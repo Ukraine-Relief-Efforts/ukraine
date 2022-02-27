@@ -28,7 +28,6 @@ export async function getStaticPaths() {
   });
 
   const numRows = response.data.values.length - 1;
-
   const paths = [];
   for (let i = 0; i < numRows; i++) {
     paths.push({ params: { row: (i + 1).toString() } });
