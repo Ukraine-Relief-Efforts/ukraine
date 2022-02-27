@@ -68,7 +68,7 @@ export default function Home(props) {
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
           return (
-            <div key={index} className="container lg:col-span-4 col-span-12">
+            <div key={index} className="container lg:col-span-4 col-span-12 flex">
               <OrgCard
                 orgIndex={index + 1}
                 titles={props.title}
