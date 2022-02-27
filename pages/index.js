@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export default function Home(props) {
   return (
-    <div className="m-12">
+    <div className="bg-blue-50">
+    <div className="p-12">
       <div className="text-center">
         <Image
           src="/assets/logo.png"
@@ -16,6 +17,9 @@ export default function Home(props) {
         ></Image>
         <h1 className="text-4xl font-bold">Help Ukraine Now</h1>
         <h2 className="my-4">Help fund the resistance</h2>
+        <h3 className="font-bold text-xl mt-8">
+          Organizations
+        </h3>
       </div>
       {props.rows.map((row, index) => {
         return (
@@ -27,6 +31,7 @@ export default function Home(props) {
         );
       })}
     </div>
+    </div>
   );
 }
 
@@ -35,7 +40,6 @@ export async function getStaticProps() {
     spreadsheetId: process.env.SHEET_ID,
     range: "General organizations",
   });
-  console.log(response.data)
   const [title, ...rows] = response.data.values;
 
   return {
