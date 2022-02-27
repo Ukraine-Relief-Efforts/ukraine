@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState } from "react";
 import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import Link from "next/link";
 import Tabs from "/components/Tabs";
 
 export default function Home(props) {
-  const tabs = ["Military", "Food", "Humanitarian"];
+  const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
   const tabGroup = props.rows.filter(
     (row) => row[4].toLowerCase().includes(
@@ -26,11 +26,9 @@ export default function Home(props) {
         <h1 className="text-4xl font-bold">Help Ukraine Now</h1>
         <h2 className="my-4">Help fund the resistance</h2>
       </div>
-
-      <div className="flex flex-wrap">
-      <div className="w-full">
+      <div className="w-full flex justify-center">
         <ul
-          className="flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+          className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
           role="tablist"
         >
           {tabs.map((tab) => {
@@ -62,7 +60,10 @@ export default function Home(props) {
             })}
         </ul>
       </div>
-    </div>
+
+      <div className="text-center">
+        <h2>Find organizations by type</h2>
+      </div>
 
       {tabGroup.map((row, index) => {
         return (
