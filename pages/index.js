@@ -80,7 +80,7 @@ export async function getStaticProps() {
     spreadsheetId: process.env.SHEET_ID,
     range: "Organizations (English)",
   });
-  console.log(response.data)
+  console.log(response.data);
   const [title, ...rows] = response.data.values;
 
   return {
