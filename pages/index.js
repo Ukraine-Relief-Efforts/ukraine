@@ -42,9 +42,9 @@ export default function Home(props) {
                       ? "text-white bg-blue-600"
                       : "text-blue-600 bg-white")
                   }
-                  onClick={e => {
-                    e.preventDefault()
-                    setOpenTab(tab)
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenTab(tab);
                   }}
                   data-toggle="tab"
                   href="#link1"
@@ -54,7 +54,7 @@ export default function Home(props) {
                 </a>
               </li>
             );
-            })}
+          })}
         </ul>
       </div>
 
