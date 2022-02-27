@@ -8,7 +8,7 @@ function OrgCard(props) {
                     <span>{props.titles[index]}:</span> {item}
                 </div>
 			</div>
-		);
+		    );
 		})}
     </div>
   );
