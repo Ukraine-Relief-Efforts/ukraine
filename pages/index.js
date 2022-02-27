@@ -8,10 +8,9 @@ import Tabs from "/components/Tabs";
 export default function Home(props) {
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
-  const tabGroup = props.rows.filter(
-    (row) => row[4].toLowerCase().includes(
-    openTab.toLowerCase()
-  ));
+  const tabGroup = props.rows.filter((row) =>
+    row[4].toLowerCase().includes(openTab.toLowerCase())
+  );
 
   return (
     <div className="m-12">
@@ -37,7 +36,8 @@ export default function Home(props) {
                 key={tab}
                 className="-mb-px mr-2 last:mr-0 flex-auto text-center"
               >
-                <a key={tab}
+                <a
+                  key={tab}
                   className={
                     "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded " +
                     "block leading-normal " +
@@ -45,9 +45,9 @@ export default function Home(props) {
                       ? "text-white bg-blue-600"
                       : "text-blue-600 bg-white")
                   }
-                  onClick={e => {
-                    e.preventDefault()
-                    setOpenTab(tab)
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenTab(tab);
                   }}
                   data-toggle="tab"
                   href="#link1"
@@ -57,7 +57,7 @@ export default function Home(props) {
                 </a>
               </li>
             );
-            })}
+          })}
         </ul>
       </div>
 
@@ -65,15 +65,19 @@ export default function Home(props) {
         <h2>Find organizations by type</h2>
       </div>
 
-      {tabGroup.map((row, index) => {
-        return (
-          <Link href={`/${index + 1}`} key={index}>
-            <a>
-              <OrgCard key={index} titles={props.title} values={row}></OrgCard>
-            </a>
-          </Link>
-        );
-      })}
+      <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
+        {tabGroup.map((row, index) => {
+          return (
+            <div key={index} className="container lg:col-span-4 col-span-12">
+              <OrgCard
+                orgIndex={index + 1}
+                titles={props.title}
+                values={row}
+              ></OrgCard>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -83,7 +87,7 @@ export async function getStaticProps() {
     spreadsheetId: process.env.SHEET_ID,
     range: "Organizations (English)",
   });
-  console.log(response.data)
+  console.log(response.data);
   const [title, ...rows] = response.data.values;
 
   return {
