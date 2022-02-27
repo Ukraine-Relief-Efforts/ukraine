@@ -8,7 +8,10 @@ import Tabs from "/components/Tabs";
 export default function Home(props) {
   const tabs = ["Military", "Food", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
-  const tabGroup = props.rows.filter((row) => openTab === row[4]);
+  const tabGroup = props.rows.filter(
+    (row) => row[4].toLowerCase().includes(
+    openTab.toLowerCase()
+  ));
 
   return (
     <div className="m-12">
