@@ -8,7 +8,7 @@ export default function Home(props) {
   }
   return (
     <div className="m-5">
-      <div className="m-5 p-5 shadow-lg rounded-lg border border-gray-100">
+      <div className="m-5 p-5">
         {props.data.map((item, index) => {
           return (
             <div key={index} className="mb-4">
@@ -24,7 +24,7 @@ export default function Home(props) {
 export async function getStaticPaths() {
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SHEET_ID,
-    range: "Sheet1",
+    range: "General organizations",
   });
 
   const numRows = response.data.values.length - 1;
@@ -42,7 +42,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { row } }) {
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SHEET_ID,
-    range: `Sheet1!${parseInt(row) + 1}:${parseInt(row) + 1}`,
+    range: `General organizations!${parseInt(row) + 1}:${parseInt(row) + 1}`,
   });
 
   return {
