@@ -1,4 +1,6 @@
-import styles from './hero.module.css'
+import styles from './hero.module.css';
+import Button from '../Button/button';
+import fbIcon from '../../public/sample_icon.png';
 
 export default function Hero () {
     return (
