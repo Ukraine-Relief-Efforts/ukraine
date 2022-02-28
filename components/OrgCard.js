@@ -4,6 +4,7 @@ import Badge from "./Badge/badge";
 function OrgCard({ titles, values, orgIndex }) {
   const [
     orgName,
+    type,
     activeFundraise,
     donationLinks,
     largeDonationsContact,
@@ -26,7 +27,6 @@ function OrgCard({ titles, values, orgIndex }) {
     prepForWeb,
     verified
   ] = values;
-  console.log(verified)
   return (
     <div className="bg-[#F2F6FF] rounded-3xl w-full mb-5 h-100 flex flex-col justify-between">
       <Link href={`/${orgIndex}`}>
