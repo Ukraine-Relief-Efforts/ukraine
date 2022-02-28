@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import sheets from "../lib/sheets";
 import { useRouter } from "next/router";
 import OrgPage from "/components/OrgPage";
@@ -5,17 +6,15 @@ import Modal from "react-modal";
 
 export default function Home(props) {
   const router = useRouter();
+  useEffect(() => {
+    router.prefetch("/");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
   return (
-    <Modal
-      isOpen={true} // The modal should always be shown on page load, it is the 'page'
-      onRequestClose={() => router.push("/")}
-      contentLabel="Post modal"
-    >
-      <OrgPage orgData={props.data}></OrgPage>
-    </Modal>
+      <OrgPage orgData={props.data} showFrontPageLink={true}></OrgPage>
   );
 }
 
