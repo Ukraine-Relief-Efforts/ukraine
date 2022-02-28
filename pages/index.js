@@ -1,7 +1,6 @@
 import { useState } from "react";
 import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
-import Image from "next/image";
 import Link from "next/link";
 import Tabs from "/components/Tabs";
 import Hero from '/components/Hero/hero'
@@ -78,7 +77,7 @@ export async function getStaticProps() {
     spreadsheetId: process.env.SHEET_ID,
     range: "Organizations (English)",
   });
-  console.log(response.data);
+  console.log(response.data.values[0]);
   const [title, ...rows] = response.data.values;
 
   return {

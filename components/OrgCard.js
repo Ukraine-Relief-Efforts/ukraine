@@ -1,9 +1,10 @@
 import Link from "next/link";
-import Image from "next/Image";
+import Badge from "./Badge/badge";
 
 function OrgCard({ titles, values, orgIndex }) {
   const [
     orgName,
+    activeFundraise,
     donationLinks,
     largeDonationsContact,
     englishDesc,
@@ -17,7 +18,15 @@ function OrgCard({ titles, values, orgIndex }) {
     translation,
     photos,
     frenchDesc,
+    germanDesc,
+    spanishDesc,
+    italianDesc,
+    polishDesc,
+    romanianDesc,
+    prepForWeb,
+    verified
   ] = values;
+  console.log(verified)
   return (
     <div className="bg-[#F2F6FF] rounded-3xl w-full mb-5 h-100 flex flex-col justify-between">
       <Link href={`/${orgIndex}`}>
@@ -32,6 +41,7 @@ function OrgCard({ titles, values, orgIndex }) {
               height="100%"
             ></Image> */}
           </div>
+          <Badge verified={verified}/>
           <h1 className="mx-5 text-3xl text-black mb-3 font-extrabold ">
             {orgName}
           </h1>
