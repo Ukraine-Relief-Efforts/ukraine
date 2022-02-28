@@ -20,10 +20,8 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
     website,
     bannerImage
   ] = orgData;
-  console.log({socials})
 
   return (
-    <>
     <div>
       <div className="w-100">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -45,20 +43,20 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           <div className="flex flex-wrap flex-row">
             {donationLinks.split("\n").map((link, index) => {
               return (
-                <>
+                <div className="sr-only" key={index}>
                 {link && (
-                    <div key={index} className="w-60 container transition duration-200 mr-4 ease-in-out text-l rounded-md font-bold px-14 py-3 text-white text-center bg-uablue-default mb-2 hover:bg-uablue-accent">
-                    <a
-                      href={link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className=""
-                    >
-                        {index == 0 ? "Donate Now " : "Donation Link " + index}
-                    </a>
+                    <div key={'donations-'+index} className="w-60 container transition duration-200 mr-4 ease-in-out text-l rounded-md font-bold px-14 py-3 text-white text-center bg-uablue-default mb-2 hover:bg-uablue-accent">
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className=""
+                      >
+                          {index == 0 ? "Donate Now " : "Donation Link " + index}
+                      </a>
                     </div>
                   )}
-                  </> 
+                </div> 
               );
             })}
           </div>
@@ -66,13 +64,13 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
             {typeof socials === "string" &&  //Had to do this because I couldnt recognize undefined otherwise
               socials.split("\n").map((link, index) => {
                 return (
-                  <>
+                  <div className="sr-only" key={index}>
                     {link && (
                       <a
                         href={link.split(": ")[1]}
                         target="_blank"
                         rel="noreferrer"
-                        key={index}
+                        key={'socials-'+index}
                         className="mr-8"
                       >
                         <Image
@@ -83,7 +81,7 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
                         ></Image>
                       </a>
                     )}
-                  </>
+                  </div>
                 );
               })}
           </div>
@@ -132,7 +130,7 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           <h2 className="font-black text-2xl mt-12">
             Payment Method
           </h2>
-          <p className="mt-2 flex">
+          <div className="mt-2 flex">
             {paymentMethod.split(',').map((method, index) => {
               return (
                 <div key={'method-'+index} className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center text-sm mr-2">
@@ -145,10 +143,9 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
                 Crypto
               </div>
             )}
-          </p>
+          </div>
         </section>
         </div>
       </div>
-    </>
   );
 }

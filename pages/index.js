@@ -94,8 +94,8 @@ export default function Home(props) {
       >
         <OrgPage orgData={orgData}></OrgPage>
         <button className="h-10 w-10 object-cover absolute top-8 right-8 bg-gray-600 rounded-full flex justify-center items-center" onClick={closeModal}>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </Modal>
@@ -103,7 +103,7 @@ export default function Home(props) {
         {tabGroup.map((row, index) => {
           return (
             <div
-              key={index}
+              key={'orgcard-'+row[row.length -1]}
               className="container lg:col-span-4 col-span-12 flex"
             >
               <OrgCard
