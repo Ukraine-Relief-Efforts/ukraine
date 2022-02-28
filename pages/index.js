@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
-import OrgPageModal from "/components/OrgPageModal";
+import OrgPage from "/components/OrgPage";
 import Image from "next/image";
 import Modal from "react-modal";
 
@@ -24,10 +24,13 @@ export default function Home(props) {
     setIsOpen(true);
     window.history.pushState(null, null, `/${rowNumber}`);
   }
+  function closeModal() {
+    setIsOpen(false);
+    window.history.pushState(null, null, `/`);
+  }
 
   return (
     <div className="m-12">
-      <div className="absolute">{modalIsOpen ? "open" : "closed"}</div>
       <div className="text-center">
         <Image
           src="/assets/logo.png"
@@ -78,7 +81,14 @@ export default function Home(props) {
       <div className="text-center">
         <h2>Find organizations by type</h2>
       </div>
-        { modalIsOpen && <OrgPageModal></OrgPageModal> }
+        
+      <Modal
+        isOpen={modalIsOpen} // The modal should always be shown on page load, it is the 'page'
+        onRequestClose={closeModal}
+        contentLabel="Post modal"
+      > 
+      <OrgPage></OrgPage>
+      </Modal>
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
           return (
