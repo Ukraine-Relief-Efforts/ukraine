@@ -20,11 +20,12 @@ export default function Home(props) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [orgData, setOrgData] = useState([]);
 
-  function openModal(rowNumber) {
+  function openModal(rowNumber, rowData) {
     setIsOpen(true);
     window.history.pushState(null, null, `/${rowNumber}`);
-    setOrgData(props.rows[rowNumber]);
+    setOrgData(rowData);
   }
+
   function closeModal() {
     setIsOpen(false);
     window.history.pushState(null, null, `/`);
@@ -98,10 +99,10 @@ export default function Home(props) {
               className="container lg:col-span-4 col-span-12 flex"
             >
               <OrgCard
-                orgIndex={index + 1}
+                orgIndex={row[row.length - 1]}
                 titles={props.title}
                 values={row}
-                open={() => openModal(index + 1)}
+                open={() => openModal(row[row.length - 1], row)}
               ></OrgCard>
             </div>
           );
@@ -118,6 +119,7 @@ export async function getStaticProps() {
   });
   console.log(response.data);
   const [title, ...rows] = response.data.values;
+  rows.map((data, initialIndex) => data.push(initialIndex + 1));
 
   return {
     props: {
