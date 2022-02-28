@@ -4,6 +4,8 @@ import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
 import OrgPage from "/components/OrgPage";
 import Image from "next/image";
+import Hero from '/components/Hero/hero'
+import Layout from "../components/layout";
 import Modal from "react-modal";
 
 Modal.setAppElement("#__next");
@@ -32,18 +34,8 @@ export default function Home(props) {
   }
 
   return (
-    <div className="m-12">
-      <div className="text-center">
-        <Image
-          src="/assets/logo.png"
-          alt="Logo"
-          layout="intrinsic"
-          width={100}
-          height={140}
-        ></Image>
-        <h1 className="text-4xl font-bold">Help Ukraine Now</h1>
-        <h2 className="my-4">Help fund the resistance</h2>
-      </div>
+    <Layout>
+      <Hero />
       <div className="w-full flex justify-center">
         <ul
           className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
@@ -108,7 +100,7 @@ export default function Home(props) {
           );
         })}
       </div>
-    </div>
+    </Layout>
   );
 }
 
