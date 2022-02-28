@@ -23,6 +23,7 @@ export default function Home(props) {
   function openModal(rowNumber) {
     setIsOpen(true);
     window.history.pushState(null, null, `/${rowNumber}`);
+    setOrgData(props.rows[rowNumber]);
   }
   function closeModal() {
     setIsOpen(false);
@@ -87,7 +88,7 @@ export default function Home(props) {
         onRequestClose={closeModal}
         contentLabel="Post modal"
       >
-        <OrgPage></OrgPage>
+        <OrgPage orgData={orgData}></OrgPage>
       </Modal>
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {

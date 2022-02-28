@@ -14,7 +14,7 @@ export default function Home(props) {
       onRequestClose={() => router.push("/")}
       contentLabel="Post modal"
     >
-      <OrgPage></OrgPage>
+      <OrgPage orgData={props.data}></OrgPage>
     </Modal>
   );
 }

@@ -11,12 +11,26 @@ export default function OrgPage({ orgData }) {
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
-  
+  const [
+    orgName,
+    donationLinks,
+    largeDonationsContact,
+    englishDesc,
+    cause,
+    spendingTowards,
+    acomplishments,
+    backedBy,
+    paymentMethod,
+    crypto,
+    socials,
+    translation,
+    photos,
+    frenchDesc,
+  ] = orgData;
 
   return (
     <>
-        OrgPage
-        {/* <div className="m-5 p-5 shadow-lg rounded-lg border border-gray-100">
+        <div>
           {orgData.map((item, index) => {
             return (
               <div key={index} className="mb-4">
@@ -24,7 +38,7 @@ export default function OrgPage({ orgData }) {
               </div>
             );
           })}
-      </div> */}
+      </div>
     </>
   );
 }
