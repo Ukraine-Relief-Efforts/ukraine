@@ -19,7 +19,7 @@ function OrgCard({ titles, values, orgIndex }) {
     frenchDesc,
   ] = values;
   return (
-    <div className="bg-[#F2F6FF] rounded-3xl mx-5 mb-5 h-100 flex flex-col justify-between">
+    <div className="bg-[#F2F6FF] rounded-3xl w-full mb-5 h-100 flex flex-col justify-between">
       <Link href={`/${orgIndex}`}>
         <a>
           <div className="container h-3/8 w-full rounded-lg  mb-2">

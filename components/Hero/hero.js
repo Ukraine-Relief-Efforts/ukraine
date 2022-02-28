@@ -2,7 +2,7 @@ import styles from './hero.module.css'
 
 export default function Hero () {
     return (
-        <div className=' ml-4 mt-24 mb-14'>
+        <div className='mt-24 mb-14'>
             <div>
                 <h1 className={`${styles.h1} font-extrabold text-5xl md:text-7xl lg:text-8xl inline leading-none
                 sm:text-9xl`}>Help </h1>

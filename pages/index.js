@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Tabs from "/components/Tabs";
 import Hero from '/components/Hero/hero'
+import Nav from '/components/Nav/nav'
 
 export default function Home(props) {
   const tabs = ["Military", "Humanitarian"];
@@ -14,10 +15,9 @@ export default function Home(props) {
   );
 
   return (
-    <div className="m-4 sm:m-12">
-      <div>
-        <Hero />
-      </div>
+    <div className="m-6 sm:m-12">
+      <Nav />
+      <Hero />
       <div className="w-full flex justify-center">
         <ul
           className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
@@ -58,10 +58,10 @@ export default function Home(props) {
         <h2>Find organizations by type</h2>
       </div>
 
-      <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
+      <div className="grid gap-6 grid-cols-12 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
           return (
-            <div key={index} className="container lg:col-span-4 col-span-12 flex">
+            <div key={index} className="container lg:col-span-4 md:col-span-6 col-span-12 flex">
               <OrgCard
                 orgIndex={index + 1}
                 titles={props.title}
