@@ -78,13 +78,16 @@ export default function OrgPage({ orgData }) {
               })}
           </div>
         </div>
-        <section className="container max-w-5xl mt-12">
+        <section className="max-w-5xl mt-12">
           <h2 className="font-black text-xl">
             Introduction
           </h2>
           <p className="mt-6">
             {englishDesc}
           </p>
+          <div className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center w-44">
+            {cause} Supplies
+          </div>
           {spendingTowards && (
           <>
             <h2 className="font-black text-xl mt-12">
