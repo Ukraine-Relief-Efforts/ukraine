@@ -13,7 +13,7 @@ export default function NavBar () {
                         layout="intrinsic"
                     />
                 </div> 
-                <Link href="pages/about.js">
+                <Link href="about">
                     <a className="leading-tight">About us</a>
                 </Link>
                 <a href="#" className="leading-tight">Apply for funding</a>
