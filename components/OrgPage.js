@@ -1,14 +1,7 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import Modal from "react-modal";
 
 export default function OrgPage({ orgData }) {
-  const router = useRouter();
-  useEffect(() => {
-    router.prefetch("/");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   const [
     orgName,
     donationLinks,
