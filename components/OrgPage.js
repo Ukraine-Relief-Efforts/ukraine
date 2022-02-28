@@ -119,6 +119,23 @@ export default function OrgPage({ orgData }) {
               </p>
             </>
           )}
+          <h2 className="font-black text-2xl mt-12">
+            Payment Method
+          </h2>
+          <p className="mt-2 flex">
+            {paymentMethod.split(',').map((method, index) => {
+              return (
+                <div key={'method-'+index} className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center text-sm mr-2">
+                  {method}
+                </div>
+              )
+            })}
+            {crypto == "yes" && (
+              <div className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center text-sm">
+                Crypto
+              </div>
+            )}
+          </p>
         </section>
         </div>
       </div>
