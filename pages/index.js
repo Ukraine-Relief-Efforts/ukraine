@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import sheets from "../lib/sheets";
-import OrgCard from "/components/OrgCard";
+import OrgCard from "../components/OrgCard";
 import Tabs from "/components/Tabs";
-import OrgPage from "/components/OrgPage";
-import Image from "next/image";
-import Hero from '/components/Hero/hero'
+import OrgPage from "../components/OrgPage";
+import Image from "next/Image";
+import Hero from '../components/Hero/hero';
 import Layout from "../components/layout";
-import OrgPage from "/components/OrgPage";
-import Image from "next/image";
 import Modal from "react-modal";
 
 Modal.setAppElement("#__next");
