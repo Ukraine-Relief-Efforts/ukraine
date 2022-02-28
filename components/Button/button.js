@@ -9,7 +9,6 @@ Props to parse (all optional)
 - href: for the external URL
 - target: target attribute of <a>
 - icon: for leading icon of button 
-
 */
 
 export default function Button ({onClick, value, href, target, icon}) {
