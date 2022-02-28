@@ -4,25 +4,24 @@ import OrgCard from "/components/OrgCard";
 import Image from "next/image";
 import Link from "next/link";
 import Tabs from "/components/Tabs";
+import Hero from '/components/Hero/hero'
+import Nav from '/components/Nav/nav'
+import Layout from "../components/layout";
 
 export default function Home(props) {
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
+<<<<<<< HEAD
+  const tabGroup = props.rows.filter((row) =>
+    row[4].toLowerCase().includes(openTab.toLowerCase())
+  );
+=======
   const tabGroup = props.rows.filter((row) => row[4].toLowerCase().includes(openTab.toLowerCase()));
+>>>>>>> a7af41478e655711e73e581a4476fc8c62cbe64b
 
   return (
-    <div className="m-12">
-      <div className="text-center">
-        <Image
-          src="/assets/logo.png"
-          alt="Logo"
-          layout="intrinsic"
-          width={100}
-          height={140}
-        ></Image>
-        <h1 className="text-4xl font-bold">Help Ukraine Now</h1>
-        <h2 className="my-4">Help fund the resistance</h2>
-      </div>
+    <Layout>
+      <Hero />
       <div className="w-full flex justify-center">
         <ul
           className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
@@ -34,7 +33,8 @@ export default function Home(props) {
                 key={tab}
                 className="-mb-px mr-2 last:mr-0 flex-auto text-center"
               >
-                <a key={tab}
+                <a
+                  key={tab}
                   className={
                     "text-xs font-bold uppercase px-5 py-3 shadow-lg rounded " +
                     "block leading-normal " +
@@ -42,9 +42,9 @@ export default function Home(props) {
                       ? "text-white bg-blue-600"
                       : "text-blue-600 bg-white")
                   }
-                  onClick={e => {
-                    e.preventDefault()
-                    setOpenTab(tab)
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenTab(tab);
                   }}
                   data-toggle="tab"
                   href="#link1"
@@ -54,7 +54,7 @@ export default function Home(props) {
                 </a>
               </li>
             );
-            })}
+          })}
         </ul>
       </div>
 
@@ -62,16 +62,20 @@ export default function Home(props) {
         <h2>Find organizations by type</h2>
       </div>
 
-      {tabGroup.map((row, index) => {
-        return (
-          <Link href={`/${index + 1}`} key={index}>
-            <a>
-              <OrgCard key={index} titles={props.title} values={row}></OrgCard>
-            </a>
-          </Link>
-        );
-      })}
-    </div>
+      <div className="grid gap-6 grid-cols-12 mt-4 h-713 padding-2 font-open">
+        {tabGroup.map((row, index) => {
+          return (
+            <div key={index} className="container lg:col-span-4 md:col-span-6 col-span-12 flex">
+              <OrgCard
+                orgIndex={index + 1}
+                titles={props.title}
+                values={row}
+              ></OrgCard>
+            </div>
+          );
+        })}
+      </div>
+    </Layout>
   );
 }
 
@@ -80,7 +84,7 @@ export async function getStaticProps() {
     spreadsheetId: process.env.SHEET_ID,
     range: "Organizations (English)",
   });
-  console.log(response.data)
+  console.log(response.data);
   const [title, ...rows] = response.data.values;
 
   return {
