@@ -13,9 +13,9 @@ export default function Home(props) {
 
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
-  const tabGroup = props.rows.filter((row) =>
-    row[4].toLowerCase().includes(openTab.toLowerCase())
-  );
+  const tabGroup = props.rows.filter((row) => {
+    return row[4] ? row[4].toLowerCase().includes(openTab.toLowerCase()): false
+  });
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [orgData, setOrgData] = useState([]);
