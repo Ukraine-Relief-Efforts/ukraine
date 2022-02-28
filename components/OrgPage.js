@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import Modal from "react-modal";
 
-export default function OrgPage({ orgData }) {
+export default function OrgPage({ orgData, showFrontPageLink }) {
   const [
     orgName,
     donationLinks,
@@ -14,18 +15,25 @@ export default function OrgPage({ orgData }) {
     paymentMethod,
     crypto,
     socials,
-    translation,
-    photos,
-    frenchDesc,
+    facebook,
+    twitter,
+    website,
+    bannerImage
   ] = orgData;
   console.log({socials})
 
   return (
     <>
     <div>
-      <div className="w-100">
-        <img src="/assets/default_cover.png" alt="Organization Logo"/>
+      <div className="w-100 pb-12">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={bannerImage || "/assets/default_cover.png"} alt="Organization Logo"/>
       </div>
+      {showFrontPageLink && (
+        <Link href="/">
+          <a className="pl-12 h-12 font-bold">&lt; BROWSE ORGANIZATIONS</a>
+        </Link>
+      )}
       <div id="organization" className="p-12">
       <h1 className="text-5xl font-black">{orgName}</h1>
         <div

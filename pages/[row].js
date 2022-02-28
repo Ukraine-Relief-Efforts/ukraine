@@ -9,13 +9,7 @@ export default function Home(props) {
     return <div>Loading...</div>;
   }
   return (
-    <Modal
-      isOpen={true} // The modal should always be shown on page load, it is the 'page'
-      onRequestClose={() => router.push("/")}
-      contentLabel="Post modal"
-    >
-      <OrgPage orgData={props.data}></OrgPage>
-    </Modal>
+      <OrgPage orgData={props.data} showFrontPageLink={true}></OrgPage>
   );
 }
 
