@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Badge from "./Badge/badge";
 
-function OrgCard({ titles, values, orgIndex }) {
+function OrgCard({ titles, values, orgIndex, open }) {
   const [
     orgName,
     type,
@@ -27,6 +27,7 @@ function OrgCard({ titles, values, orgIndex }) {
     prepForWeb,
     verified
   ] = values;
+
   return (
     <div className="bg-[#F2F6FF] rounded-3xl w-full mb-5 h-100 flex flex-col justify-between">
       <Link href={`/${orgIndex}`}>
@@ -49,23 +50,12 @@ function OrgCard({ titles, values, orgIndex }) {
         </a>
       </Link>
       <div className="flex mb-6 mt-5 px-4">
-        {donationLinks.split("\n").map((link, index) => {
-          return (
-            <>
-              {link && (
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={index}
-                  className="container text-xl rounded-md font-boldest text-white text-center bg-black mx-4 mb-2 ring-2 ring-black hover:bg-[#ffd700] hover:ring-3 hover:ring-[#0057b7] hover:text-black "
-                >
-                  Donation Link {index == 0 ? '' : index}
-                </a>
-              )}
-            </>
-          );
-        })}
+        <div
+          onClick={open}
+          className="container text-xl rounded-md font-boldest text-white text-center bg-black mx-4 mb-2 ring-2 ring-black hover:bg-[#ffd700] hover:ring-3 hover:ring-[#0057b7] hover:text-black "
+        >
+          Donate Now
+        </div>
       </div>
     </div>
   );
