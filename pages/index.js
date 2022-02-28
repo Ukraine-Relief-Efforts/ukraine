@@ -4,6 +4,7 @@ import OrgCard from "/components/OrgCard";
 import Image from "next/image";
 import Link from "next/link";
 import Tabs from "/components/Tabs";
+import Hero from '/components/Hero/hero'
 
 export default function Home(props) {
   const tabs = ["Military", "Humanitarian"];
@@ -13,17 +14,9 @@ export default function Home(props) {
   );
 
   return (
-    <div className="m-12">
-      <div className="text-center">
-        <Image
-          src="/assets/logo.png"
-          alt="Logo"
-          layout="intrinsic"
-          width={100}
-          height={140}
-        ></Image>
-        <h1 className="text-4xl font-bold">Help Ukraine Now</h1>
-        <h2 className="my-4">Help fund the resistance</h2>
+    <div className="m-4 sm:m-12">
+      <div>
+        <Hero />
       </div>
       <div className="w-full flex justify-center">
         <ul
