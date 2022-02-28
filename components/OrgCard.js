@@ -9,7 +9,7 @@ function OrgCard({ titles, values, orgIndex }) {
     englishDesc,
     cause,
     spendingTowards,
-    accomplishments,
+    acomplishments,
     backedBy,
     paymentMethod,
     crypto,
