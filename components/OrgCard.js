@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Badge from "./Badge/badge";
+import Button from "./Button/button";
 
 function OrgCard({ titles, values, orgIndex, open }) {
   const [
@@ -42,12 +43,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
         </a>
       </Link>
       <div className="flex mb-6 mt-5 px-4">
-        <div
-          onClick={open}
-          className="container text-xl rounded-md font-boldest text-white text-center bg-black mx-4 mb-2 ring-2 ring-black hover:bg-[#ffd700] hover:ring-3 hover:ring-[#0057b7] hover:text-black "
-        >
-          Donate Now
-        </div>
+        <Button onClick={open} value='Learn More'/>
       </div>
     </div>
   );
