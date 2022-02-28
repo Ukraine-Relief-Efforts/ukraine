@@ -31,13 +31,24 @@ export default function OrgPage({ orgData }) {
   return (
     <>
         <div>
-          {orgData.map((item, index) => {
-            return (
-              <div key={index} className="mb-4">
-                {item}
-              </div>
-            );
-          })}
+          <h1 className="text-5xl font-black mb-4">{orgName}</h1>
+          {donationLinks.split("\n").map((link, index) => {
+          return (
+            <>
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={index}
+                  className="container transition duration-200 ease-in-out text-l rounded-md font-bold px-14 py-3 text-white text-center bg-uablue-default mb-2  hover:bg-uablue-accent"
+                >
+                  {index == 0 ? 'Donate Now ' : 'Donation Link ' + index}
+                </a>
+              )}
+            </>
+          );
+        })}
       </div>
     </>
   );
