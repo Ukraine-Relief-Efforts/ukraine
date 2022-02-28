@@ -18,6 +18,7 @@ export default function OrgPage({ orgData }) {
     photos,
     frenchDesc,
   ] = orgData;
+  console.log({socials})
 
   return (
     <>
@@ -52,7 +53,7 @@ export default function OrgPage({ orgData }) {
             })}
           </div>
           <div id="socials" className="flex flex-wrap items-center">
-            {socials &&
+            {typeof socials === "string" &&  //Had to do this because I couldnt recognize undefined otherwise
               socials.split("\n").map((link, index) => {
                 return (
                   <>
@@ -81,30 +82,40 @@ export default function OrgPage({ orgData }) {
           <h2 className="font-black text-xl">
             Introduction
           </h2>
-          <p>
+          <p className="mt-6">
             {englishDesc}
           </p>
-          <h2 className="font-black text-xl mt-12">
-            How we will spend donations
-          </h2>
-          <p>
-            {spendingTowards}
-          </p>
-          <h2 className="font-black text-xl mt-12">
-            What we&apos;ve accomplished so far
-          </h2>
-          <p>
-            To read about our accomplishments, please visit: <br></br>
-            <a className="" href={accomplishments} target="_blank" rel="noreferrer">
-              {accomplishments}
-            </a>
-          </p>
-          <h2 className="font-black text-xl mt-12">
-            Contant information
-          </h2>
-          <p>
-            {largeDonationsContact}
-          </p>
+          {spendingTowards && (
+          <>
+            <h2 className="font-black text-xl mt-12">
+              How we will spend donations
+            </h2>
+            <p className="mt-6">
+              {spendingTowards}
+            </p>
+          </>)}
+          {accomplishments && (
+          <>
+            <h2 className="font-black text-xl mt-12">
+              What we&apos;ve accomplished so far
+            </h2>
+            <p className="mt-6">
+              To read about our accomplishments, please visit: <br></br>
+              <a href={accomplishments} target="_blank" rel="noreferrer" className="text-blue-500 border-b-2 border-blue-500">
+                CHECK OUT OUR WEBSITE
+              </a>
+            </p>
+          </>)}
+          {largeDonationsContact && (
+            <>
+              <h2 className="font-black text-xl mt-12">
+                Contant information
+              </h2>
+              <p className="mt-6">
+                {largeDonationsContact}
+              </p>
+            </>
+          )}
         </section>
         </div>
       </div>
