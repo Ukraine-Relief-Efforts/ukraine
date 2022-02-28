@@ -11,13 +11,7 @@ import Layout from "../components/layout";
 export default function Home(props) {
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
-<<<<<<< HEAD
-  const tabGroup = props.rows.filter((row) =>
-    row[4].toLowerCase().includes(openTab.toLowerCase())
-  );
-=======
   const tabGroup = props.rows.filter((row) => row[4].toLowerCase().includes(openTab.toLowerCase()));
->>>>>>> a7af41478e655711e73e581a4476fc8c62cbe64b
 
   return (
     <Layout>
