@@ -1,16 +1,7 @@
-export default function Badge ({verified, type}){
+export default function Badge ({cause}){
     return (
-        <div className="rounded-3xl">
-            {verified != '' ? (
-                <div className="bg-[#005BBC] text-white">
-                    Verified
-                </div>
-            ) : (
-                <div className="bg-white text-[#005BBC] border-[#005BBC] border">
-                    Military
-                </div>
-            )}
-
+        <div className="bg-white text-[#005BBC] text-sm lg:text-base font-semibold border-[#005BBC] border rounded-3xl py-1 px-4 inline-block">
+            {cause}
         </div>
     );
 }
