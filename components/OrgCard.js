@@ -4,8 +4,6 @@ import Badge from "./Badge/badge";
 function OrgCard({ titles, values, orgIndex, open }) {
   const [
     orgName,
-    type,
-    activeFundraise,
     donationLinks,
     largeDonationsContact,
     englishDesc,
@@ -15,19 +13,13 @@ function OrgCard({ titles, values, orgIndex, open }) {
     backedBy,
     paymentMethod,
     crypto,
-    socials,
-    translation,
-    photos,
-    frenchDesc,
-    germanDesc,
-    spanishDesc,
-    italianDesc,
-    polishDesc,
-    romanianDesc,
-    prepForWeb,
-    verified
+    facebook,
+    instagram,
+    twitter,
+    website,
+    bannerImage
   ] = values;
-
+  // console.log(values);
   return (
     <div className="bg-[#F2F6FF] rounded-3xl w-full mb-5 h-100 flex flex-col justify-between">
       <Link href={`/${orgIndex}`}>
@@ -42,7 +34,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
               height="100%"
             ></Image> */}
           </div>
-          <Badge verified={verified}/>
+          <Badge cause={cause}/>
           <h1 className="mx-5 text-3xl text-black mb-3 font-extrabold ">
             {orgName}
           </h1>
