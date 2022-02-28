@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/Image";
 
-function OrgCard({ titles, values, orgIndex, open }) {
+function OrgCard({ titles, values, orgIndex }) {
   const [
     orgName,
     donationLinks,
@@ -18,7 +18,6 @@ function OrgCard({ titles, values, orgIndex, open }) {
     photos,
     frenchDesc,
   ] = values;
-
   return (
     <div className="bg-[#F2F6FF] rounded-3xl mx-5 mb-5 h-100 flex flex-col justify-between">
       <Link href={`/${orgIndex}`}>
@@ -40,12 +39,23 @@ function OrgCard({ titles, values, orgIndex, open }) {
         </a>
       </Link>
       <div className="flex mb-6 mt-5 px-4">
-        <div
-          onClick={open}
-          className="container text-xl rounded-md font-boldest text-white text-center bg-black mx-4 mb-2 ring-2 ring-black hover:bg-[#ffd700] hover:ring-3 hover:ring-[#0057b7] hover:text-black "
-        >
-          Donate Now
-        </div>
+        {donationLinks.split("\n").map((link, index) => {
+          return (
+            <>
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={index}
+                  className="container text-xl rounded-md font-boldest text-white text-center bg-black mx-4 mb-2 ring-2 ring-black hover:bg-[#ffd700] hover:ring-3 hover:ring-[#0057b7] hover:text-black "
+                >
+                  Donation Link {index == 0 ? '' : index}
+                </a>
+              )}
+            </>
+          );
+        })}
       </div>
     </div>
   );
