@@ -81,13 +81,13 @@ export default function Home(props) {
       <div className="text-center">
         <h2>Find organizations by type</h2>
       </div>
-        
+
       <Modal
         isOpen={modalIsOpen} // The modal should always be shown on page load, it is the 'page'
         onRequestClose={closeModal}
         contentLabel="Post modal"
-      > 
-      <OrgPage></OrgPage>
+      >
+        <OrgPage></OrgPage>
       </Modal>
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
