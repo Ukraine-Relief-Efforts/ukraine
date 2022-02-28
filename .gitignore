@@ -17,6 +17,7 @@ secrets.json
 /build
 
 # misc
+.idea
 .DS_Store
 *.pem
 
