@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
-import Link from "next/link";
 import Tabs from "/components/Tabs";
+import OrgPage from "/components/OrgPage";
+import Image from "next/image";
 import Hero from '/components/Hero/hero'
-import Nav from '/components/Nav/nav'
 import Layout from "../components/layout";
 import OrgPage from "/components/OrgPage";
 import Image from "next/image";
