@@ -1,5 +1,7 @@
 import sheets from "../lib/sheets";
 import { useRouter } from "next/router";
+import OrgPage from "/components/OrgPage";
+import Modal from "react-modal";
 
 export default function Home(props) {
   const router = useRouter();
@@ -7,17 +9,13 @@ export default function Home(props) {
     return <div>Loading...</div>;
   }
   return (
-    <div className="m-5">
-      <div className="m-5 p-5 shadow-lg rounded-lg border border-gray-100">
-        {props.data.map((item, index) => {
-          return (
-            <div key={index} className="mb-4">
-              {item}
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <Modal
+      isOpen={true} // The modal should always be shown on page load, it is the 'page'
+      onRequestClose={() => router.push("/")}
+      contentLabel="Post modal"
+    >
+      <OrgPage></OrgPage>
+    </Modal>
   );
 }
 

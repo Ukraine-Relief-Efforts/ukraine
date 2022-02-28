@@ -1,19 +1,33 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
+import OrgPageModal from "/components/OrgPageModal";
 import Image from "next/image";
-import Link from "next/link";
-import Tabs from "/components/Tabs";
+import Modal from "react-modal";
+
+Modal.setAppElement("#__next");
 
 export default function Home(props) {
+  const router = useRouter();
+
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
   const tabGroup = props.rows.filter((row) =>
     row[4].toLowerCase().includes(openTab.toLowerCase())
   );
 
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [orgData, setOrgData] = useState([]);
+
+  function openModal(rowNumber) {
+    setIsOpen(true);
+    window.history.pushState(null, null, `/${rowNumber}`);
+  }
+
   return (
     <div className="m-12">
+      <div className="absolute">{modalIsOpen ? "open" : "closed"}</div>
       <div className="text-center">
         <Image
           src="/assets/logo.png"
@@ -64,15 +78,19 @@ export default function Home(props) {
       <div className="text-center">
         <h2>Find organizations by type</h2>
       </div>
-
+        { modalIsOpen && <OrgPageModal></OrgPageModal> }
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
           return (
-            <div key={index} className="container lg:col-span-4 col-span-12 flex">
+            <div
+              key={index}
+              className="container lg:col-span-4 col-span-12 flex"
+            >
               <OrgCard
                 orgIndex={index + 1}
                 titles={props.title}
                 values={row}
+                open={() => openModal(index + 1)}
               ></OrgCard>
             </div>
           );
