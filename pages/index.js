@@ -1,35 +1,16 @@
 import { useState } from "react";
-import { useRouter } from "next/router";
 import sheets from "../lib/sheets";
 import OrgCard from "/components/OrgCard";
-import OrgPage from "/components/OrgPage";
 import Image from "next/image";
-import Modal from "react-modal";
-
-Modal.setAppElement("#__next");
+import Link from "next/link";
+import Tabs from "/components/Tabs";
 
 export default function Home(props) {
-  const router = useRouter();
-
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
   const tabGroup = props.rows.filter((row) =>
     row[4].toLowerCase().includes(openTab.toLowerCase())
   );
-
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [orgData, setOrgData] = useState([]);
-
-  function openModal(rowNumber, rowData) {
-    setIsOpen(true);
-    window.history.pushState(null, null, `/${rowNumber}`);
-    setOrgData(rowData);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-    window.history.pushState(null, null, `/`);
-  }
 
   return (
     <div className="m-12">
@@ -84,25 +65,14 @@ export default function Home(props) {
         <h2>Find organizations by type</h2>
       </div>
 
-      <Modal
-        isOpen={modalIsOpen} // The modal should always be shown on page load, it is the 'page'
-        onRequestClose={closeModal}
-        contentLabel="Post modal"
-      >
-        <OrgPage orgData={orgData}></OrgPage>
-      </Modal>
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
           return (
-            <div
-              key={index}
-              className="container lg:col-span-4 col-span-12 flex"
-            >
+            <div key={index} className="container lg:col-span-4 col-span-12 flex">
               <OrgCard
-                orgIndex={row[row.length - 1]}
+                orgIndex={index + 1}
                 titles={props.title}
                 values={row}
-                open={() => openModal(row[row.length - 1], row)}
               ></OrgCard>
             </div>
           );
@@ -119,7 +89,6 @@ export async function getStaticProps() {
   });
   console.log(response.data);
   const [title, ...rows] = response.data.values;
-  rows.map((data, initialIndex) => data.push(initialIndex + 1));
 
   return {
     props: {
