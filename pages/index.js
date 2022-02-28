@@ -6,6 +6,7 @@ import Link from "next/link";
 import Tabs from "/components/Tabs";
 import Hero from '/components/Hero/hero'
 import Nav from '/components/Nav/nav'
+import Layout from "../components/layout";
 
 export default function Home(props) {
   const tabs = ["Military", "Humanitarian"];
@@ -15,8 +16,7 @@ export default function Home(props) {
   );
 
   return (
-    <div className="m-6 sm:m-12">
-      <Nav />
+    <Layout>
       <Hero />
       <div className="w-full flex justify-center">
         <ul
@@ -71,7 +71,7 @@ export default function Home(props) {
           );
         })}
       </div>
-    </div>
+    </Layout>
   );
 }
 
