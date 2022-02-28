@@ -85,9 +85,9 @@ export default function Home(props) {
       </div>
 
       <Modal
-        isOpen={modalIsOpen} // The modal should always be shown on page load, it is the 'page'
+        isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        contentLabel="Post modal"
+        contentLabel="Organization Page"
       >
         <OrgPage orgData={orgData}></OrgPage>
       </Modal>
