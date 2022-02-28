@@ -93,6 +93,11 @@ export default function Home(props) {
         className={"ReactModal__Content p-0 w-100 lg:max-w-5xl mx-auto my-12 max-h-[90vh] overflow-y-auto bg-white rounded-[50px]"}
       >
         <OrgPage orgData={orgData}></OrgPage>
+        <button className="h-10 w-10 object-cover absolute top-8 right-8 bg-gray-600 rounded-full flex justify-center items-center" onClick={closeModal}>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </Modal>
       <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
         {tabGroup.map((row, index) => {
