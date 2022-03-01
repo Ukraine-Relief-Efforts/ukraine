@@ -33,7 +33,7 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
       {showFrontPageLink && (
         <div className="mt-12">
           <Link href="/">
-            <a className="pl-12 h-12 font-bold">&lt; BROWSE ORGANIZATIONS</a>
+            <a className="h-12 font-bold">&lt; BROWSE ORGANIZATIONS</a>
           </Link>
         </div>
       )}
