@@ -93,12 +93,10 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           <h2 className="font-black text-xl">
             Introduction
           </h2>
-          <p className="mt-6">
+          <p className="mt-6 mb-3">
             {englishDesc}
           </p>
-          <div className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center w-44">
-            {cause} Supplies
-          </div>
+          <Badge value={`${cause} Supplies`}/>
           {spendingTowards && (
           <>
             <h2 className="font-black text-xl mt-12">
