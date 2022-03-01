@@ -21,11 +21,13 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
     bannerImage
   ] = orgData;
 
+  let bannerViewableUrl = bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','')
+
   return (
     <div>
       <div className="w-100">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={bannerImage || "/assets/default_cover.png"} alt="Organization Logo"/>
+        <img src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl} alt="Organization Logo"/>
       </div>
       {showFrontPageLink && (
         <div className="mt-12">
