@@ -25,9 +25,9 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
 
   return (
     <div>
-      <div className="w-100">
+      <div className="w-100 h-60 lg:h-80">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl} alt="Organization Logo"/>
+        <img src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl} alt="Organization Logo" className=" w-full h-full object-cover object-center"/>
       </div>
       {showFrontPageLink && (
         <div className="mt-12">
@@ -36,7 +36,7 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           </Link>
         </div>
       )}
-      <div id="organization" className="p-12">
+      <div id="organization" className="p-8 md:p-12">
       <h1 className="text-5xl font-black">{orgName}</h1>
         <div
           id="links-area"
