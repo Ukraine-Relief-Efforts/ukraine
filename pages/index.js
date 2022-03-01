@@ -84,7 +84,7 @@ export default function Home(props) {
       >
         <OrgPage orgData={orgData}></OrgPage>
       </Modal>
-      <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2">
+      <div className="grid gap-6 grid-cols-12 w-100 mt-4 h-713 padding-2">
         {tabGroup.map((row, index) => {
           return (
             <div
