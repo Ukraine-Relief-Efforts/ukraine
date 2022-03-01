@@ -12,8 +12,8 @@ Modal.setAppElement("#__next");
 export default function Home(props) {
   const router = useRouter();
 
-  const tabs = ["Military", "Humanitarian"];
-  const [openTab, setOpenTab] = useState("Military");
+  const tabs = ["Large Organization", "Small Organization / Individual"];
+  const [openTab, setOpenTab] = useState("Large Organization");
   const tabGroup = props.rows.filter((row) => {
     return row[4] ? row[4].toLowerCase().includes(openTab.toLowerCase()): false
   });
