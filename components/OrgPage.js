@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "react-modal";
+import Badge from "./Badge/badge";
 
 export default function OrgPage({ orgData, showFrontPageLink }) {
   const [
@@ -129,15 +130,13 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
               </p>
             </>
           )}
-          <h2 className="font-black text-2xl mt-12">
+          <h2 className="font-black text-2xl mt-12 mb-4">
             Payment Method
           </h2>
-          <div className="mt-2 flex flex-wrap">
+          <div className="mt-2 flex flex-wrap gap-2">
             {paymentMethod.split(',').map((method, index) => {
               return (
-                <div key={'method-'+index} className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center text-sm mr-2">
-                  {method}
-                </div>
+                <Badge key={'method-'+index} value={method}/>
               )
             })}
             {crypto == "yes" && (
