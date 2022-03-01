@@ -14,7 +14,7 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
     backedBy,
     paymentMethod,
     crypto,
-    socials,
+    instagram,
     facebook,
     twitter,
     website,
@@ -63,29 +63,50 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
             })}
           </div>
           <div id="socials" className="flex flex-wrap items-center">
-            {typeof socials === "string" &&  //Had to do this because I couldnt recognize undefined otherwise
-              socials.split("\n").map((link, index) => {
-                return (
-                  <div className="sr-only" key={index}>
-                    {link && (
-                      <a
-                        href={link.split(": ")[1]}
-                        target="_blank"
-                        rel="noreferrer"
-                        key={'socials-'+index}
-                        className="mr-8"
-                      >
-                        <Image
-                          src={link.split(": ")[0] && `/assets/icons/${link.split(": ")[0].toLowerCase()}.svg`}
-                          alt={link.split(": ")[0]}
-                          height="20px"
-                          width="20px"
-                        ></Image>
-                      </a>
-                    )}
-                  </div>
-                );
-              })}
+            {instagram && (
+              <a
+                href={instagram}
+                target="_blank"
+                rel="noreferrer"
+                className="mr-8"
+              >
+                <Image
+                  src="/assets/icons/instagram.svg"
+                  alt="instagram"
+                  height="20px"
+                  width="20px"
+                ></Image>
+              </a>
+              )}
+              {facebook && (
+                <a
+                  href={facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mr-8"
+                >
+                  <Image
+                    src="/assets/icons/facebook.svg"
+                    alt={facebook}
+                    height="20px"
+                    width="20px"
+                  ></Image>
+                </a>
+                )}
+            {twitter && (
+              <a
+                href={twitter}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Image
+                  src="/assets/icons/twitter.svg"
+                  alt="twitter"
+                  height="20px"
+                  width="20px"
+                ></Image>
+              </a>
+              )}
           </div>
         </div>
         <section className="max-w-5xl mt-12">
