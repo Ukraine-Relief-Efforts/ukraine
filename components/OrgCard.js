@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Badge from "./Badge/badge";
+import Button from "./Button/button";
 import Image from "next/image";
 
 function OrgCard({ titles, values, orgIndex, open }) {
@@ -13,37 +15,42 @@ function OrgCard({ titles, values, orgIndex, open }) {
     backedBy,
     paymentMethod,
     crypto,
-    socials,
-    translation,
-    photos,
-    frenchDesc,
+    facebook,
+    instagram,
+    twitter,
+    website,
+    bannerImage
   ] = values;
-
   return (
-    <div className="bg-[#F2F6FF] rounded-3xl w-full mb-5 h-100 flex flex-col justify-between">
-      <a>
-        <div className="container h-3/8 w-full rounded-lg  mb-2">
-          <div className="h-8"></div>
-          {/* <Image //Not yet ready to be pulled in from the database
-            alt="Organization Logo"
-            className="object-cover rounded-t-lg"
-            src={photos}
-            width="100%"
-            height="100%"
-          ></Image> */}
+    <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-2xl shadow-2xl">
+      <a 
+        onClick={open} 
+        className='cursor-pointer'
+      >
+        <div className="w-full mb-2">
+          <div className="h-56 w-full relative">
+            <Image 
+              src={bannerImage==undefined ? 'https://drive.google.com/uc?id=1PetdCZKqmbi0fXLFUrMAs3QJBGubnxJ0' : `https://drive.google.com/uc?id=${bannerImage}`}
+              alt={orgName}
+              layout='fill'
+              objectFit="cover"
+              objectPosition={'center','center'}
+              className='rounded-t-2xl'
+            />
+            <div className='absolute left-4 top-4 float-left'>
+              <Badge value={cause} />
+            </div>
+          </div>
         </div>
-        <h1 className="mx-5 text-3xl text-black mb-3 font-extrabold ">
-          {orgName}
-        </h1>
-        <p className="mx-5 text-l mb-2">{englishDesc}</p>
+        <div className="m-6">
+            <h1 className=" font-bold text-2xl mb-4">
+              {orgName}
+            </h1>
+            <p className="text-base">{englishDesc}</p>
+        </div>
       </a>
       <div className="flex mb-6 mt-5 px-4">
-        <div
-          onClick={open}
-          className="container text-xl rounded-md font-boldest text-white text-center bg-black mx-4 mb-2 ring-2 ring-black hover:bg-[#ffd700] hover:ring-3 hover:ring-[#0057b7] hover:text-black "
-        >
-          Donate Now
-        </div>
+        <Button onClick={open} value='Learn More'/>
       </div>
     </div>
   );

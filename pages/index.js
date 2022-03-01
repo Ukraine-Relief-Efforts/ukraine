@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import sheets from "../lib/sheets";
-import OrgCard from "/components/OrgCard";
-import OrgPage from "/components/OrgPage";
-import Image from "next/image";
-import Hero from '/components/Hero/hero'
+import OrgCard from "../components/OrgCard";
+import Tabs from "/components/Tabs";
+import OrgPage from "../components/OrgPage";
+import Image from "next/Image";
+import Hero from '../components/Hero/hero';
 import Layout from "../components/layout";
 import Modal from "react-modal";
 
@@ -91,12 +92,12 @@ export default function Home(props) {
           </svg>
         </button>
       </Modal>
-      <div className="grid gap-4 grid-cols-12 w-100 mt-4 h-713 padding-2 font-open">
+      <div className="grid gap-6 grid-cols-12 w-100 mt-4 h-713 padding-2">
         {tabGroup.map((row, index) => {
           return (
             <div
-              key={'orgcard-'+row[row.length -1]}
-              className="container lg:col-span-4 col-span-12 flex"
+              key={index}
+              className="container md:col-span-6 xl:col-span-4 col-span-12 flex"
             >
               <OrgCard
                 orgIndex={row[row.length - 1]}
@@ -117,7 +118,7 @@ export async function getStaticProps() {
     spreadsheetId: process.env.SHEET_ID,
     range: "Organizations (English)",
   });
-  console.log(response.data);
+  console.log(response.data.values[0]);
   const [title, ...rows] = response.data.values;
   rows.map((data, initialIndex) => data.push(initialIndex + 1));
 
