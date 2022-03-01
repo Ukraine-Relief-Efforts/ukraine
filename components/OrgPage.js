@@ -23,18 +23,18 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
 
   return (
     <div>
-      <div className={"w-100 " + showFrontPageLink ? '-mx-12' : ''}>
+      <div className={"w-100 " + showFrontPageLink ? '-mx-6 sm:-mx-12' : ''}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="w-full" src={bannerImage || "/assets/default_cover.png"} alt="Organization Logo"/>
       </div>
       {showFrontPageLink && (
         <div className="mt-12">
           <Link href="/">
-            <a className="pl-12 h-12 font-bold">&lt; BROWSE ORGANIZATIONS</a>
+            <a className="h-12 font-bold">&lt; BROWSE ORGANIZATIONS</a>
           </Link>
         </div>
       )}
-      <div id="organization" className="p-12">
+      <div id="organization" className="py-6">
       <h1 className="text-5xl font-black">{orgName}</h1>
         <div
           id="links-area"

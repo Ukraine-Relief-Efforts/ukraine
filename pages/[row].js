@@ -15,7 +15,8 @@ export default function Home(props) {
   }
   return (
     <Layout>
-      <OrgPage orgData={props.data} showFrontPageLink={true}></OrgPage>
+      <div className="mt-8"></div>
+      <OrgPage className="mt-4" orgData={props.data} showFrontPageLink={true}></OrgPage>
     </Layout>
   );
 }

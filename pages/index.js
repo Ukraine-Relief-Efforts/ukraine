@@ -4,7 +4,6 @@ import sheets from "../lib/sheets";
 import OrgCard from "../components/OrgCard";
 import Tabs from "/components/Tabs";
 import OrgPage from "../components/OrgPage";
-import Image from "next/Image";
 import Hero from '../components/Hero/hero';
 import Layout from "../components/layout";
 import Modal from "react-modal";
@@ -21,6 +20,7 @@ export default function Home(props) {
   });
 
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [expandModal, setExpandModal] = useState(false);
   const [orgData, setOrgData] = useState([]);
 
   function openModal(rowNumber, rowData) {
@@ -32,6 +32,11 @@ export default function Home(props) {
   function closeModal() {
     setIsOpen(false);
     window.history.pushState(null, null, `/`);
+  }
+
+  function goToModalPage(){
+    setExpandModal(!expandModal);
+    setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 500);
   }
 
   return (
@@ -83,14 +88,20 @@ export default function Home(props) {
         onAfterClose={() => {document.querySelector("body").style.overflow = "auto"}}
         onRequestClose={closeModal}
         contentLabel="Organization Page"
-        className={"ReactModal__Content p-0 w-100 lg:max-w-5xl mx-auto my-12 max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-[50px]"}
+        className={"ReactModal__Content px-6 sm:px-12 pb-12 mx-auto my-12 max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-[50px] max-w-[90vw] transition-all duration-500 " + (expandModal && "top-[120px] max-w-[100vw]")}
       >
+        <button onClick={() => {goToModalPage()}} className="h-10 w-10 object-cover absolute top-24 right-8 bg-gray-600 rounded-full flex justify-center items-center ">
+          <svg alt="expand" xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+          </svg>
+        </button>
         <OrgPage orgData={orgData}></OrgPage>
         <button className="h-10 w-10 object-cover absolute top-8 right-8 bg-gray-600 rounded-full flex justify-center items-center" onClick={closeModal}>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
+
       </Modal>
       <div className="grid gap-6 grid-cols-12 w-100 mt-4 h-713 padding-2">
         {tabGroup.map((row, index) => {
