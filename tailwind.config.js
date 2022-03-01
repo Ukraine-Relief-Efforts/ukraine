@@ -10,7 +10,13 @@ module.exports = {
       fontFamily: {
         sans: ['Open Sans',...defaultTheme.fontFamily.sans],
      },
-    },
+    colors: {
+      uablue: {
+        default: '#005BBC',
+        accent: '#1E429F'
+        }
+      }
+    }
   },
   plugins: [],
-};
+}

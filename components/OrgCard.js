@@ -1,6 +1,9 @@
 import Link from "next/link";
+<<<<<<< HEAD
 import Badge from "./Badge/badge";
 import Button from "./Button/button";
+=======
+>>>>>>> 790adcd9c0bc2bb8494e39fad61fb24bb2af96a1
 import Image from "next/image";
 
 function OrgCard({ titles, values, orgIndex, open }) {
