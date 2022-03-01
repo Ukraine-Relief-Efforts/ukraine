@@ -15,12 +15,15 @@ function OrgCard({ titles, values, orgIndex, open }) {
     backedBy,
     paymentMethod,
     crypto,
-    facebook,
     instagram,
+    facebook,
     twitter,
     website,
     bannerImage
   ] = values;
+
+  let bannerViewableUrl = bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','')
+  
   return (
     <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-2xl shadow-2xl">
       <a 
@@ -30,7 +33,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
         <div className="w-full mb-2">
           <div className="h-56 w-full relative">
             <Image 
-              src={bannerImage==undefined ? 'https://drive.google.com/uc?id=1PetdCZKqmbi0fXLFUrMAs3QJBGubnxJ0' : `https://drive.google.com/uc?id=${bannerImage}`}
+              src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl}
               alt={orgName}
               layout='fill'
               objectFit="cover"
