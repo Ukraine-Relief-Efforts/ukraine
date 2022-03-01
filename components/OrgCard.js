@@ -15,8 +15,8 @@ function OrgCard({ titles, values, orgIndex, open }) {
     backedBy,
     paymentMethod,
     crypto,
-    facebook,
     instagram,
+    facebook,
     twitter,
     website,
     bannerImage
