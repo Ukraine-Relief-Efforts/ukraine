@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import sheets from "../lib/sheets";
 import { useRouter } from "next/router";
 import OrgPage from "/components/OrgPage";
-import Modal from "react-modal";
+import Layout from "../components/layout";
 
 export default function Home(props) {
   const router = useRouter();
@@ -14,7 +14,9 @@ export default function Home(props) {
     return <div>Loading...</div>;
   }
   return (
+    <Layout>
       <OrgPage orgData={props.data} showFrontPageLink={true}></OrgPage>
+    </Layout>
   );
 }
 
