@@ -119,6 +119,16 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
               </a>
             </p>
           </>)}
+          {backedBy && (
+            <>
+              <h2 className="font-black text-xl mt-12">
+                Institutions that support us
+              </h2>
+              <p className="mt-6">
+                {backedBy}
+              </p>
+            </>
+          )}
           {largeDonationsContact && (
             <>
               <h2 className="font-black text-xl mt-12">
