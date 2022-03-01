@@ -11,7 +11,7 @@ Modal.setAppElement("#__next");
 
 export default function Home(props) {
   const router = useRouter();
-  const [showOnlyIndividuals, setShowOnlyIndividuals] = useState(false);
+
   const tabs = ["Military", "Humanitarian"];
   const [openTab, setOpenTab] = useState("Military");
   const tabGroup = props.rows.filter((row) => {
@@ -36,10 +36,6 @@ export default function Home(props) {
   function goToModalPage(){
     setExpandModal(!expandModal);
     setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 500);
-  };
-
-  function handleCheckOnlyIndividuals() {
-    setShowOnlyIndividuals(!showOnlyIndividuals);
   }
 
   return (
@@ -83,18 +79,6 @@ export default function Home(props) {
 
       <div className="text-center">
         <h2>Find organizations by type</h2>
-      </div>
-      <div className="flex">
-        <button onClick={() => handleCheckOnlyIndividuals()} className={"font-bold flex items-center"}>
-          <div className={"h-8 w-8 flex justify-center items-center rounded transition text-white duration-200 border-2 border-uablue-default "+(showOnlyIndividuals && 'bg-uablue-default')}>
-            {showOnlyIndividuals && (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-              </svg>
-            )}
-          </div>
-          <span className="ml-2">Show only individuals / small organizations</span>
-        </button>
       </div>
 
       <Modal
