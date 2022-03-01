@@ -83,7 +83,7 @@ export default function Home(props) {
         onAfterClose={() => {document.querySelector("body").style.overflow = "auto"}}
         onRequestClose={closeModal}
         contentLabel="Organization Page"
-        className={"ReactModal__Content p-0 w-100 lg:max-w-5xl mx-4 my-12 max-h-[90vh] overflow-y-auto bg-white rounded-[50px]"}
+        className={"ReactModal__Content p-0 w-100 lg:max-w-5xl mx-4 my-12 max-h-[90vh] overflow-y-auto bg-white rounded-[32px] lg:rounded-[50px]"}
         style={{overlay:{backgroundColor: 'rgba(4, 25, 48, 0.75)'}}}
       >
         <OrgPage orgData={orgData}></OrgPage>
