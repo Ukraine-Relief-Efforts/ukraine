@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "react-modal";
+import Badge from "./Badge/badge";
 
 export default function OrgPage({ orgData, showFrontPageLink }) {
   const [
@@ -25,9 +26,9 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
 
   return (
     <div>
-      <div className={"w-100 " + showFrontPageLink ? '-mx-6 sm:-mx-12' : ''}>
+      <div className="w-100 h-60 lg:h-80">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl} alt="Organization Logo"/>
+        <img src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl} alt="Organization Logo" className=" w-full h-full object-cover object-center"/>
       </div>
       {showFrontPageLink && (
         <div className="mt-12">
@@ -36,8 +37,8 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           </Link>
         </div>
       )}
-      <div id="organization" className="py-6">
-      <h1 className="text-5xl font-black">{orgName}</h1>
+      <div id="organization" className="p-8 md:p-12">
+        <h1 className="text-5xl font-black">{orgName}</h1>
         <div
           id="links-area"
           className="mt-12 flex flex-wrap w-100 justify-between items-center"
@@ -113,12 +114,10 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           <h2 className="font-black text-xl">
             Introduction
           </h2>
-          <p className="mt-6">
+          <p className="mt-6 mb-3">
             {englishDesc}
           </p>
-          <div className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center w-44">
-            {cause} Supplies
-          </div>
+          <Badge value={`${cause} Supplies`}/>
           {spendingTowards && (
           <>
             <h2 className="font-black text-xl mt-12">
@@ -160,15 +159,13 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
               </p>
             </>
           )}
-          <h2 className="font-black text-2xl mt-12">
+          <h2 className="font-black text-2xl mt-12 mb-4">
             Payment Method
           </h2>
-          <div className="mt-2 flex">
+          <div className="mt-2 flex flex-wrap gap-2">
             {paymentMethod.split(',').map((method, index) => {
               return (
-                <div key={'method-'+index} className="px-4 py-1 mt-4 border-2 rounded-full border-uablue-default text-uablue-default text-center text-sm mr-2">
-                  {method}
-                </div>
+                <Badge key={'method-'+index} value={method}/>
               )
             })}
             {crypto == "yes" && (

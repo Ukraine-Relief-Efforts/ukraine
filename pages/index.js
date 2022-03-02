@@ -98,9 +98,10 @@ export default function Home(props) {
         onRequestClose={closeModal}
         contentLabel="Organization Page"
         className={
-          "ReactModal__Content px-6 sm:px-12 pb-12 mx-auto my-12 max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-[50px] max-w-[90vw] transition-all duration-500 " +
+          "ReactModal__Content pb-12 mx-auto my-12 max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-[50px] max-w-[90vw] transition-all duration-500 " +
           (expandModal && "top-[120px] max-w-[100vw]")
         }
+        style={{overlay:{backgroundColor: 'rgba(4, 25, 48, 0.75)'}}}
       >
         <button
           onClick={() => {
