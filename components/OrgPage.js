@@ -44,8 +44,8 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           className="mt-12 flex flex-wrap w-100 justify-between items-center"
         >
           <div className="flex flex-wrap flex-row">
-            {/* conditionally render payment method */}
-            {typeof paymentMethod === 'string' && 
+            {/* conditionally render donation link*/}
+            {typeof donationLinks === 'string' && 
               donationLinks.split("\n").map((link, index) => {
                 return (
                   <div className="sr-only" key={index}>
