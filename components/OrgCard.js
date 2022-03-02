@@ -22,7 +22,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
     bannerImage
   ] = values;
 
-  let bannerViewableUrl = bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','')
+  const bannerViewableUrl = typeof bannerImage === 'string' ? bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','') : '';
   
   return (
     <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-2xl shadow-2xl">
@@ -33,7 +33,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
         <div className="w-full mb-2">
           <div className="h-56 w-full relative">
             <Image 
-              src={bannerImage==undefined ? '/assets/default_cover.png' : bannerViewableUrl}
+              src={bannerViewableUrl == '' ? '/assets/default_cover.png' : bannerViewableUrl}
               alt={orgName}
               layout='fill'
               objectFit="cover"

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Modal from "react-modal";
 import Badge from "./Badge/badge";
 
-export default function OrgPage({ orgData, showFrontPageLink }) {
+export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
   const [
     orgName,
     donationLinks,
@@ -21,9 +21,9 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
     website,
     bannerImage
   ] = orgData;
-
-  let bannerViewableUrl = bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','')
-
+  
+  const bannerViewableUrl = typeof bannerImage === 'string' ? bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','') : '';
+  
   return (
     <div>
       <div className="w-100 h-60 lg:h-80">
@@ -37,7 +37,7 @@ export default function OrgPage({ orgData, showFrontPageLink }) {
           </Link>
         </div>
       )}
-      <div id="organization" className="p-8 md:p-12">
+      <div id="organization" className={expandModal ? 'p-0' : "p-8 md:p-12"}>
         <h1 className="text-5xl font-black">{orgName}</h1>
         <div
           id="links-area"
