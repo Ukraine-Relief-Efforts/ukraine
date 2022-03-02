@@ -21,10 +21,8 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
     website,
     bannerImage
   ] = orgData;
-  let bannerViewableUrl
-  if (bannerImage != ''){
-    bannerViewableUrl = bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','')
-  }
+  
+  const bannerViewableUrl = typeof bannerImage === 'string' ? bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','') : '';
   
   return (
     <div>
