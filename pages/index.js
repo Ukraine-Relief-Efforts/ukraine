@@ -6,6 +6,7 @@ import OrgPage from "../components/OrgPage";
 import Hero from '../components/Hero/hero';
 import Layout from "../components/layout";
 import Modal from "react-modal";
+import { getMiddlewareManifest } from "next/dist/client/route-loader";
 
 Modal.setAppElement("#__next");
 
@@ -39,7 +40,7 @@ export default function Home(props) {
 
   function goToModalPage(){
     setExpandModal(!expandModal);
-    setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 500);
+    setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
   }
 
   return (
@@ -97,6 +98,7 @@ export default function Home(props) {
         }}
         onRequestClose={closeModal}
         contentLabel="Organization Page"
+        expandModal={expandModal}
         className={
           "ReactModal__Content pb-12 mx-auto my-12 max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-[50px] max-w-[90vw] transition-all duration-500 " +
           (expandModal && "top-[120px] max-w-[100vw]")
