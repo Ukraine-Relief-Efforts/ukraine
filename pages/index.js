@@ -176,7 +176,10 @@ export async function getStaticProps() {
     range: "Organizations (English)",
   });
   const [title, ...rows] = response.data.values;
-  rows.map((data, initialIndex) => data.push(initialIndex + 1));
+  rows.map((data, initialIndex) => {
+    console.log(data)
+    data.push(initialIndex + 1)
+  });
 
   return {
     props: {

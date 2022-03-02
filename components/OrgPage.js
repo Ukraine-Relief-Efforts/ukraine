@@ -44,24 +44,27 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           className="mt-12 flex flex-wrap w-100 justify-between items-center"
         >
           <div className="flex flex-wrap flex-row">
-            {donationLinks.split("\n").map((link, index) => {
-              return (
-                <div className="sr-only" key={index}>
-                {link && (
-                    <div key={'donations-'+index} className="w-60 container transition duration-200 mr-4 ease-in-out text-l rounded-md font-bold px-14 py-3 text-white text-center bg-uablue-default mb-2 hover:bg-uablue-accent">
-                      <a
-                        href={link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className=""
-                      >
-                          {index == 0 ? "Donate Now " : "Donation Link " + index}
-                      </a>
-                    </div>
-                  )}
-                </div> 
-              );
-            })}
+            {/* conditionally render donation link*/}
+            {typeof donationLinks === 'string' && 
+              donationLinks.split("\n").map((link, index) => {
+                return (
+                  <div className="sr-only" key={index}>
+                  {link && (
+                      <div key={'donations-'+index} className="w-60 container transition duration-200 mr-4 ease-in-out text-l rounded-md font-bold px-14 py-3 text-white text-center bg-uablue-default mb-2 hover:bg-uablue-accent">
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className=""
+                        >
+                            {index == 0 ? "Donate Now " : "Donation Link " + index}
+                        </a>
+                      </div>
+                    )}
+                  </div> 
+                );
+              })
+            }
           </div>
           <div id="socials" className="flex flex-wrap items-center">
             {instagram && (
@@ -163,7 +166,9 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
             Payment Method
           </h2>
           <div className="mt-2 flex flex-wrap gap-2">
-            {paymentMethod.split(',').map((method, index) => {
+            {/* conditionally render payment method */}
+            {typeof paymentMethod === 'string' &&
+             paymentMethod.split(',').map((method, index) => {
               return (
                 <Badge key={'method-'+index} value={method}/>
               )
