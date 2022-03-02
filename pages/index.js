@@ -12,12 +12,16 @@ Modal.setAppElement("#__next");
 export default function Home(props) {
   const router = useRouter();
 
-  const tabs = ["Large Organization", "Small Organization / Individual"];
-  const [openTab, setOpenTab] = useState("Large Organization");
-  const tabGroup = props.rows.filter((row) => {
-    return row[4] ? row[4].toLowerCase().includes(openTab.toLowerCase()): false
+  let small, big;
+  [small, big] = ["Small Organizations", "Big Charity / Government"];
+  const [openTab, setOpenTab] = useState(small);
+  const regExp = /[a-zA-Z]/g;
+  const smallGroup = props.rows.filter((row) => {
+    return row[15] ? regExp.test(row[15]) : false;
   });
-
+  const orgList = openTab === small && smallGroup
+    ? smallGroup
+    : props.rows.filter((row) => row && !row.includes(smallGroup));
   const [modalIsOpen, setIsOpen] = useState(false);
   const [expandModal, setExpandModal] = useState(false);
   const [orgData, setOrgData] = useState([]);
@@ -46,7 +50,7 @@ export default function Home(props) {
           className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
           role="tablist"
         >
-          {tabs.map((tab) => {
+          {[small, big].map((tab) => {
             return (
               <li
                 key={tab}
@@ -103,7 +107,7 @@ export default function Home(props) {
 
       </Modal>
       <div className="grid gap-6 grid-cols-12 w-100 mt-4 h-713 padding-2">
-        {tabGroup.map((row, index) => {
+        {orgList.map((row, index) => {
           return (
             <div
               key={index}
