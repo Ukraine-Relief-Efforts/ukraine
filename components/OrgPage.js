@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Modal from "react-modal";
 import Badge from "./Badge/badge";
+import Button from "./Button/button";
 
 export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
   const [
@@ -37,7 +38,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           </Link>
         </div>
       )}
-      <div id="organization" className={expandModal ? 'p-0' : "p-8 md:p-12"}>
+      <div id="organization" className={showFrontPageLink ? 'px-0 pt-8' : "p-8 md:p-12"}>
         <h1 className="text-5xl font-black">{orgName}</h1>
         <div
           id="links-area"
@@ -46,24 +47,11 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           <div className="flex flex-wrap flex-row">
             {/* conditionally render donation link*/}
             {typeof donationLinks === 'string' && 
-              donationLinks.split("\n").map((link, index) => {
-                return (
-                  <div className="sr-only" key={index}>
-                  {link && (
-                      <div key={'donations-'+index} className="w-60 container transition duration-200 mr-4 ease-in-out text-l rounded-md font-bold px-14 py-3 text-white text-center bg-uablue-default mb-2 hover:bg-uablue-accent">
-                        <a
-                          href={link}
-                          target="_blank"
-                          rel="noreferrer"
-                          className=""
-                        >
-                            {index == 0 ? "Donate Now " : "Donation Link " + index}
-                        </a>
-                      </div>
-                    )}
-                  </div> 
-                );
-              })
+              <Button
+                value='Donate Now'
+                href={donationLinks.trim()}
+                target='_blank'
+              />
             }
           </div>
           <div id="socials" className="flex flex-wrap items-center">
