@@ -45,9 +45,9 @@ function OrgCard({ titles, values, orgIndex, open }) {
               objectPosition={'center','center'}
               className='rounded-t-2xl'
             />
-            <div className='absolute left-4 top-4 float-left'>
+            {/* <div className='absolute left-4 top-4 float-left'>
               <Badge value={cause} />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="m-6">
