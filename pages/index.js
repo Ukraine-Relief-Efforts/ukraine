@@ -13,16 +13,16 @@ Modal.setAppElement("#__next");
 export default function Home(props) {
   const router = useRouter();
 
-  let big, small;
-  [big, small] = ["Big Charity / Government", "Small Organizations"];
-  const [openTab, setOpenTab] = useState(big);
+  let small, big;
+  [small, big] = ["Small Organizations", "Big Charity / Government"];
+  const [openTab, setOpenTab] = useState(small);
   const regExp = /[a-zA-Z]/g;
   const smallGroup = props.rows.filter((row) => {
     return row[15] ? regExp.test(row[15]) : false;
   });
   const orgList = openTab === small && smallGroup
     ? smallGroup
-    : props.rows.filter((row) => row && !row.includes(smallGroup));
+    : props.rows.filter((row) => row && !smallGroup.includes(row));
   const [modalIsOpen, setIsOpen] = useState(false);
   const [expandModal, setExpandModal] = useState(false);
   const [orgData, setOrgData] = useState([]);
@@ -51,7 +51,7 @@ export default function Home(props) {
           className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
           role="tablist"
         >
-          {[big, small].map((tab) => {
+          {[small, big].map((tab) => {
             return (
               <li
                 key={tab}
