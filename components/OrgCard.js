@@ -19,20 +19,25 @@ function OrgCard({ titles, values, orgIndex, open }) {
     facebook,
     twitter,
     website,
-    bannerImage
+    bannerImage,
+    smallOrg,
+    bannerImage2
   ] = values;
 
-  const bannerViewableUrl = typeof bannerImage === 'string' ? bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','') : '';
-  
+  const bannerViewableUrl =
+    typeof bannerImage2 === "string"
+      ? bannerImage2
+      : "";
+
   return (
     <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-2xl shadow-2xl">
-      <a 
-        onClick={open} 
+      <a
+        onClick={open}
         className='cursor-pointer'
       >
         <div className="w-full mb-2">
           <div className="h-56 w-full relative">
-            <Image 
+            <Image
               src={bannerViewableUrl == '' ? '/assets/default_cover.png' : bannerViewableUrl}
               alt={orgName}
               layout='fill'
