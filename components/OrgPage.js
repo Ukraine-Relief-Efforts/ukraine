@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Modal from "react-modal";
 import Badge from "./Badge/badge";
 import Button from "./Button/button";
 
@@ -20,11 +19,13 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
     facebook,
     twitter,
     website,
-    bannerImage
+    bannerImage,
+    smallOrg,
+    bannerImage2
   ] = orgData;
-  
-  const bannerViewableUrl = typeof bannerImage === 'string' ? bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','') : '';
-  
+
+  const bannerViewableUrl = typeof bannerImage2 === 'string' ? bannerImage2 : '';
+
   return (
     <div>
       <div className="w-100 h-60 lg:h-80">
