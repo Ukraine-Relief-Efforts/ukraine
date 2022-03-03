@@ -19,20 +19,25 @@ function OrgCard({ titles, values, orgIndex, open }) {
     facebook,
     twitter,
     website,
-    bannerImage
+    bannerImage,
+    smallOrg,
+    bannerImage2
   ] = values;
 
-  const bannerViewableUrl = typeof bannerImage === 'string' ? bannerImage.replace('file/d/', 'uc?id=').replace('/view?usp=sharing','') : '';
-  
+  const bannerViewableUrl =
+    typeof bannerImage2 === "string"
+      ? bannerImage2
+      : "";
+
   return (
     <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-2xl shadow-2xl">
-      <a 
-        onClick={open} 
+      <a
+        onClick={open}
         className='cursor-pointer'
       >
         <div className="w-full mb-2">
           <div className="h-56 w-full relative">
-            <Image 
+            <Image
               src={bannerViewableUrl == '' ? '/assets/default_cover.png' : bannerViewableUrl}
               alt={orgName}
               layout='fill'
@@ -40,9 +45,9 @@ function OrgCard({ titles, values, orgIndex, open }) {
               objectPosition={'center','center'}
               className='rounded-t-2xl'
             />
-            <div className='absolute left-4 top-4 float-left'>
+            {/* <div className='absolute left-4 top-4 float-left'>
               <Badge value={cause} />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="m-6">
