@@ -19,9 +19,9 @@ export default function NavBar () {
                 </div>
                 <div className="flex flex-row items-center gap-4 lg:gap-10 font-bold text-base md:text-xl lg:text-2xl "> 
                     <Link href="about">
-                        <a className="leading-tight text-gray-400 hover:text-gray-700">About us</a>
+                        <a className="leading-tight text-gray-400 hover:text-gray-800">About us</a>
                     </Link>
-                    <a href="#" className="leading-tight text-gray-400 hover:text-gray-700">Apply for funding</a>
+                    <a href="#" className="leading-tight text-gray-400 hover:text-gray-800">Apply for funding</a>
                 </div>
             </div>
             
