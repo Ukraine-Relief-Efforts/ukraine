@@ -62,7 +62,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                 rel="noreferrer"
                 className=" text-uablue-default text-xl font-bold underline underline-offset-4 hover:text-uablue-accent"
               >
-                {website.trim()}
+                Website
               </a>
             )}
             {instagram && (
@@ -133,9 +133,8 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
               What we&apos;ve accomplished so far
             </h2>
             <p className="mt-6">
-              To read about our accomplishments, please visit: <br></br>
-              <a href={accomplishments} target="_blank" rel="noreferrer" className="text-blue-500 border-b-2 border-blue-500">
-                CHECK OUT OUR WEBSITE
+              <a href={accomplishments} target="_blank" rel="noreferrer" className=" text-uablue-default underline underline-offset-4 text-base font-bold hover:text-uablue-accent">
+                Check out our past work
               </a>
             </p>
           </>)}
