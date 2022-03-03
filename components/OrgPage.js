@@ -39,12 +39,12 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
         </div>
       )}
       <div id="organization" className={showFrontPageLink ? 'px-0 pt-8' : "p-8 md:p-12"}>
-        <h1 className="text-5xl font-black">{orgName}</h1>
+        <h1 className="text-4xl font-black">{orgName}</h1>
         <div
           id="links-area"
-          className="mt-12 flex flex-wrap w-100 justify-between items-center"
+          className="mt-10 flex flex-wrap gap-8 w-100 justify-between items-center"
         >
-          <div className="flex flex-wrap flex-row">
+          <div className="flex flex-wrap flex-row content-center w-full md:w-64">
             {/* conditionally render donation link*/}
             {typeof donationLinks === 'string' && 
               <Button
@@ -54,19 +54,29 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
               />
             }
           </div>
-          <div id="socials" className="flex flex-wrap items-center">
+          <div id="links" className="flex flex-wrap gap-7 items-center">
+            {website && (
+              <a
+                href={website.trim()}
+                target="_blank"
+                rel="noreferrer"
+                className=" text-uablue-default text-xl font-bold underline underline-offset-4 hover:text-uablue-accent"
+              >
+                {website.trim()}
+              </a>
+            )}
             {instagram && (
               <a
                 href={instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="mr-8"
               >
                 <Image
                   src="/assets/icons/instagram.svg"
                   alt="instagram"
-                  height="20px"
-                  width="20px"
+                  height="32px"
+                  width="32px"
+                  className="w-8 h-8"
                 ></Image>
               </a>
               )}
@@ -75,13 +85,12 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                   href={facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="mr-8"
                 >
                   <Image
                     src="/assets/icons/facebook.svg"
                     alt={facebook}
-                    height="20px"
-                    width="20px"
+                    height="32px"
+                    width="32px"
                   ></Image>
                 </a>
                 )}
@@ -94,8 +103,8 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                 <Image
                   src="/assets/icons/twitter.svg"
                   alt="twitter"
-                  height="20px"
-                  width="20px"
+                  height="32px"
+                  width="32px"
                 ></Image>
               </a>
               )}
