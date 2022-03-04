@@ -14,7 +14,7 @@ export default function Home(props) {
   const router = useRouter();
 
   let small, big;
-  [small, big] = ["Small Organizations", "Big Charity / Government"];
+  [small, big] = ["Volunteer Groups", "Big Charities"];
   const [openTab, setOpenTab] = useState(small);
   const regExp = /[a-zA-Z]/g;
   const smallGroup = props.rows.filter((row) => {
