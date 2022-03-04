@@ -2,29 +2,94 @@ import Image from "next/image";
 import logo from '../../public/logo.png'
 import Link from "next/link"
 
-export default function NavBar() {
-    return (
-        <div>
-            <div className="flex flex-row items-center justify-between gap-6 md:gap-10 lg:gap-16">
-                <div className="w-10 sm:w-14 lg:w-16">
-                    <Link href="/">
-                        <a>
-                            <Image
-                                src={logo}
-                                alt='Ukraine Donations'
-                                layout="intrinsic"
-                            />
-                        </a>
-                    </Link>
-                </div>
-                <div className="flex flex-row items-center gap-4 lg:gap-10 font-bold text-base md:text-xl lg:text-2xl ">
-                    <Link href="for-donors">
-                        <a className="leading-tight text-gray-400 hover:text-gray-800">For donors</a>
-                    </Link>
-                    <a href="#" className="leading-tight text-gray-400 hover:text-gray-800">Apply for funding</a>
-                </div>
-            </div>
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-        </div>
-    )
+const navigation = [
+  { name: 'Home', href: '/'},
+  { name: 'For Donors', href: '/for-donors'},
+  { name: 'For Fundraisers', href: '/for-fundraisers'},
+  { name: 'Work With Us', href: '#', cta: true},
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export default function NavBar() {
+  return (
+    <Disclosure as="nav" className="bg-white">
+      {({ open }) => (
+        <>
+          <div className=" max-w-full mx-auto">
+            <div className="relative flex items-center justify-between h-16">
+              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                {/* Mobile menu button*/}
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                  <span className="sr-only">Open main menu</span>
+                  {open ? (
+                    <XIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </Disclosure.Button>
+              </div>
+              <div className="flex-1 flex items-center justify-center sm:justify-between">
+                <div className="flex-shrink-0 flex items-center w-10 md:w-12 lg:w-16">
+                  <Image
+                    className="block"
+                    src={logo}
+                    alt='Help Ukraine Now'
+                  />
+                </div>
+                <div className="hidden sm:block sm:ml-6">
+                  <div className="flex space-x-4">
+                    {navigation.map((item) => (
+                        <Link
+                            href={item.href}
+                            key={item.name}
+                        >
+                            <a
+                                className={`
+                                    px-3 py-2 
+                                    rounded-md 
+                                    text-base md:text-lg 
+                                    font-bold 
+                                    ${item.cta ? 
+                                        'text-uablue-default hover:text-uablue-accent' 
+                                        : 'text-gray-400 hover:text-gray-800'}`}
+                            >
+                                {item.name}
+                            </a>
+                        </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <Disclosure.Panel className="sm:hidden">
+            <div className="px-3 pt-2 pb-4 space-y-1 bg-gray-100 rounded-2xl">
+              {navigation.map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={item.href}
+                  className={`
+                    block px-3 py-2 rounded-md text-base font-bold
+                    ${item.cta ? 
+                        'text-uablue-default hover:text-uablue-accent' 
+                        :'text-gray-400 hover:text-gray-800'}`
+                    }
+                >
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </div>
+          </Disclosure.Panel>
+        </>
+      )}
+    </Disclosure>
+  )
 }

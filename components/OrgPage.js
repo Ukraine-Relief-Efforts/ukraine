@@ -113,7 +113,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
         <section className="max-w-5xl mt-12">
           <h2 className="font-black text-xl">Introduction</h2>
           <p className="mt-6 mb-3">{englishDesc}</p>
-          <Badge value={`${cause} Supplies`} />
+          <Badge value={cause}/>
           {spendingTowards && (
             <>
               <h2 className="font-black text-xl mt-12">
