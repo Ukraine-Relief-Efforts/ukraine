@@ -9,7 +9,7 @@ const navigation = [
   { name: 'Home', href: '/'},
   { name: 'For Donors', href: '/for-donors'},
   { name: 'For Fundraisers', href: '/for-fundraisers'},
-  { name: 'Apply For Funding', href: '#', cta: true},
+  { name: 'Work With Us', href: '#', cta: true},
 ]
 
 function classNames(...classes) {
@@ -54,7 +54,7 @@ export default function NavBar() {
                                     px-3 py-2 
                                     rounded-md 
                                     text-base md:text-lg 
-                                    font-semibold 
+                                    font-bold 
                                     ${item.cta ? 
                                         'text-uablue-default hover:text-uablue-accent' 
                                         : 'text-gray-400 hover:text-gray-800'}`}
@@ -77,7 +77,7 @@ export default function NavBar() {
                   as="a"
                   href={item.href}
                   className={`
-                    block px-3 py-2 rounded-md text-base font-medium
+                    block px-3 py-2 rounded-md text-base font-bold
                     ${item.cta ? 
                         'text-uablue-default hover:text-uablue-accent' 
                         :'text-gray-400 hover:text-gray-800'}`
