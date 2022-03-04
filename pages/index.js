@@ -38,7 +38,7 @@ export default function Home(props) {
     window.history.pushState(null, null, `/`);
   }
 
-  function goToModalPage(){
+  function goToModalPage() {
     setExpandModal(!expandModal);
     setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
   }
@@ -103,7 +103,7 @@ export default function Home(props) {
           "ReactModal__Content pb-12 md:pb-0 mx-auto mt-7 md:mt-12 mb-0 md:mb-12 max-h-[100vh] md:max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-t-3xl md:rounded-3xl max-w-[100vw] md:max-w-[90vw] transition-all duration-500" +
           (expandModal && "top-[120px] max-w-[100vw]")
         }
-        style={{overlay:{backgroundColor: 'rgba(4, 25, 48, 0.75)'}}}
+        style={{ overlay: { backgroundColor: 'rgba(4, 25, 48, 0.75)' } }}
       >
         <div className='
            absolute 
@@ -184,7 +184,6 @@ export async function getStaticProps() {
   });
   const [title, ...rows] = response.data.values;
   rows.map((data, initialIndex) => {
-    console.log(data)
     data.push(initialIndex + 1)
   });
 
