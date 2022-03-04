@@ -184,7 +184,6 @@ export async function getStaticProps() {
   });
   const [title, ...rows] = response.data.values;
   rows.map((data, initialIndex) => {
-    console.log(data)
     data.push(initialIndex + 1)
   });
 
