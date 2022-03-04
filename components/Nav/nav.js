@@ -7,8 +7,8 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
   { name: 'Home', href: '/'},
-  { name: 'For Donors', href: '/about'},
-  { name: 'For Fundraisers', href: '#'},
+  { name: 'For Donors', href: '/for-donors'},
+  { name: 'For Fundraisers', href: '/for-fundraisers'},
   { name: 'Apply For Funding', href: '#', cta: true},
 ]
 
