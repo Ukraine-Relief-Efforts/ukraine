@@ -5,6 +5,8 @@ import Image from 'next/image';
 import arrowDown from '../public/assets/icons/arrow_right.svg'
 import OneFaq from '../components/SubPage/FAQ/OneFaq';
 import Button from '../components/Button/button';
+import { sheets } from 'googleapis/build/src/apis/sheets';
+import PaymentOption from '../components/SubPage/PaymentMethods/paymentOption';
 
 export default function ForFundraisers() {
   return (
@@ -175,7 +177,10 @@ export default function ForFundraisers() {
             />
           </div>
         </div>
-        {/* <div className="mt-24">
+        <PaymentOption />
+
+        {/* Rose's version of payment methods
+        <div className="mt-24">
           <h1 className="font-extrabold text-2xl lg:text-4xl">
             Receiving money with a Ukrainian card
           </h1>
@@ -340,4 +345,22 @@ export default function ForFundraisers() {
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SHEET_ID,
+    range: "Payment Method",
+  });
+  const [title, ...rows] = response.data.values;
+  rows.map((data,initialIndex) => {
+    data.push(initialINdex + 1)
+  });
+
+  return {
+    props: {
+      title,
+      rows,
+    }
+  }
 }
