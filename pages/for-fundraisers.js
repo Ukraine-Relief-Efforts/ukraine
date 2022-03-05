@@ -5,10 +5,10 @@ import Image from 'next/image';
 import arrowDown from '../public/assets/icons/arrow_right.svg'
 import OneFaq from '../components/SubPage/FAQ/OneFaq';
 import Button from '../components/Button/button';
-import { sheets } from 'googleapis/build/src/apis/sheets';
 import PaymentOption from '../components/SubPage/PaymentMethods/paymentOption';
+import sheets from "../lib/sheets";
 
-export default function ForFundraisers() {
+export default function ForFundraisers(props) {
   return (
     <Layout>
       <div className="w-full md:w-3/4 lg:w-2/3 pb-16">
@@ -177,7 +177,7 @@ export default function ForFundraisers() {
             />
           </div>
         </div>
-        <PaymentOption />
+        <PaymentMethods titles={props.title} rows={props.rows}/>
 
         {/* Rose's version of payment methods
         <div className="mt-24">
@@ -353,9 +353,6 @@ export async function getStaticProps() {
     range: "Payment Method",
   });
   const [title, ...rows] = response.data.values;
-  rows.map((data,initialIndex) => {
-    data.push(initialINdex + 1)
-  });
 
   return {
     props: {
