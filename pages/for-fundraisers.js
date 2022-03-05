@@ -167,7 +167,7 @@ export default function ForFundraisers() {
             fundraiser for Ukraine.
           </p>
         </div>
-        <div className="mt-24">
+        {/* <div className="mt-24">
           <h1 className="font-extrabold text-2xl lg:text-4xl">
             Receiving money with a Ukrainian card
           </h1>
@@ -328,7 +328,7 @@ export default function ForFundraisers() {
           </div>
 
           <hr className="mt-10"></hr>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
