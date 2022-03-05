@@ -1,23 +1,23 @@
+import { useEffect } from "react";
 import sheets from "../lib/sheets";
 import { useRouter } from "next/router";
+import OrgPage from "/components/OrgPage";
+import Layout from "../components/layout";
 
 export default function Home(props) {
   const router = useRouter();
+  useEffect(() => {
+    router.prefetch("/");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
   return (
-    <div className="m-5">
-      <div className="m-5 p-5 shadow-lg rounded-lg border border-gray-100">
-        {props.data.map((item, index) => {
-          return (
-            <div key={index} className="mb-4">
-              {item}
-            </div>
-          );
-        })}
-      </div>
-    </div>
+    <Layout>
+      <div className="mt-8"></div>
+      <OrgPage className="mt-4" orgData={props.data} showFrontPageLink={true}></OrgPage>
+    </Layout>
   );
 }
 
@@ -28,6 +28,7 @@ export async function getStaticPaths() {
   });
 
   const numRows = response.data.values.length - 1;
+
   const paths = [];
   for (let i = 0; i < numRows; i++) {
     paths.push({ params: { row: (i + 1).toString() } });
