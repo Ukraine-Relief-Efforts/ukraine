@@ -4,6 +4,7 @@ import PaymentMethods from '../components/SubPage/PaymentMethods/paymentMethods'
 import Image from 'next/image';
 import arrowDown from '../public/assets/icons/arrow_right.svg'
 import OneFaq from '../components/SubPage/FAQ/OneFaq';
+import Button from '../components/Button/button';
 
 export default function ForFundraisers() {
   return (
@@ -166,6 +167,13 @@ export default function ForFundraisers() {
             reach out to their online support and tell them you’re hosting a
             fundraiser for Ukraine.
           </p>
+          <div className='mt-8 w-full md:w-72'>
+            <Button 
+              value='Explore Payment Methods'
+              href='https://docs.google.com/spreadsheets/d/e/2PACX-1vTcQaGsIGHKSY4Dyg2BgpkvUi9LhLPc2AosUKRDaWfTb4OwpKWU-bAItlArKCcomTUEpmwibPCT9_d6/pubhtml?gid=548486344&single=true'
+              target='_blank'
+            />
+          </div>
         </div>
         {/* <div className="mt-24">
           <h1 className="font-extrabold text-2xl lg:text-4xl">
