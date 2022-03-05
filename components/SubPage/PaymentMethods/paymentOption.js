@@ -1,5 +1,4 @@
 export default function PaymentOption(props) {
-    console.log(props)
     return (
         <div className='mt-12'>
             <div>
