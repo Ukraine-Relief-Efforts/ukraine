@@ -169,15 +169,19 @@ export default function ForFundraisers(props) {
             reach out to their online support and tell them you’re hosting a
             fundraiser for Ukraine.
           </p>
-          <div className='mt-8 w-full md:w-72'>
-            <Button 
-              value='Explore Payment Methods'
-              href='https://docs.google.com/spreadsheets/d/e/2PACX-1vTcQaGsIGHKSY4Dyg2BgpkvUi9LhLPc2AosUKRDaWfTb4OwpKWU-bAItlArKCcomTUEpmwibPCT9_d6/pubhtml?gid=548486344&single=true'
-              target='_blank'
-            />
-          </div>
         </div>
-        <PaymentMethods titles={props.title} rows={props.rows} ukraine={true}/>
+        <div className="mt-12">
+          <h1 className="font-extrabold text-2xl lg:text-4xl">
+            Receiving money with a Ukrainian card
+          </h1>
+          <PaymentMethods titles={props.title} rows={props.rows} ukraine={true}/>
+        </div>
+        <div className="mt-12">
+          <h1 className="font-extrabold text-2xl lg:text-4xl">
+          Using a trusted person to receive donations through an international banking system
+          </h1>
+          <PaymentMethods titles={props.title} rows={props.rows}/>
+        </div>
       </div>
     </Layout>
   );

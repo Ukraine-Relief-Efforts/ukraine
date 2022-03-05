@@ -8,9 +8,7 @@ export default function PaymentMethods(props) {
         <div>
             {payMethods.map((row,index) => {
                 return (
-                    <div key={`pay_method${index}`}>
-                        <PaymentOption payDesc={row} />
-                    </div>
+                    <PaymentOption payDesc={row} key={`pay_method${index}`} active={props.ukraine ? true : false}/>
                 )
             })}
         </div>
