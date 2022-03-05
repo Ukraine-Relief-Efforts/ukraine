@@ -63,10 +63,10 @@ export default function ForFundraisers() {
             <p>This will help donors evaluate the credibility of your fundraiser. When your donation request is on the official social media page of the organization you’re supporting, or a profile of a person with a well-established social reputation, it creates another space for supporters to learn about your efforts.</p>
           </OneFaq>
           <OneFaq title='Can our fundraiser get listed if we don’t have access to a social media page with a meaningful following and engagement?'>
-            <p>No. This criteria is an essential part of the vetting process for smaller fundraisers. Please reach out to any local activist, Ukrainian diaspora, political figure, or industry professional to vouch for you. Use this guide to explain what’s needed from their side: <a className='underline text-uablue-default hover:text-uablue-accent'>Backing Reputation.</a></p>
+            <p>No. This criteria is an essential part of the vetting process for smaller fundraisers. Please reach out to any local activist, Ukrainian diaspora, political figure, or industry professional to vouch for you. Use this guide to explain what’s needed from their side: <a className='underline text-uablue-default hover:text-uablue-accent' href='https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit' target='_blank' rel='noreferrer'>Backing Reputation.</a></p>
           </OneFaq>
           <OneFaq title='Where can I get help with translating my donations post to English?'>
-            <p>We have volunteers happy to help create a fundraiser post in English with the information you provide. Please use this form to request help: <a className='underline text-uablue-default hover:text-uablue-accent'>Request help with translation.</a></p>
+            <p>We have volunteers happy to help create a fundraiser post in English with the information you provide. Please use this form to request help: <a className='underline text-uablue-default hover:text-uablue-accent' href='https://docs.google.com/forms/d/e/1FAIpQLSdgj1TpCypclrkZB9g5msGX2g6CqBQB8iiVJllDj_1Ne-QuzQ/viewform' target='_blank' rel='noreferrer'>Request help with translation.</a></p>
           </OneFaq>
         </div>
         {/* Need to implement payment method description here
