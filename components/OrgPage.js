@@ -66,45 +66,44 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
               />
             )}
           </div>
-          <div id="links" className="flex flex-wrap gap-7 items-center">
+          <div id="links" className="flex flex-wrap gap-5 md:gap-7 items-center">
             {website && (
               <a
                 href={website.trim()}
                 target="_blank"
                 rel="noreferrer"
-                className=" text-uablue-default text-xl font-bold underline underline-offset-4 hover:text-uablue-accent"
+                className=" text-uablue-default text-lg md:text-xl font-bold underline underline-offset-4 hover:text-uablue-accent"
               >
                 Website
               </a>
             )}
             {instagram && (
-              <a href={instagram} target="_blank" rel="noreferrer">
+              <a href={instagram} target="_blank" rel="noreferrer" className="flex items-center">
                 <Image
                   src="/assets/icons/instagram.svg"
                   alt="instagram"
-                  height="32px"
-                  width="32px"
-                  className="w-8 h-8"
+                  height="28px"
+                  width="28px"
                 ></Image>
               </a>
             )}
             {facebook && (
-              <a href={facebook} target="_blank" rel="noreferrer">
+              <a href={facebook} target="_blank" rel="noreferrer" className="flex items-center">
                 <Image
                   src="/assets/icons/facebook.svg"
                   alt={facebook}
-                  height="32px"
-                  width="32px"
+                  height="28px"
+                  width="28px"
                 ></Image>
               </a>
             )}
             {twitter && (
-              <a href={twitter} target="_blank" rel="noreferrer">
+              <a href={twitter} target="_blank" rel="noreferrer" className="flex items-center">
                 <Image
                   src="/assets/icons/twitter.svg"
                   alt="twitter"
-                  height="32px"
-                  width="32px"
+                  height="28px"
+                  width="28px"
                 ></Image>
               </a>
             )}
