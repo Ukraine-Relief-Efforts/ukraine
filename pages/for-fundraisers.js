@@ -69,6 +69,11 @@ export default function ForFundraisers() {
             <p>We have volunteers happy to help create a fundraiser post in English with the information you provide. Please use this form to request help: <a className='underline text-uablue-default hover:text-uablue-accent'>Request help with translation.</a></p>
           </OneFaq>
         </div>
+        <div className="mt-24">
+          <h1 className="font-extrabold text-2xl lg:text-4xl mb-8">Receiving donations and choosing a payment method</h1>
+          <h5 className='font-bold text-xl mb-4'>Important</h5>
+          <p>Before posting your payment details on social media, make sure the account is set up with two-factor authentication connected to a code-generating app. <br></br><br></br>Make sure you have checked with your bank before hosting a fundraiser. Excessive deposits might result in your card being frozen. If you’re using a Ukrainian bank (Monobank, PrivatBank), reach out to their online support and tell them you’re hosting a fundraiser for Ukraine.</p>
+        </div>
       </div>
     </Layout>
   );
