@@ -18,10 +18,10 @@ export default function PaymentOption(props) {
                 </div>
                 <div className="w-full">
                     <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                    Monobank
+                    {props.payDesc[0]}
                     </h4>
                     {isActive &&
-                        <PaymentDesc />
+                        <PaymentDesc payDesc={props.payDesc}/>
                     }
                 </div>
             </div>

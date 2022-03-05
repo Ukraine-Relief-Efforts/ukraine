@@ -2,12 +2,15 @@ import PaymentOption from './paymentOption';
 
 
 export default function PaymentMethods(props) {
-    const [
-        
-    ]
     return (
-        <div className='mt-24'>
-            Testing
+        <div>
+            {props.rows.map((row,index) => {
+                return (
+                    <div key={`pay_method${index}`}>
+                        <PaymentOption payDesc={row} />
+                    </div>
+                )
+            })}
         </div>
     )
 }
