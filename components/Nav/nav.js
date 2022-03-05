@@ -86,7 +86,7 @@ export default function NavBar() {
                     block px-3 py-2 rounded-md text-base font-bold
                     ${item.cta ? 
                         'text-uablue-default hover:text-uablue-accent' 
-                        :'text-gray-400 hover:text-gray-800'}`
+                        :'text-gray-500 hover:text-gray-800'}`
                     }
                 >
                   {item.name}
