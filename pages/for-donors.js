@@ -6,7 +6,7 @@ import PaymentMethods from '../components/SubPage/PaymentMethods/paymentMethods'
 export default function ForDonors() {
   return (
     <Layout>
-      <div className='w-2/3 pb-16'>
+      <div className='w-full md:w-3/4 lg:w-2/3 pb-16'>
         <Hero title="For donors" description="We’ve compiled some helpful information to give you a better understanding of how to pick the right project to support, and how to transfer funds." />
         <div className="mt-24">
           <h1 className="font-extrabold text-2xl lg:text-4xl">About this initiative</h1>
