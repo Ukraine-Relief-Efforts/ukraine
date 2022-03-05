@@ -58,8 +58,10 @@ export default function ForDonors() {
                 <span className='shrink-0 w-6'>👉 </span>
                 <span><p className=' leading-tight'><strong>Donating to a US-based account:</strong>Wise, SWIFT, Western Union</p></span>
             </div>
-            <Link>
-              <a>See All Organizations</a>
+            <Link
+              href='/'
+            >
+              <a className='font-medium text-lg text-uablue-default underline underline-offset-4 hover:bg-uablue-accent'>See All Organizations</a>
             </Link>
           </OneFaq>
         </div>
