@@ -25,7 +25,7 @@ export default function ForFundraisers() {
             <div className='w-100'>
               <h4 className='text-2xl font-bold text-uablue-default mb-4'>For Large Organization</h4>
               <p className='mb-4'>For established charities or non-profits hosting emergency fundraisers to provide immediate humanitarian relief to Ukrainians on the ground.</p>
-              <a className=' font-medium text-lg text-uablue-default underline underline-offset-4 hover:bg-uablue-accent'>Instructions for large organizations</a>
+              <a className=' font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent' href='https://docs.google.com/document/d/1UcVhNpjNEuGzPSqk1C7GLLX0BPC9VjZOq02mUTsf0LE/edit' target='_blank' rel='noreferrer'>Instructions for large organizations</a>
             </div>
           </div>
           <hr className='mt-10'></hr>
@@ -39,7 +39,7 @@ export default function ForFundraisers() {
             <div className='w-100'>
               <h4 className='text-2xl font-bold text-uablue-default mb-4'>For Volunteer Fundraisers</h4>
               <p className='mb-4'>For volunteers organizing fundraisers for emergency needs of civilian and military groups.</p>
-              <a className=' font-medium text-lg text-uablue-default hover:bg-uablue-accent underline underline-offset-4'>Instructions for volunteer fundraisers</a>
+              <a className=' font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4' href='https://docs.google.com/document/d/10aLozlKb0P9iiXEsORKoOVWousWyxjAvQ1tZ9uWxdrk/edit' target='_blank' rel='noreferrer'>Instructions for volunteer fundraisers</a>
             </div>
           </div>
           <hr className='mt-10'></hr>
@@ -53,7 +53,7 @@ export default function ForFundraisers() {
             <div className='w-100'>
               <h4 className='text-2xl font-bold text-uablue-default mb-4'>For Those Posting on a Behalf of the Volunteer Group</h4>
               <p className='mb-4'>For individuals with an established and meaningful social media presence who can verify their reputation and are willing to vouch for the emergency fundraiser by Ukrainian volunteers.</p>
-              <a className=' font-medium text-lg text-uablue-default hover:bg-uablue-accent underline underline-offset-4'>Instructions for posting on a behalf of the volunteer group</a>
+              <a className=' font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4' href='https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit' target='_blank' rel='noreferrer'>Instructions for posting on a behalf of the volunteer group</a>
             </div>
           </div>
         </div>
@@ -69,11 +69,13 @@ export default function ForFundraisers() {
             <p>We have volunteers happy to help create a fundraiser post in English with the information you provide. Please use this form to request help: <a className='underline text-uablue-default hover:text-uablue-accent'>Request help with translation.</a></p>
           </OneFaq>
         </div>
+        {/* Need to implement payment method description here
         <div className="mt-24">
           <h1 className="font-extrabold text-2xl lg:text-4xl mb-8">Receiving donations and choosing a payment method</h1>
           <h5 className='font-bold text-xl mb-4'>Important</h5>
           <p>Before posting your payment details on social media, make sure the account is set up with two-factor authentication connected to a code-generating app. <br></br><br></br>Make sure you have checked with your bank before hosting a fundraiser. Excessive deposits might result in your card being frozen. If you’re using a Ukrainian bank (Monobank, PrivatBank), reach out to their online support and tell them you’re hosting a fundraiser for Ukraine.</p>
         </div>
+        */}
       </div>
     </Layout>
   );
