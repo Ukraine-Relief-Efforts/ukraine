@@ -3,6 +3,7 @@ import Hero from '../components/SubPage/Hero/hero';
 import PaymentMethods from '../components/SubPage/PaymentMethods/paymentMethods';
 import Image from 'next/image';
 import arrowDown from '../public/assets/icons/arrow_right.svg'
+import OneFaq from '../components/SubPage/FAQ/OneFaq';
 
 export default function ForFundraisers() {
   return (
@@ -56,7 +57,18 @@ export default function ForFundraisers() {
             </div>
           </div>
         </div>
-        <PaymentMethods />
+        <div className="mt-24">
+          <h1 className="font-extrabold text-2xl lg:text-4xl mb-2">F.A.Q.</h1>
+          <OneFaq title='Why do smaller fundraisers need to have a social media post to be featured?'>
+            <p>This will help donors evaluate the credibility of your fundraiser. When your donation request is on the official social media page of the organization you’re supporting, or a profile of a person with a well-established social reputation, it creates another space for supporters to learn about your efforts.</p>
+          </OneFaq>
+          <OneFaq title='Can our fundraiser get listed if we don’t have access to a social media page with a meaningful following and engagement?'>
+            <p>No. This criteria is an essential part of the vetting process for smaller fundraisers. Please reach out to any local activist, Ukrainian diaspora, political figure, or industry professional to vouch for you. Use this guide to explain what’s needed from their side: <a className='underline text-uablue-default hover:text-uablue-accent'>Backing Reputation.</a></p>
+          </OneFaq>
+          <OneFaq title='Where can I get help with translating my donations post to English?'>
+            <p>We have volunteers happy to help create a fundraiser post in English with the information you provide. Please use this form to request help: <a className='underline text-uablue-default hover:text-uablue-accent'>Request help with translation.</a></p>
+          </OneFaq>
+        </div>
       </div>
     </Layout>
   );
