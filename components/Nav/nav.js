@@ -9,7 +9,6 @@ const navigation = [
   { name: 'Home', href: '/'},
   { name: 'For Donors', href: '/for-donors'},
   { name: 'For Fundraisers', href: '/for-fundraisers'},
-  { name: 'Work With Us', href: '#', cta: true},
 ]
 
 function classNames(...classes) {
@@ -48,6 +47,8 @@ export default function NavBar() {
                         <Link
                             href={item.href}
                             key={item.name}
+                            target={item.target}
+                            rel={item.rel}
                         >
                             <a
                                 className={`
