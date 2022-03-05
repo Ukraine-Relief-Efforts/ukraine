@@ -2,16 +2,17 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
     return (
-        <Html>
-            <Head>
-                <script
-                    async
-                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-                />
+      <Html>
+        <Head>
+          <link rel="shortcut icon" href="../public/favicon.ico" />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+          />
 
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
@@ -19,13 +20,13 @@ export default function Document() {
                         page_path: window.location.pathname
                     });
                     `,
-                    }}
-                />
-            </Head>
-            <body>
-                <Main />
-                <NextScript />
-            </body>
-        </Html>
-    )
+            }}
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
 }
