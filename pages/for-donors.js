@@ -116,7 +116,7 @@ export default function ForDonors() {
               <span className="shrink-0 w-6">👉 </span>
               <span>
                 <p className=" leading-tight">
-                  <strong>Donating to a Ukrainian card:</strong>Wise, SWIFT,
+                  <strong>Donating to a Ukrainian card:</strong> Wise, SWIFT,
                   Western Union
                 </p>
               </span>
@@ -125,8 +125,7 @@ export default function ForDonors() {
               <span className="shrink-0 w-6">👉 </span>
               <span>
                 <p className=" leading-tight">
-                  <strong>Donating to a US-based account:</strong>Venmo, Paypal,
-                  Venmo, Zelle, Revolut, CashApp
+                  <strong>Donating to a US-based account:</strong> Venmo, Paypal, Zelle, Revolut, CashApp
                 </p>
               </span>
             </div>
