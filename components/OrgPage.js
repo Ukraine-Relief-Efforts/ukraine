@@ -148,7 +148,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           )}
           {largeDonationsContact && (
             <>
-              <h2 className="font-black text-xl mt-12">Contant information</h2>
+              <h2 className="font-black text-xl mt-12">Contact information</h2>
               <p className="mt-6">{largeDonationsContact}</p>
             </>
           )}
