@@ -16,9 +16,8 @@ export default function Home(props) {
   let small, big;
   [small, big] = ["Volunteer Groups", "Big Charities"];
   const [openTab, setOpenTab] = useState(small);
-  const regExp = /[a-zA-Z]/g;
   const smallGroup = props.rows.filter((row) => {
-    return row[15] ? regExp.test(row[15]) : false;
+    return row[15] ? row[15] : false;
   });
   const orgList = openTab === small && smallGroup
     ? smallGroup

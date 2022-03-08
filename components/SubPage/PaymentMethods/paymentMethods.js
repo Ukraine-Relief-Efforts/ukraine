@@ -2,14 +2,15 @@ import PaymentOption from './paymentOption';
 
 
 export default function PaymentMethods(props) {
+    
+    const payMethods = props.ukraine ? props.rows.filter((row) => row[4]==='Yes') : props.rows.filter((row) => row[5]==='Yes')
     return (
-        <div className='mt-24'>
-            <div>
-                <h1 className={`font-extrabold text-2xl lg:text-4xl`}>Common payment methods</h1>
-            </div>
-            <PaymentOption paymentTitle="PayPal" paymentDescription="Larger organizations receive a lot of funding, while smaller on-the-ground groups cannot get necessary funds because of smaller reach &amp; lack of vetting process to confirm their legitimacy." pros={["Pro1", "Pro2", "Pro3"]} cons={["Con1", "Con2", "Con3"]} />
-            <PaymentOption paymentTitle="SWIFT" paymentDescription="Larger organizations receive a lot of funding, while smaller on-the-ground groups cannot get necessary funds because of smaller reach &amp; lack of vetting process to confirm their legitimacy." pros={["Pro1", "Pro2", "Pro3"]} cons={["Con1", "Con2", "Con3"]} />
-            <PaymentOption paymentTitle="Crypto" paymentDescription="Larger organizations receive a lot of funding, while smaller on-the-ground groups cannot get necessary funds because of smaller reach &amp; lack of vetting process to confirm their legitimacy." pros={["Pro1", "Pro2", "Pro3"]} cons={["Con1", "Con2", "Con3"]} />
+        <div>
+            {payMethods.map((row,index) => {
+                return (
+                    <PaymentOption payDesc={row} key={`pay_method${index}`} active={props.ukraine ? true : false}/>
+                )
+            })}
         </div>
     )
 }

@@ -1,31 +1,31 @@
+import { useState } from "react"
+import arrow_right from '../../../public/assets/icons/arrow_right.svg'
+import arrow_down from '../../../public/assets/icons/arrow_down.svg'
+import Image from "next/image";
+import PaymentDesc from "./paymentDesc";
+
 export default function PaymentOption(props) {
+    const [isActive, setActive] = useState(props.active);
+
     return (
-        <div className='mt-12'>
-            <div>
-                <h1 className={`font-bold text-uablue-default text-xl lg:text-2xl`}>{props.paymentTitle}</h1>
-            </div>
-            <div className='my-1 md:my-2 lg:my-4 font-light text-m md:text-5m lg:text-l'>
-                <p>{props.paymentDescription}</p>
-            </div>
-            <div className='flex'>
-                <div className='flex-1 min-w-[50%]'>
-                    <p className='text-l lg:text-xl font-bold'>Pros</p>
-                    <ul className='list-disc ml-6 mt-2'>
-                        {props.pros && (props.pros).map((i) => {
-                            return <li key={i}>{i}</li>
-                        })}
-                    </ul>
+        <div className="mt-8">
+            <div className="mb-4 flex flex-row mt-10">
+                <div className="w-7 shrink-0 mr-2">
+                {isActive ? 
+                    <Image src={arrow_down} alt="expanded" onClick={() => setActive(!isActive)}/> :
+                    <Image src={arrow_right} alt="collapsed" onClick={() => setActive(!isActive)}/>
+                    }
                 </div>
-                <div className='flex-1 min-w-[50%]'>
-                    <p className='text-l lg:text-xl font-bold'>Cons</p>
-                    <ul className='list-disc ml-6 mt-2'>
-                        {props.cons && (props.cons).map((i) => {
-                            return <li key={i}>{i}</li>
-                        })}
-                    </ul>
+                <div className="w-full">
+                    <h4 className="text-2xl font-bold text-uablue-default mb-4" onClick={() => setActive(!isActive)}>
+                    {props.payDesc[0]}
+                    </h4>
+                    {isActive &&
+                        <PaymentDesc payDesc={props.payDesc}/>
+                    }
                 </div>
             </div>
-            <hr className='mt-8' />
+            <hr className="mt-10"></hr>
         </div>
     )
 }

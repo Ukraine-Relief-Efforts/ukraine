@@ -5,11 +5,13 @@ import Image from 'next/image';
 import arrowDown from '../public/assets/icons/arrow_right.svg'
 import OneFaq from '../components/SubPage/FAQ/OneFaq';
 import Button from '../components/Button/button';
+import PaymentOption from '../components/SubPage/PaymentMethods/paymentOption';
+import sheets from "../lib/sheets";
 
-export default function ForFundraisers() {
+export default function ForFundraisers(props) {
   return (
     <Layout>
-      <div className="w-full md:w-3/4 lg:w-2/3 pb-16">
+      <div className="w-full md:w-5/6 lg:w-2/3 pb-16">
         <Hero
           title="For Fundraisers"
           description="Helping to communicate your fundraising efforts and credibility to the international community."
@@ -36,7 +38,7 @@ export default function ForFundraisers() {
             </div>
             <div className="w-100">
               <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                For Large Organization
+                For Large Fundraisers
               </h4>
               <p className="mb-4">
                 For established charities or non-profits hosting emergency
@@ -49,7 +51,7 @@ export default function ForFundraisers() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Instructions for large organizations
+                Instructions for large fundraisers
               </a>
             </div>
           </div>
@@ -167,177 +169,35 @@ export default function ForFundraisers() {
             reach out to their online support and tell them you’re hosting a
             fundraiser for Ukraine.
           </p>
-          <div className='mt-8 w-full md:w-72'>
-            <Button 
-              value='Explore Payment Methods'
-              href='https://docs.google.com/spreadsheets/d/e/2PACX-1vTcQaGsIGHKSY4Dyg2BgpkvUi9LhLPc2AosUKRDaWfTb4OwpKWU-bAItlArKCcomTUEpmwibPCT9_d6/pubhtml?gid=548486344&single=true'
-              target='_blank'
-            />
-          </div>
         </div>
-        {/* <div className="mt-24">
+        <div className="mt-12">
           <h1 className="font-extrabold text-2xl lg:text-4xl">
             Receiving money with a Ukrainian card
           </h1>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Monobank
-              </h4>
-
-              <h5 className="font-bold text-xl mb-4">What&apos;s needed</h5>
-              <p className="mb-4">[content]</p>
-
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="mr-5">
-                  <h5 className="font-bold text-xl mb-4">Pros</h5>
-                  <div className="block">
-                    <ul className="list-inside list-disc">
-                      <li>Global</li>
-                      <li>Scaleable</li>
-                      <li>Fits in your pocket</li>
-                      <li>Lightening Fast</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="ml-5">
-                  <h5 className="font-bold text-xl mb-4">Cons</h5>
-                  <ul className="list-inside list-disc">
-                    <li>Not Bitcoin</li>
-                    <li>Meh UI</li>
-                  </ul>
-                </div>
-              </div>
-
-              <h5 className="font-bold text-xl mb-4">How To</h5>
-              <p className="mb-4">[content]</p>
-            </div>
-          </div>
-          <hr className="mt-10"></hr>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Privat Bank
-              </h4>
-              <h5 className="font-bold text-xl mb-4">What&apos;s needed</h5>
-              <p className="mb-4">[content]</p>
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="w-100">
-                  <h5 className="font-bold text-xl mb-4">Pros</h5>
-                  <div className="block">
-                    <ul className="list-inside list-disc">
-                      <li>Global</li>
-                      <li>Scaleable</li>
-                      <li>Fits in your pocket</li>
-                      <li>Lightening Fast</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="w-100">
-                  <h5 className="font-bold text-xl mb-4">Cons</h5>
-                  <ul className="list-inside list-disc">
-                    <li>Not Bitcoin</li>
-                    <li>Meh UI</li>
-                  </ul>
-                </div>
-              </div>
-
-              <h5 className="font-bold text-xl mb-4">How To</h5>
-              <p className="mb-4">[content]</p>
-            </div>
-          </div>
-          <hr className="mt-10"></hr>
+          <PaymentMethods titles={props.title} rows={props.rows} ukraine={true}/>
         </div>
-        <div className="mt-24">
+        <div className="mt-12">
           <h1 className="font-extrabold text-2xl lg:text-4xl">
-            Using a trusted person to receive donations through an international
-            banking system
+          Using a trusted person to receive donations through an international banking system
           </h1>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Venmo
-              </h4>
-              <p className="mb-4">[Content]</p>
-            </div>
-          </div>
-          <hr className="mt-10"></hr>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Paypal
-              </h4>
-              <p className="mb-4">[Content]</p>
-            </div>
-          </div>
-
-          <hr className="mt-10"></hr>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Zelle
-              </h4>
-              <p className="mb-4">[Content]</p>
-            </div>
-          </div>
-
-          <hr className="mt-10"></hr>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Revolut
-              </h4>
-              <p className="mb-4">[Content]</p>
-            </div>
-          </div>
-
-          <hr className="mt-10"></hr>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                CashApp
-              </h4>
-              <p className="mb-4">[Content]</p>
-            </div>
-          </div>
-
-          <hr className="mt-10"></hr>
-          <div className="mb-4 flex flex-row mt-10">
-            <div className="w-7 shrink-0 mr-2">
-              <Image src={arrowDown} alt="arrow down" />
-            </div>
-            <div className="w-100">
-              <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                Patreon
-              </h4>
-              <p className="mb-4">[Content]</p>
-            </div>
-          </div>
-
-          <hr className="mt-10"></hr>
-        </div> */}
+          <PaymentMethods titles={props.title} rows={props.rows}/>
+        </div>
       </div>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SHEET_ID,
+    range: "Payment Method",
+  });
+  const [title, ...rows] = response.data.values;
+
+  return {
+    props: {
+      title,
+      rows,
+    }
+  }
 }
