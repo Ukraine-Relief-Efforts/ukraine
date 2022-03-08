@@ -43,7 +43,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
       {showFrontPageLink && (
         <div className="mt-12">
           <Link href="/">
-            <a className="h-12 font-bold">&lt; BROWSE ORGANIZATIONS</a>
+            <a className="h-12 font-bold">&lt; BROWSE FUNDRAISERS</a>
           </Link>
         </div>
       )}

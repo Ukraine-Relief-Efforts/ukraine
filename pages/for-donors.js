@@ -26,7 +26,7 @@ export default function ForDonors() {
             <p>
               <strong>Large charities:</strong>
               <br></br>
-              Our volunteers looked for organizations endorsed in the media.
+              Our volunteers looked for fundraisers endorsed in the media.
               We’ve also considered the relevance and urgency of fundraising
               efforts.
               <br></br>
@@ -131,7 +131,7 @@ export default function ForDonors() {
             </div>
             <Link href="/">
               <a className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:bg-uablue-accent">
-                See All Organizations
+                See All Fundraisers
               </a>
             </Link>
           </OneFaq>

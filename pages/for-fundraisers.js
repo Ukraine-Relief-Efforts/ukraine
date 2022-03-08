@@ -38,7 +38,7 @@ export default function ForFundraisers(props) {
             </div>
             <div className="w-100">
               <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                For Large Organization
+                For Large Fundraisers
               </h4>
               <p className="mb-4">
                 For established charities or non-profits hosting emergency
@@ -51,7 +51,7 @@ export default function ForFundraisers(props) {
                 target="_blank"
                 rel="noreferrer"
               >
-                Instructions for large organizations
+                Instructions for large fundraisers
               </a>
             </div>
           </div>
