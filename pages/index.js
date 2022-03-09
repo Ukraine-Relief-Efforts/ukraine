@@ -83,13 +83,13 @@ export default function Home(props) {
 
       {openTab === small ? (
         <div className="w-50 flex justify-center">
-          <div className="text-xs font-bold uppercase px-5 py-3 rounded">
-          VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND MILITARY GROUPS. 
-            <div className="text-xs font-light uppercase px-5 py-2 rounded"> 
+          <div className="text-xs font-bold uppercase px-5 py-3 rounded text-center">
+               VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND MILITARY GROUPS. 
+          </div> 
+          <div className="text-xs font-light uppercase px-5 py-2 rounded text-center"> 
                TO HELP YOU EVALUATE SMALL FUNDRAISERS WE HAVE ASKED THEM TO HOST THEIR FUNDRAISER INFORMATION ON 
                A CREDIBLE SOCIAL MEDIA ACCOUNT. 
             </div>
-          </div>
         </div>
       ) : (
         <div className="flex justify-center content-center text-xs font-bold uppercase px-5 py-3 text-center">
