@@ -14,7 +14,7 @@ export default function Home(props) {
   const router = useRouter();
 
   let small, big;
-  [small, big] = ["Volunteer Groups", "Big Charities"];
+  [small, big] = ["Small Fundraisers", "Big Charities"];
   const [openTab, setOpenTab] = useState(small);
   const smallGroup = props.rows.filter((row) => {
     return row[15] ? row[15] : false;
@@ -81,6 +81,22 @@ export default function Home(props) {
         </ul>
       </div>
 
+      {openTab === small ? (
+        <div className="w-50 flex justify-center">
+          <div className="text-xs font-bold uppercase px-5 py-3 rounded">
+            VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND
+            MILITARY GROUPS.
+          </div>
+        </div>
+      ) : (
+        <div className="flex justify-center content-center text-xs font-bold uppercase px-5 py-3 text-center">
+            <div className="w-3/5">
+                ESTABLISHED CHARITIES OR NONPROFITS HOSTING FUNDRAISERS TO PROVIDE
+                HUMANITARIAN RELIEF TO UKRAINIANS AFFECTED BY THE WAR.
+            </div>
+        </div>
+      )}
+
       {!orgList.length && (
         <div className="w-full flex justify-center">
           <h2>Please, check back later</h2>
@@ -102,14 +118,16 @@ export default function Home(props) {
           "ReactModal__Content pb-12 md:pb-0 mx-auto mt-7 md:mt-12 mb-0 md:mb-12 max-h-[100vh] md:max-h-[90vh] overflow-y-auto overflow-x-hidden bg-white rounded-t-3xl md:rounded-3xl max-w-[100vw] md:max-w-[90vw] transition-all duration-500" +
           (expandModal && "top-[120px] max-w-[100vw]")
         }
-        style={{ overlay: { backgroundColor: 'rgba(4, 25, 48, 0.75)' } }}
+        style={{ overlay: { backgroundColor: "rgba(4, 25, 48, 0.75)" } }}
       >
-        <div className='
-           absolute 
+        <div
+          className="
+           absolute
            right-0 md:right-5 lg:right-8 xl:right-14
            top-2 md:top-6
            flex flex-col gap-3
-        '>
+        "
+        >
           <button
             className="h-10 w-10 object-cover bg-white bg-opacity-30 rounded-full flex justify-center items-center"
             onClick={closeModal}
