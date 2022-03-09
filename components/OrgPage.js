@@ -141,7 +141,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           {backedBy && (
             <>
               <h2 className="font-black text-xl mt-12">
-                Institutions that support us
+                Institutions that support them
               </h2>
               <p className="mt-6">{backedBy}</p>
             </>
