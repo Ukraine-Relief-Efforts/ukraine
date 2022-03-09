@@ -174,7 +174,7 @@ export default function ForFundraisers(props) {
           <h1 className="font-extrabold text-2xl lg:text-4xl">
             Receiving money with a Ukrainian card
           </h1>
-          <PaymentMethods titles={props.title} rows={props.rows} ukraine={true}/>
+          <PaymentMethods titles={props.title} rows={props.rows} ukraine={false}/>
         </div>
         <div className="mt-12">
           <h1 className="font-extrabold text-2xl lg:text-4xl">
