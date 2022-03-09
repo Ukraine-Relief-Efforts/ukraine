@@ -81,6 +81,22 @@ export default function Home(props) {
         </ul>
       </div>
 
+      {openTab === small ? (
+        <div className="w-full flex justify-center">
+          <div className="text-xs font-bold uppercase px-5 py-3 rounded">
+            VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND
+            MILITARY GROUPS.
+          </div>
+        </div>
+      ) : (
+        <div className="w-full flex justify-center">
+          <div className="text-xs font-bold uppercase px-5 py-3 rounded">
+            ESTABLISHED CHARITIES OR NONPROFITS HOSTING FUNDRAISERS TO PROVIDE
+            HUMANITARIAN RELIEVE TO UKRAINIANS AFFECTED BY THE WAR.
+          </div>
+        </div>
+      )}
+
       {!orgList.length && (
         <div className="w-full flex justify-center">
           <h2>Please, check back later</h2>
