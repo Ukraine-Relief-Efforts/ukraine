@@ -45,9 +45,9 @@ export default function Home(props) {
   return (
     <Layout>
       <Hero />
-      <div className="w-full flex justify-center">
+      <div className="w-full flex justify-left">
         <ul
-          className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+          className="w-1/2 flex mb-0 list-none pt-3 pb-4 flex-row"
           role="tablist"
         >
           {[small, big].map((tab) => {
@@ -63,7 +63,7 @@ export default function Home(props) {
                     "block leading-normal " +
                     (openTab === tab
                       ? "text-white bg-blue-600"
-                      : "text-blue-600 bg-white")
+                      : "text-blue-600 bg-slate-100")
                   }
                   onClick={(e) => {
                     e.preventDefault();
@@ -82,15 +82,15 @@ export default function Home(props) {
       </div>
 
       {openTab === small ? (
-        <div className="w-50 flex justify-center">
+        <div className="w-full flex justify-left bg-gray-200 rounded">
           <div className="text-xs font-bold uppercase px-5 py-3 rounded">
           VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND MILITARY GROUPS. TO HELP YOU EVALUATE SMALL 
           FUNDRAISERS WE HAVE ASKED THEM TO HOST THEIR FUNDRAISER INFORMATION ON A CREDIBLE SOCIAL MEDIA ACCOUNT.
           </div>
         </div>
       ) : (
-        <div className="flex justify-center content-center text-xs font-bold uppercase px-5 py-3 text-center">
-            <div className="w-3/5">
+        <div className="w-full flex justify-left bg-gray-200 rounded">
+          <div className="text-xs font-bold uppercase px-5 py-3 rounded ">
                 ESTABLISHED CHARITIES OR NONPROFITS HOSTING FUNDRAISERS TO PROVIDE
                 HUMANITARIAN RELIEF TO UKRAINIANS AFFECTED BY THE WAR.
             </div>
