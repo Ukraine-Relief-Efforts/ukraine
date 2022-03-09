@@ -14,7 +14,7 @@ export default function Home(props) {
   const router = useRouter();
 
   let small, big;
-  [small, big] = ["Volunteer Groups", "Big Charities"];
+  [small, big] = ["Small Fundraiser", "Big Charities"];
   const [openTab, setOpenTab] = useState(small);
   const smallGroup = props.rows.filter((row) => {
     return row[15] ? row[15] : false;
