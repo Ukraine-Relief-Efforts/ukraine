@@ -82,7 +82,7 @@ export default function Home(props) {
       </div>
 
       {openTab === small ? (
-        <div className="w-50 flex justify-center">
+        <div className="w-50 flex flex-col justify-center">
           <div className="text-xs font-bold uppercase px-5 py-3 rounded text-center">
                VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND MILITARY GROUPS. 
           </div> 
