@@ -17,13 +17,13 @@ export default function Hero () {
                 w-full sm:w-3/4'>
                 <h3 className='
                     text-2xl md:text-3xl 
-                    font-bold leading-tight lg:leading-snug'
-                    >Helping the international community support Ukraine.</h3>
+                    font-medium leading-tight lg:leading-snug'
+                    >Trusted fundraisers you can donate to now.</h3>
                 <h3 className='
-                    text-2xl md:text-3xl 
-                    font-bold leading-tight lg:leading-snug
+                    text-xl md:text-3xl 
+                    font-normal leading-tight lg:leading-snug
                     pt-4'
-                    >We’ve aggregated the key information to help you evaluate emergency fundraisers.</h3>
+                    >A database of pre-vetted organizations and small fundraisers providing emergency aid to people in Ukraine.</h3>
             </div>
         </div>
     )
