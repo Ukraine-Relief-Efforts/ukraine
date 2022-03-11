@@ -6,9 +6,10 @@ export default function Hero(props) {
             <div>
                 <h1 className={`${styles.h1} font-extrabold text-5xl md:text-7xl lg:text-8xl inline leading-none`}>{props.title} </h1>
             </div>
-            <div className=' my-8 md:my-12 lg:my-20 text-1xl md:text-2xl lg:text-4xl'>
+            <div className=' my-8 md:my-12 lg:my-20 text-2xl md:text-2xl lg:text-4xl'>
                 <p>{props.description}</p>
             </div>
         </div>
     )
 }
+
