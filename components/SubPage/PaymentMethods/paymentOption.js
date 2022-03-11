@@ -8,7 +8,7 @@ export default function PaymentOption(props) {
     const [isActive, setActive] = useState(props.active);
 
     return (
-        <div className="mt-8">
+        <div className="mt-4">
             <div className="flex flex-row mt-10">
                 <div className="w-7 shrink-0 mr-2">
                 {isActive ?
