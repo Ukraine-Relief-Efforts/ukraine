@@ -9,9 +9,9 @@ export default function PaymentOption(props) {
 
     return (
         <div className="mt-8">
-            <div className="mb-4 flex flex-row mt-10">
+            <div className="flex flex-row mt-10">
                 <div className="w-7 shrink-0 mr-2">
-                {isActive ? 
+                {isActive ?
                     <Image src={arrow_down} alt="expanded" onClick={() => setActive(!isActive)}/> :
                     <Image src={arrow_right} alt="collapsed" onClick={() => setActive(!isActive)}/>
                     }
@@ -25,7 +25,7 @@ export default function PaymentOption(props) {
                     }
                 </div>
             </div>
-            <hr className="mt-10"></hr>
+            <hr></hr>
         </div>
     )
 }
