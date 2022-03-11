@@ -27,14 +27,6 @@ export default function PaymentDesc (props) {
                     </ul>
                 </div>
             </div>
-            <div>
-                <h5 className="font-bold text-xl mb-2">How To Donate With This Method?</h5>
-                <ul>
-                    {howTo.split('\n').map((step, index) => 
-                        <li key={`step${index}`}>{step}</li>
-                    )}
-                </ul>
-            </div>
         </div>
     )
 }
