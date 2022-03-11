@@ -9,7 +9,6 @@ export default function PaymentDesc (props) {
         serviceRegion
     ] = props.payDesc;
 
-    console.log(howTo);
     return (
         <div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
@@ -27,14 +26,6 @@ export default function PaymentDesc (props) {
                         {cons.split(', ').map((con,index) => <li key={`con${index}`} className='ml-4'>{con}</li>)}
                     </ul>
                 </div>
-            </div>
-            <div>
-                <h5 className="font-bold text-xl mb-2">How To Donate With This Method?</h5>
-                <ul>
-                    {howTo.split('\n').map((step, index) => 
-                        <li key={`step${index}`}>{step}</li>
-                    )}
-                </ul>
             </div>
         </div>
     )
