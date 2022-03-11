@@ -47,7 +47,7 @@ export default function Home(props) {
       <Hero />
       <div className="w-full flex justify-center">
         <ul
-          className="w-1/2 flex mb-0 list-none flex-wrap pt-3 pb-4 flex-row"
+          className="w-1/2 flex mb-0 list-none pt-3 pb-4 flex-row min-w-fit"
           role="tablist"
         >
           {[small, big].map((tab) => {
@@ -84,11 +84,11 @@ export default function Home(props) {
       {openTab === small ? (
         <div className="w-50 flex flex-col justify-center">
           <div className="text-xs font-bold uppercase px-5 py-3 rounded text-center">
-               VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND MILITARY GROUPS. 
-          </div> 
-          <div className="text-xs font-light uppercase px-5 py-2 rounded text-center"> 
-               TO HELP YOU EVALUATE SMALL FUNDRAISERS WE HAVE ASKED THEM TO HOST THEIR FUNDRAISER INFORMATION ON 
-               A CREDIBLE SOCIAL MEDIA ACCOUNT. 
+               VOLUNTEER-ORGANIZED FUNDRAISERS FOR EMERGENCY NEEDS OF CIVILIAN AND MILITARY GROUPS.
+          </div>
+          <div className="text-xs font-light uppercase px-5 py-2 rounded text-center">
+               TO HELP YOU EVALUATE SMALL FUNDRAISERS WE HAVE ASKED THEM TO HOST THEIR FUNDRAISER INFORMATION ON
+               A CREDIBLE SOCIAL MEDIA ACCOUNT.
             </div>
         </div>
       ) : (
