@@ -116,7 +116,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           {spendingTowards && (
             <>
               <h2 className="font-black text-xl mt-12">
-                How we will spend donations
+                How they will spend donations
               </h2>
               <p className="mt-6">{spendingTowards}</p>
             </>
@@ -124,7 +124,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           {accomplishments && (
             <>
               <h2 className="font-black text-xl mt-12">
-                What we&apos;ve accomplished so far
+                What they&apos;ve accomplished so far
               </h2>
               <p className="mt-6">
                 <a
@@ -133,7 +133,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                   rel="noreferrer"
                   className=" text-uablue-default underline underline-offset-4 text-base font-bold hover:text-uablue-accent"
                 >
-                  Check out our past work
+                  Check out their past work
                 </a>
               </p>
             </>

@@ -38,7 +38,7 @@ export default function ForFundraisers(props) {
             </div>
             <div className="w-100">
               <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                For Large Fundraisers
+                For Large Organizations
               </h4>
               <p className="mb-4">
                 For established charities or non-profits hosting emergency
@@ -62,7 +62,7 @@ export default function ForFundraisers(props) {
             </div>
             <div className="w-100">
               <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                For Volunteer Fundraisers
+                For Small Fundraisers
               </h4>
               <p className="mb-4">
                 For volunteers organizing fundraisers for emergency needs of
@@ -85,7 +85,7 @@ export default function ForFundraisers(props) {
             </div>
             <div className="w-100">
               <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                For Those Posting on a Behalf of the Volunteer Group
+                Vouching for Small Fundraisers
               </h4>
               <p className="mb-4">
                 For individuals with an established and meaningful social media
