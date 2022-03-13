@@ -8,8 +8,8 @@ export default function PaymentOption(props) {
     const [isActive, setActive] = useState(props.active);
 
     return (
-        <div className="mt-4">
-            <div className="flex flex-row mt-10">
+        <div>
+            <div className="flex flex-row mt-5">
                 <div className="w-7 shrink-0 mr-2">
                 {isActive ?
                     <Image src={arrow_down} alt="expanded" onClick={() => setActive(!isActive)}/> :
@@ -17,7 +17,7 @@ export default function PaymentOption(props) {
                     }
                 </div>
                 <div className="w-full">
-                    <h4 className="text-2xl font-bold text-uablue-default mb-4" onClick={() => setActive(!isActive)}>
+                    <h4 className="text-2xl font-bold text-uablue-default mb-2" onClick={() => setActive(!isActive)}>
                     {props.payDesc[0]}
                     </h4>
                     {isActive &&
