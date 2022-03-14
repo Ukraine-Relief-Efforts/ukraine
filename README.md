@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) that uses npm as package manager.
 
 ## Getting Started
 
@@ -6,8 +6,11 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
+```
+Before opening a PR, please check that your changes can be built:
+
+```bash
+npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
