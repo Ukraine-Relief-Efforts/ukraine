@@ -7,6 +7,7 @@ import OneFaq from '../components/SubPage/FAQ/OneFaq';
 import Button from '../components/Button/button';
 import PaymentOption from '../components/SubPage/PaymentMethods/paymentOption';
 import sheets from "../lib/sheets";
+import Link from 'next/link';
 
 export default function ForFundraisers(props) {
   return (
@@ -45,14 +46,13 @@ export default function ForFundraisers(props) {
                 fundraisers to provide immediate humanitarian relief to
                 Ukrainians on the ground.
               </p>
-              <a
-                className=" font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent"
-                href="https://docs.google.com/document/d/1UcVhNpjNEuGzPSqk1C7GLLX0BPC9VjZOq02mUTsf0LE/edit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instructions for large fundraisers
-              </a>
+              <Link href="/for-fundraisers/for-large-organizations">
+                <a 
+                    className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent"
+                >
+                    Instructions for large fundraisers
+                </a>
+              </Link>
             </div>
           </div>
           <hr className="mt-10"></hr>
