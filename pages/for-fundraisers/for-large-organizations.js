@@ -1,9 +1,5 @@
 import Layout from '../../components/layout'
 import Hero from '../../components/SubPage/Hero/hero';
-import PaymentMethods from '../../components/SubPage/PaymentMethods/paymentMethods';
-import Image from 'next/image';
-import arrowDown from '../../public/assets/icons/arrow_right.svg'
-import OneFaq from '../../components/SubPage/FAQ/OneFaq';
 import sheets from "../../lib/sheets";
 
 export default function ForLargeOrganizations(props) {
