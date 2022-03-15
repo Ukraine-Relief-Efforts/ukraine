@@ -45,7 +45,7 @@ export default function Home(props) {
   return (
     <Layout>
       <Hero />
-      <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:mt-8">
+      <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8">
         <div className="w-full flex justify-center absolute right-0 -top-9">
           <ul
             className="w-11/12 sm:w-1/2 flex list-none mt-3 mb-4 flex-row min-w-fit rounded-full box-border 
@@ -175,7 +175,7 @@ export default function Home(props) {
           </div>
           <OrgPage orgData={orgData}></OrgPage>
         </Modal>
-        <div className="grid gap-6 grid-cols-12 w-100 mt-4 h-713 padding-2">
+        <div className="grid gap-6 sm:gap-12 grid-cols-12 w-100 mt-4 h-713 padding-2">
           {orgList &&
             orgList.map((row, index) => {
               return (
