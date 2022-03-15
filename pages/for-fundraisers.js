@@ -89,15 +89,6 @@ export default function ForFundraisers(props) {
                 presence who can verify their reputation and are willing to
                 vouch for the emergency fundraiser by Ukrainian volunteers.
               </p>
-              <a
-                className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4"
-                href="https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instructions for posting on a behalf of the volunteer group
-              </a>
-
               <Link href="/for-fundraisers/for-reputation-backers">
                 <a className="font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4">
                     Instructions for posting on a behalf of the volunteer group
