@@ -97,6 +97,12 @@ export default function ForFundraisers(props) {
               >
                 Instructions for posting on a behalf of the volunteer group
               </a>
+
+              <Link href="/for-fundraisers/for-reputation-backers">
+                <a className="font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4">
+                    Instructions for posting on a behalf of the volunteer group
+                </a>
+              </Link>
             </div>
           </div>
         </div>
