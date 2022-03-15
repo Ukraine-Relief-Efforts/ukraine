@@ -67,15 +67,12 @@ export default function ForFundraisers(props) {
               <p className="mb-4">
                 For volunteers organizing fundraisers for emergency needs of
                 civilian and military groups.
-              </p>
-              <a
-                className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4"
-                href="https://docs.google.com/document/d/10aLozlKb0P9iiXEsORKoOVWousWyxjAvQ1tZ9uWxdrk/edit"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instructions for volunteer fundraisers
-              </a>
+              </p>              
+              <Link href="/for-fundraisers/for-small-fundraisers">
+                <a className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4">
+                    Instructions for volunteer fundraisers
+                </a>
+              </Link>
             </div>
           </div>
           <hr className="mt-10"></hr>
