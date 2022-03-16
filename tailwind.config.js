@@ -14,9 +14,13 @@ module.exports = {
       uablue: {
         default: '#005BBC',
         accent: '#1E429F'
-        }
-      }
-    }
+        },
+      textAccent: {
+          yellow: '#FFD500',
+          blue: '#E0EFFF',
+        },
+      },
+    },
   },
   plugins: [],
 }
