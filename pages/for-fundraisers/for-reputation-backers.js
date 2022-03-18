@@ -81,8 +81,8 @@ export default function ForReputationBackers(props) {
                     <br />
                     <i>Please verify with volunteers verbally or via encrypted chat that these details are accurate.</i>
                     <ul className='ml-12'>
-                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2'>Payment details MUST be included in your post.</b> We are not hosting any payment details on <b>helpuanow.org!</b></li>
-                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2'>Note on payment methods: </b> If you can find someone with PayPal, Venmo, or Zelle who can accept donations on your behalf, this will help bring more funding! The simpler the payment process the more likely people will contribute!</li>
+                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2 inline-block p-1'>Payment details MUST be included in your post.</b> We are not hosting any payment details on <b>helpuanow.org!</b></li>
+                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2 inline-block p-1'>Note on payment methods: </b> If you can find someone with PayPal, Venmo, or Zelle who can accept donations on your behalf, this will help bring more funding! The simpler the payment process the more likely people will contribute!</li>
                     </ul>
                 </li>
                 <li className='mb-2'>👉 <b>Contact information for big donations</b>
