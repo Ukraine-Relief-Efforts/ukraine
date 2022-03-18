@@ -89,9 +89,12 @@ export default function ForReputationBackers(props) {
                 <br /> Only add if applicable; please make sure it’s not someone on the frontline for safety purposes</li>
             </ul>
             <br />
-            <p className='bg-textAccent-blue rounded-3xl block'>
-                <b>If you need help writing or translating this post to English, our volunteers can help</b> Please fill out this form in Ukrainian: <a href='https://forms.gle/YYkY5PMh1vp8ThjcA' className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4" target="_blank" rel="noreferrer">https://forms.gle/YYkY5PMh1vp8ThjcA</a>
-            </p>
+            <div className='bg-textAccent-blue rounded-3xl block p-2'>
+                <p>
+                    <b>If you need help writing or translating this post to English, our volunteers can help</b> Please fill out this form in Ukrainian: <a href='https://forms.gle/YYkY5PMh1vp8ThjcA' className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4" target="_blank" rel="noreferrer">https://forms.gle/YYkY5PMh1vp8ThjcA</a>
+                </p>
+            </div>
+            
         </div> 
     </Content> 
   </div>           
