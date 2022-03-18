@@ -2,12 +2,18 @@ import Layout from '../../components/layout'
 import Hero from '../../components/SubPage/Hero/hero';
 import sheets from "../../lib/sheets";
 import Content from '../../components/content';
+import Link from "next/link";
 
 export default function ForReputationBackers(props) {
   return (
     <div>
     <Layout>
       <div className="w-full md:w-5/6 lg:w-2/3 pb-16">
+        <div className="mt-12">
+            <Link href="/for-fundraisers" passHref>  
+                <div className='cursor-pointer'>{'<'} Back</div>
+            </Link>
+        </div>
         <Hero
           title="For Reputation Backers"
           description=""
