@@ -11,7 +11,7 @@ export default function ForLargeOrganizations(props) {
       <div className="w-full md:w-5/6 lg:w-2/3 pb-16">
       <div className="mt-12">
         <Link href="/for-fundraisers" passHref>  
-            <div className='cursor-pointer'>{'<'} Back</div>
+            <a>{'<'} Back</a>
         </Link>
       </div>
         <Hero
