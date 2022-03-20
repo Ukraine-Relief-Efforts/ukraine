@@ -13,7 +13,7 @@ export default function AboutUs() {
                     united over a mission to save Ukrainian lives and
                     support the wellbeing of people affected by the war."
                 />
-                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8">
+                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
                         <h1 className="text-2xl lg:text-4xl mb-2">
                             Problems We Are Solving
