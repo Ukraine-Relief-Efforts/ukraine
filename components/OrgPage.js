@@ -41,7 +41,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
         />
       </div>
       {showFrontPageLink && (
-        <div className="mt-12">
+        <div className="mt-12 md:px-20 lg:px-40">
           <Link href="/">
             <a className="h-12 font-bold">&lt; BROWSE FUNDRAISERS</a>
           </Link>
@@ -49,7 +49,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
       )}
       <div
         id="organization"
-        className={showFrontPageLink ? "px-0 pt-8" : "p-8 md:p-12"}
+        className={showFrontPageLink ? "px-0 pt-8 md:px-20 lg:px-40" : "p-8 md:py-12 md:px-24 lg:px-44"}
       >
         <h1 className="text-4xl font-black">{orgName}</h1>
         <div
@@ -153,7 +153,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
             </>
           )}
           <h2 className="font-black text-2xl mt-12 mb-4">Payment Method</h2>
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="mt-2 flex flex-wrap gap-2 mb-16">
             {/* conditionally render payment method */}
             {typeof paymentMethod === "string" &&
               paymentMethod.split(",").map((method, index) => {

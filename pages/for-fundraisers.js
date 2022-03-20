@@ -17,7 +17,7 @@ export default function ForFundraisers(props) {
                     title="For Fundraisers"
                     description="Helping to communicate your fundraising efforts and credibility to the international community."
                 />
-                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8">
+                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <p>
                         Fundraisers and aid organizations of Ukraine, we are so
                         grateful for the work you have been doing for the
@@ -31,7 +31,7 @@ export default function ForFundraisers(props) {
                         to the international community and convey that you are a
                         trustworthy and efficient coordinator of their funds.
                     </p>
-                    <div className="mt-24">
+                    <div className="mt-16">
                         <h1 className="text-2xl lg:text-4xl mb-2">
                             How to apply to get your fundraiser listed?
                         </h1>
