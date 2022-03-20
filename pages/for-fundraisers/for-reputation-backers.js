@@ -2,12 +2,18 @@ import Layout from '../../components/layout'
 import Hero from '../../components/SubPage/Hero/hero';
 import sheets from "../../lib/sheets";
 import Content from '../../components/content';
+import Link from "next/link";
 
 export default function ForReputationBackers(props) {
   return (
     <div>
     <Layout>
       <div className="w-full md:w-5/6 lg:w-2/3 pb-16">
+        <div className="mt-12">
+            <Link href="/for-fundraisers" passHref>  
+                <a>{'<'} Back</a>
+            </Link>
+        </div>
         <Hero
           title="For Reputation Backers"
           description=""
@@ -75,17 +81,20 @@ export default function ForReputationBackers(props) {
                     <br />
                     <i>Please verify with volunteers verbally or via encrypted chat that these details are accurate.</i>
                     <ul className='ml-12'>
-                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2'>Payment details MUST be included in your post.</b> We are not hosting any payment details on <b>helpuanow.org!</b></li>
-                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2'>Note on payment methods: </b> If you can find someone with PayPal, Venmo, or Zelle who can accept donations on your behalf, this will help bring more funding! The simpler the payment process the more likely people will contribute!</li>
+                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2 inline-block p-1'>Payment details MUST be included in your post.</b> We are not hosting any payment details on <b>helpuanow.org!</b></li>
+                        <li>&bull; <b className='rounded-full bg-textAccent-yellow m-2 inline-block p-1'>Note on payment methods: </b> If you can find someone with PayPal, Venmo, or Zelle who can accept donations on your behalf, this will help bring more funding! The simpler the payment process the more likely people will contribute!</li>
                     </ul>
                 </li>
                 <li className='mb-2'>👉 <b>Contact information for big donations</b>
                 <br /> Only add if applicable; please make sure it’s not someone on the frontline for safety purposes</li>
             </ul>
             <br />
-            <p className='bg-textAccent-blue rounded-3xl block'>
-                <b>If you need help writing or translating this post to English, our volunteers can help</b> Please fill out this form in Ukrainian: <a href='https://forms.gle/YYkY5PMh1vp8ThjcA' className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4" target="_blank" rel="noreferrer">https://forms.gle/YYkY5PMh1vp8ThjcA</a>
-            </p>
+            <div className='bg-textAccent-blue rounded-3xl block p-2'>
+                <p>
+                    <b>If you need help writing or translating this post to English, our volunteers can help</b> Please fill out this form in Ukrainian: <a href='https://forms.gle/YYkY5PMh1vp8ThjcA' className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4" target="_blank" rel="noreferrer">https://forms.gle/YYkY5PMh1vp8ThjcA</a>
+                </p>
+            </div>
+            
         </div> 
     </Content> 
   </div>           
