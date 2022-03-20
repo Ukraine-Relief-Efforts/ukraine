@@ -1,14 +1,20 @@
 import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
+import Link from "next/link";
 
 export default function ForReputationBackers(props) {
     return (
         <Layout>
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
+                <div className="mt-12">
+                    <Link href="/for-fundraisers" passHref>
+                        <a>{"<"} Back</a>
+                    </Link>
+                </div>
                 <Hero title="For Reputation Backers" description="" />
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
-                        <h1 className="text-2xl lg:text-4xl mb-4">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             Who are the reputation backers?
                         </h1>
                         <p>
@@ -21,7 +27,7 @@ export default function ForReputationBackers(props) {
                             additional due diligence on the project and hosting
                             a fundraiser post on their social media platform.
                         </p>
-                        <h1 className="text-2xl lg:text-4xl mb-4 mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
                             Problem
                         </h1>
                         <p>
@@ -48,7 +54,7 @@ export default function ForReputationBackers(props) {
                             purchased faster and more people getting crucial
                             help.
                         </p>
-                        <h1 className="text-2xl lg:text-4xl mb-4 mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
                             Solution
                         </h1>
                         <p>
@@ -89,7 +95,7 @@ export default function ForReputationBackers(props) {
                                 worked on in the past
                             </li>
                         </ul>
-                        <b className="rounded-full bg-textAccent-yellow">
+                        <b className="inline-block p-1 rounded-full bg-textAccent-yellow">
                             Important: this communication should happen over
                             secure channels like Signal or other methods using
                             end to end encryption!
@@ -170,7 +176,7 @@ export default function ForReputationBackers(props) {
                                 <ul className="ml-4 sm:ml-12">
                                     <li>
                                         &bull;{" "}
-                                        <b className="rounded-full bg-textAccent-yellow m-2">
+                                        <b className="inline-block p-1 rounded-full bg-textAccent-yellow m-2">
                                             Payment details MUST be included in
                                             your post.
                                         </b>{" "}
@@ -179,7 +185,7 @@ export default function ForReputationBackers(props) {
                                     </li>
                                     <li>
                                         &bull;{" "}
-                                        <b className="rounded-full bg-textAccent-yellow m-2">
+                                        <b className="inline-block p-1 rounded-full bg-textAccent-yellow m-2">
                                             The simpler the payment process, the
                                             more likely people will contribute!{" "}
                                         </b>{" "}
@@ -199,7 +205,7 @@ export default function ForReputationBackers(props) {
                             </li>
                         </ul>
                         <br />
-                        <p className="bg-textAccent-blue rounded-3xl block">
+                        <p className="bg-textAccent-blue rounded-3xl block p-4">
                             <b>
                                 If you need help writing or translating this
                                 post to English, our volunteers can help
