@@ -2,6 +2,7 @@ import Layout from "../components/layout";
 import OneFaq from "../components/SubPage/FAQ/OneFaq";
 import Hero from "../components/SubPage/Hero/hero";
 import Link from "next/link";
+import Button from "../components/Button/button";
 
 export default function ForDonors() {
     return (
@@ -9,120 +10,81 @@ export default function ForDonors() {
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
                 <Hero
                     title="For donors"
-                    description="Helping you vet and support fundraising for Ukraine."
+                    description="Helping you meaningfully support grassroots fundraising efforts for Ukraine."
                 />
-                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8">
+                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
                         <p>
-                            We created this website to help the international
-                            community donate to Ukrainians in need. In addition
-                            to hosting the key information about major donation
-                            avenues, we have also sought out volunteer groups
-                            coordinating purchases of emergency supplies for
-                            both civilians and military in Ukraine.
+                            This project was created to find, evaluate and
+                            amplify credible fundraisers organized by Ukrainian
+                            volunteers.
                         </p>
                     </div>
-                    <div className="mt-24">
-                        <h1 className="text-2xl lg:text-4xl mb-2">
-                            F.A.Q.
-                        </h1>
-                        <OneFaq title="How have we vetted fundraisers?">
+                    <div className="mt-16">
+                        <h1 className="text-2xl lg:text-4xl mb-2">F.A.Q.</h1>
+                        <OneFaq title="Why donate to small fundraisers?">
                             <p>
-                                <strong>Large charities:</strong>
-                                <br></br>
-                                Our volunteers looked for fundraisers endorsed
-                                in the media. We’ve also considered the
-                                relevance and urgency of fundraising efforts.
-                                <br></br>
-                                <br></br>
-                                <strong>Volunteer-driven fundraisers:</strong>
-                                <br></br>
-                                Our volunteers actively looked for potential red
-                                flags during the onboarding process and used
-                                their subjective discretion when approving
-                                submissions. <br></br>
-                                <br></br>For smaller campaigns posted by people
-                                with credible social media presence on the
-                                behalf of volunteers, we&#39;ve asked them to:
-                                <br></br>
-                                <br></br>
+                                Since Russia’s most recent invasion, friends and
+                                families of people fighting on the frontlines,
+                                activists, and others have volunteered to
+                                support the people and military in Ukraine, at
+                                times risking their lives to deliver essential
+                                supplies to occupied areas. While large
+                                charities will continue playing a crucial role
+                                in helping people affected by this war, their
+                                ability to quickly respond to the needs of small
+                                groups in different regions of Ukraine is
+                                limited. Volunteers fill in this gap. They have
+                                first-hand information on the most current and
+                                urgent needs. Every dollar of the donation to
+                                their fundraisers goes to life-saving supplies
+                                and services - medicines, protective gear,
+                                transportation, and more - making a tremendous
+                                impact for people on the ground.
                             </p>
+                        </OneFaq>
+                        <OneFaq title="How do we vet volunteer-driven fundraisers?">
                             <ul className="list-disc ml-8">
                                 <li>
-                                    have a phone conversation with the campaign
-                                    organizer before agreeing to host the
-                                    fundraiser on their social media platform
+                                    Multiple people on our team independently
+                                    evaluate fundraiser information.
                                 </li>
                                 <li>
-                                    ask for receipts and photo evidence from
-                                    previous supply deliveries to validate that
-                                    money is going to where it is intended
+                                    We only onboard fundraisers that have proven
+                                    ability to deliver aid.
                                 </li>
                                 <li>
-                                    reach out to the beneficiary group to verify
-                                    the relationship with the fundraiser and the
-                                    accuracy of payment details
+                                    We only support fundraisers hosted on
+                                    credible social media pages or websites.
+                                    Read more:{" "}
+                                    <Link href="/for-fundraisers/for-reputation-backers">
+                                        <a className="font-medium text-uablue-default underline underline-offset-4 hover:text-uablue-accent">
+                                            here
+                                        </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    reach out to any personal connections in
-                                    common to further vet the request and the
-                                    reputation of the coordinator
+                                    Soon, we will employ a group of trusted
+                                    Ukrainians with connections to volunteer
+                                    networks on the ground to further formalize
+                                    our vetting process.
                                 </li>
                             </ul>
-
-                            <br></br>
-
-                            <div className="flex flex-row items-center mb-4 gap-3">
+                            <div className="flex flex-row items-center mb-4 mt-4 gap-3">
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
                                     <p className=" leading-tight">
-                                        <strong>
-                                            Note: while we have done as much as
-                                            possible to ensure that all donation
-                                            requests are valid, the final
-                                            vetting is still your
-                                            responsibility!
-                                        </strong>
+                                        <strong>Disclaimer: </strong>
+                                        We try to make it as easy as possible
+                                        for you to evaluate fundraisers, but you
+                                        are the final decision if yours. Before
+                                        donating, double-check the legitimacy of
+                                        the page hosting the fundraiser.
                                     </p>
                                 </span>
                             </div>
-
-                            <p>
-                                By aggregating useful data, our goal was to make
-                                it as easy as possible for you to evaluate
-                                fundraisers. If you’re considering a large
-                                donation, but feel like there’s not enough
-                                information on the fundraiser you wish to
-                                support, please use the “Request Information”
-                                feature and we will get you in touch with the
-                                organizers as soon as possible. We are also
-                                working on a comment section feature that would
-                                allow fundraisers to post updates and photo
-                                evidence.
-                            </p>
                         </OneFaq>
-                        <OneFaq title="Why donate to volunteer-driven fundraisers?">
-                            <p>
-                                One of our main goals was to make evaluation of
-                                smaller volunteer-driven fundraisers simple.
-                                Volunteers do much of the work of coordinating
-                                emergency humanitarian aid to Ukrainians. These
-                                are political activists, Ukrainian diaspora,
-                                friends and family members of people requiring
-                                immediate aid. They are in direct contact with
-                                people on the ground and understand their
-                                immediate needs best.
-                                <br></br>
-                                <br></br>
-                                As a part of a large informal network of
-                                volunteers, they purchase and deliver the
-                                supplies like medicines, food, body armor, and
-                                first aid kits. All charitable donations are
-                                crucial, but please take the extra moment to
-                                consider these fundraisers.
-                            </p>
-                        </OneFaq>
-                        <OneFaq title="How can I donate?">
+                        <OneFaq title="How to donate?">
                             <p>
                                 Each fundraiser page specifies payment methods
                                 available. Click “Donate Now” for payment
@@ -153,11 +115,13 @@ export default function ForDonors() {
                                     </p>
                                 </span>
                             </div>
-                            <Link href="/">
-                                <a className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:bg-uablue-accent">
-                                    See All Fundraisers
-                                </a>
-                            </Link>
+                            <div className="w-full sm:w-64">
+                                <Button
+                                    value="See All Fundraisers"
+                                    href="/"
+                                    target="_blank"
+                                />
+                            </div>
                         </OneFaq>
                     </div>
                 </div>
