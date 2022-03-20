@@ -31,7 +31,7 @@ export default function ForFundraisers(props) {
                         to the international community and convey that you are a
                         trustworthy and efficient coordinator of their funds.
                     </p>
-                    <div className="mt-24">
+                    <div className="mt-16">
                         <h1 className="text-2xl lg:text-4xl mb-2">
                             How to apply to get your fundraiser listed?
                         </h1>

@@ -19,61 +19,34 @@ export default function ForReputationBackers(props) {
                             supporter abroad, political figure, industry
                             professional. They have to be committed to doing
                             additional due diligence on the project and hosting
-                            a fundraiser post on their social media platform. If
-                            you think you can help - read on!
+                            a fundraiser post on their social media platform.
                         </p>
                         <h1 className="text-2xl lg:text-4xl mb-4 mt-8">
                             Problem
                         </h1>
                         <p>
-                            We have many volunteers on the ground coordinating
-                            supplies and aid for Ukrainian civilians and
-                            military. They are in direct contact with local
-                            groups on the ground and understand their immediate
-                            needs best.
+                            There are many volunteers coordinating supplies and
+                            aid for Ukrainian civilians and military. They are
+                            in direct contact with local groups on the ground
+                            and understand their immediate needs best.
                         </p>
                         <br />
                         <p>
-                            The process of getting aid is messy and
-                            decentralized. Troops or civilians ask volunteers
-                            for help. Volunteers have to find suppliers and
-                            orchestrate delivery from Europe into some part of
-                            Ukraine. Right now, there is not a better process.
-                            Centralization would be more dangerous by increasing
-                            the chances of ambushes and putting delivery
-                            volunteers and recipients in danger. Technology
-                            cannot help — yet.
+                            Often they cannot communicate transparently what
+                            amount of aid is needed, where the supplies will go,
+                            and what financial transactions took place.
+                            Sensitive information if made public can be used by
+                            enemy intelligence and result in ambushes putting
+                            both delivery volunteers and aid recipients in
+                            danger.
                         </p>
                         <br />
                         <p>
-                            Even still, we can help streamline the funding
-                            process to support volunteers coordinating the
-                            supplies and aid. So far, fundraising is limited by
-                            someone’s personal network. Volunteers rely on their
-                            reputation to secure the funds from friends and
-                            acquaintances. Ukrainians cannot afford to donate
-                            much, and some funding amounts are much larger than
-                            someone’s personal network can afford. For example,
-                            my friends in Kyiv joined a civilian resistance
-                            group that needed traumatic bleeding patches. These
-                            patches save lives but also cost $100 per patch for
-                            a quality brand. To help them, I need to find a
-                            supplier in Europe, delivery people, and funds.
-                            After the hustle of finding a supplier and setting
-                            up logistics through a trusted network of personal
-                            connections, I can only afford to buy 20 patches
-                            with the $2,000 fundraised through personal
-                            connections. The good news is that I get to help my
-                            friends. The bad news is that I cannot wait for more
-                            funding to come in and later send a larger supply
-                            because these patches are needed as soon as
-                            possible.
-                        </p>
-                        <br />
-                        <p>
-                            If individual volunteers get more funding, they can
-                            buy more supplies and get these delivered where they
-                            are most needed faster.
+                            For this reason volunteers have to rely on their
+                            close networks to secure the funds. Securing the
+                            funds from broader audiences means more supplies
+                            purchased faster and more people getting crucial
+                            help.
                         </p>
                         <h1 className="text-2xl lg:text-4xl mb-4 mt-8">
                             Solution
@@ -81,9 +54,9 @@ export default function ForReputationBackers(props) {
                         <p>
                             You can help! As someone who shares a meaningful
                             level of social media reputation, is willing to
-                            reveal your identity, and is willing to do the due
-                            diligence, you can ask for donations on behalf of a
-                            volunteer or a specific group they are aiding.
+                            reveal your identity, and do the due diligence, you
+                            can ask for donations on behalf of a volunteer or
+                            the group they are aiding.
                         </p>
                         <br />
                         <p className="font-semibold">Forms of due diligence:</p>
@@ -116,13 +89,18 @@ export default function ForReputationBackers(props) {
                                 worked on in the past
                             </li>
                         </ul>
+                        <b className="rounded-full bg-textAccent-yellow">
+                            Important: this communication should happen over
+                            secure channels like Signal or other methods using
+                            end to end encryption!
+                        </b>{" "}
+                        <br />
                         <br />
                         <p>
                             Once you have decided to share the fundraiser on
-                            your platform, draft a social media post that
-                            includes as much of the following information as
-                            possible: (Please be sure to ask volunteers to read
-                            and confirm this draft post before sharing)
+                            your platform, make a post on your social media
+                            account. Double check that includes as much of the
+                            following information as possible
                         </p>
                         <br />
                         <ul className="mx-4 sm:mx-12">
@@ -145,7 +123,7 @@ export default function ForReputationBackers(props) {
                                 👉{" "}
                                 <b>
                                     <i>
-                                        One sentence on what the money will be
+                                        A few sentences on how the money will be
                                         used for
                                     </i>
                                 </b>{" "}
@@ -154,19 +132,11 @@ export default function ForReputationBackers(props) {
                                     possible)
                                 </i>
                             </li>
+
                             <li className="mb-2">
                                 👉{" "}
                                 <b>
-                                    <i>
-                                        How much approximately you are trying to
-                                        raise
-                                    </i>
-                                </b>
-                            </li>
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>If anyone else backs this effort:</i>
+                                    <i>Is anyone else backing this effort:</i>
                                 </b>{" "}
                                 <i>
                                     Mention if the group you are representing is
@@ -197,11 +167,6 @@ export default function ForReputationBackers(props) {
                                     <i>Payment method and details:</i>
                                 </b>
                                 <br />
-                                <i>
-                                    Please verify with volunteers verbally or
-                                    via encrypted chat that these details are
-                                    accurate.
-                                </i>
                                 <ul className="ml-4 sm:ml-12">
                                     <li>
                                         &bull;{" "}
@@ -215,22 +180,22 @@ export default function ForReputationBackers(props) {
                                     <li>
                                         &bull;{" "}
                                         <b className="rounded-full bg-textAccent-yellow m-2">
-                                            Note on payment methods:{" "}
+                                            The simpler the payment process, the
+                                            more likely people will contribute!{" "}
                                         </b>{" "}
-                                        If you can find someone with PayPal,
-                                        Venmo, or Zelle who can accept donations
-                                        on your behalf, this will help bring
-                                        more funding! The simpler the payment
-                                        process the more likely people will
-                                        contribute!
+                                        Consider PayPal, which just launched in
+                                        Ukraine. If you ask for donations to
+                                        Ukrainian cards, mention how someone can
+                                        make a transaction (Wise and SWIFT are
+                                        the most common options).
                                     </li>
                                 </ul>
                             </li>
                             <li className="mb-2">
-                                👉 <b>Contact information for big donations</b>
-                                <br /> Only add if applicable; please make sure
-                                it’s not someone on the frontline for safety
-                                purposes
+                                👉{" "}
+                                <b>Contact information for big donations: </b>
+                                <br /> only add if applicable; please make sure
+                                it’s not someone on the frontlines.
                             </li>
                         </ul>
                         <br />
