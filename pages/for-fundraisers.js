@@ -17,7 +17,7 @@ export default function ForFundraisers(props) {
                     title="For Fundraisers"
                     description="Helping to communicate your fundraising efforts and credibility to the international community."
                 />
-                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8">
+                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <p>
                         Fundraisers and aid organizations of Ukraine, we are so
                         grateful for the work you have been doing for the
