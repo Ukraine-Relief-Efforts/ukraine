@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
 import sheets from "../../lib/sheets";
-import Content from "../../components/content";
+import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
 
 export default function ForLargeOrganizations(props) {
@@ -55,12 +55,12 @@ export default function ForLargeOrganizations(props) {
                                 </li>
                             </ul>
                             <br />
-                            <div className="bg-textAccent-blue rounded-3xl block p-4 inline-block">
+                            <BlueInlineCallout>
                                 <p>
                                     We want to help you communicate this
                                     information.
                                 </p>
-                            </div>
+                            </BlueInlineCallout>
                         </div>
                         <div>
                             <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
@@ -165,7 +165,7 @@ export default function ForLargeOrganizations(props) {
                                 </ul>
                                 <br />
                                 <br />
-                                <div className="bg-textAccent-blue rounded-3xl block p-4">
+                                <BlueInlineCallout>
                                     <b>
                                         If you need help creating your donations
                                         page or translating it to English, our
@@ -173,6 +173,7 @@ export default function ForLargeOrganizations(props) {
                                     </b>{" "}
                                     Please fill out this form with as much
                                     detail as possible:
+                                    <br/>
                                     <a
                                         href="https://forms.gle/YYkY5PMh1vp8ThjcA"
                                         className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent"
@@ -187,7 +188,7 @@ export default function ForLargeOrganizations(props) {
                                     prioritize helping smaller fundraisers for
                                     on-the-ground groups, but we are happy to
                                     help you when we have the capacity!
-                                </div>
+                                </BlueInlineCallout>
                             </p>
                         </div>
                         <div>
