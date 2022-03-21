@@ -1,5 +1,6 @@
 import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
+import YellowInlineCallout from "../../components/yellowInlineCallout";
 import Link from "next/link";
 
 export default function ForReputationBackers(props) {
@@ -95,11 +96,13 @@ export default function ForReputationBackers(props) {
                                 worked on in the past
                             </li>
                         </ul>
-                        <b className="inline-block p-1 rounded-full bg-textAccent-yellow">
-                            Important: this communication should happen over
-                            secure channels like Signal or other methods using
-                            end to end encryption!
-                        </b>{" "}
+                        <YellowInlineCallout>
+                            <b>
+                                Important: this communication should happen over
+                                secure channels like Signal or other methods using
+                                end to end encryption!
+                            </b>{" "}
+                        </YellowInlineCallout>
                         <br />
                         <br />
                         <p>
@@ -176,19 +179,23 @@ export default function ForReputationBackers(props) {
                                 <ul className="ml-4 sm:ml-12">
                                     <li>
                                         &bull;{" "}
-                                        <b className="inline-block p-1 rounded-full bg-textAccent-yellow m-2">
-                                            Payment details MUST be included in
-                                            your post.
-                                        </b>{" "}
+                                        <YellowInlineCallout>
+                                            <b>
+                                                Payment details MUST be included in
+                                                your post.
+                                            </b>{" "}
+                                        </YellowInlineCallout>
                                         We are not hosting any payment details
                                         on <b>helpuanow.org!</b>
                                     </li>
                                     <li>
                                         &bull;{" "}
-                                        <b className="inline-block p-1 rounded-full bg-textAccent-yellow m-2">
-                                            The simpler the payment process, the
-                                            more likely people will contribute!{" "}
-                                        </b>{" "}
+                                        <YellowInlineCallout>
+                                            <b>
+                                                The simpler the payment process, the
+                                                more likely people will contribute!{" "}
+                                            </b>{" "}
+                                        </YellowInlineCallout>
                                         Consider PayPal, which just launched in
                                         Ukraine. If you ask for donations to
                                         Ukrainian cards, mention how someone can

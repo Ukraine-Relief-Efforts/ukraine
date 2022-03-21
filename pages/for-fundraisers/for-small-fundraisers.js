@@ -1,7 +1,7 @@
 import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
 import sheets from "../../lib/sheets";
-import Content from "../../components/content";
+import YellowInlineCallout from "../../components/yellowInlineCallout";
 import Link from "next/link";
 
 export default function ForSmallFundraisers(props) {
@@ -51,9 +51,9 @@ export default function ForSmallFundraisers(props) {
                         </p>
                         <p>
                             {" "}
-                            <span className="rounded-full bg-textAccent-yellow my-2 inline-block p-1">
+                            <YellowInlineCallout>
                                 The fundraisers should be hosted on:
-                            </span>
+                            </YellowInlineCallout>
                         </p>
                         <ul>
                             <li className="mt-2">
@@ -178,21 +178,21 @@ export default function ForSmallFundraisers(props) {
                                 accurate.
                                 <ul>
                                     <li className="ml-4">
-                                        <span className="rounded-full bg-textAccent-yellow m-2 inline-block p-1">
+                                        <YellowInlineCallout>
                                             &bull;
                                             <b>
                                                 Payment details MUST be included
                                                 in your post.
                                             </b>
-                                        </span>{" "}
+                                        </YellowInlineCallout>{" "}
                                         We are not hosting any payment details
                                         on <b>helpuanow.org!</b>
                                     </li>
                                     <li className="ml-4">
-                                        <span className="rounded-full bg-textAccent-yellow m-2 inline-block p-1">
+                                        <YellowInlineCallout>
                                             &bull;
                                             <b>Note on payment methods:</b>
-                                        </span>
+                                        </YellowInlineCallout>
                                         <br />
                                         If you can find someone with PayPal,
                                         Venmo, or Zelle who can accept donations
