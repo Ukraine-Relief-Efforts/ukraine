@@ -1,6 +1,7 @@
 import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
 import YellowInlineCallout from "../../components/yellowInlineCallout";
+import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
 
 export default function ForReputationBackers(props) {
@@ -212,7 +213,7 @@ export default function ForReputationBackers(props) {
                             </li>
                         </ul>
                         <br />
-                        <p className="bg-textAccent-blue rounded-3xl block p-4">
+                        <BlueInlineCallout>
                             <b>
                                 If you need help writing or translating this
                                 post to English, our volunteers can help
@@ -226,7 +227,7 @@ export default function ForReputationBackers(props) {
                             >
                                 https://forms.gle/YYkY5PMh1vp8ThjcA
                             </a>
-                        </p>
+                        </BlueInlineCallout>
                     </div>
                 </div>
             </div>

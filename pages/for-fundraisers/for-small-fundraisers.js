@@ -2,6 +2,7 @@ import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
 import sheets from "../../lib/sheets";
 import YellowInlineCallout from "../../components/yellowInlineCallout";
+import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
 
 export default function ForSmallFundraisers(props) {
@@ -211,7 +212,7 @@ export default function ForSmallFundraisers(props) {
                             </li>
                         </ul>
                         <br />
-                        <div className="bg-textAccent-blue rounded-3xl block p-4">
+                        <BlueInlineCallout>
                             <p>
                                 <b>
                                     If you need help writing or translating this
@@ -227,7 +228,7 @@ export default function ForSmallFundraisers(props) {
                                     https://forms.gle/YYkY5PMh1vp8ThjcA
                                 </a>
                             </p>
-                        </div>
+                        </BlueInlineCallout>
                     </div>
                     <div>
                         <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
@@ -255,7 +256,7 @@ export default function ForSmallFundraisers(props) {
                             media.
                         </p>
                         <br />
-                        <div className="bg-textAccent-blue rounded-3xl block p-4">
+                        <BlueInlineCallout>
                             <p>
                                 <b>
                                     <span className="text-red-700">!</span>{" "}
@@ -268,7 +269,7 @@ export default function ForSmallFundraisers(props) {
                                 If your organization is already featured, you
                                 cannot apply for another fundraiser.
                             </p>
-                        </div>
+                        </BlueInlineCallout>
                     </div>{" "}
                 </div>
             </Layout>
