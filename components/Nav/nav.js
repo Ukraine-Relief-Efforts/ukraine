@@ -1,6 +1,7 @@
 import Image from "next/image";
 import logo from '../../public/logo.png'
 import Link from "next/link"
+import { useRouter } from "next/router";
 
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -17,6 +18,8 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+  const router = useRouter()
+
   return (
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
@@ -62,8 +65,8 @@ export default function NavBar() {
                                     rounded-md 
                                     text-base md:text-lg 
                                     font-bold 
-                                    ${item.cta ? 
-                                        'text-uablue-default hover:text-uablue-accent' 
+                                    ${router.pathname === item.href ? 
+                                        'text-gray-800 hover:text-gray-800' 
                                         : 'text-gray-400 hover:text-gray-800'}`}
                             >
                                 {item.name}
@@ -85,8 +88,8 @@ export default function NavBar() {
                   href={item.href}
                   className={`
                     block px-3 py-2 rounded-md text-base font-bold
-                    ${item.cta ? 
-                        'text-uablue-default hover:text-uablue-accent' 
+                    ${router.pathname === item.href ? 
+                        'text-gray-800 hover:text-gray-800' 
                         :'text-gray-500 hover:text-gray-800'}`
                     }
                 >
