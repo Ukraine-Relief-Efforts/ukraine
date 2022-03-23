@@ -76,8 +76,8 @@ export default function NavBar() {
                                 className={`
                                     px-3 py-2 
                                     rounded-md 
-                                    text-base md:text-lg 
-                                    font-bold 
+                                    text-base md:text-lg md:leading-loose 
+                                    font-bold align-middle 
                                     ${router.pathname === item.href ? 
                                         'text-gray-800 hover:text-gray-800' 
                                         : 'text-gray-400 hover:text-gray-800'}`}
@@ -87,7 +87,7 @@ export default function NavBar() {
                         </Link>
                     ))}
                     <ul
-                        className="w-11/12 sm:w-1/4 flex list-none mt-3 mb-4 flex-row min-w-fit rounded-full box-border border-2 border-white bg-gray-200"
+                        className="flex list-none mb-4 flex-row min-w-fit rounded-full box-border border-2 border-white bg-gray-200"
                         role="tablist"
                     >
                     {[en_lang, ua_lang].map((lang) => {
