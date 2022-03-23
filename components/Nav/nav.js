@@ -24,7 +24,7 @@ export default function NavBar() {
   const { i18n } = useTranslation();
   let en_lang, ua_lang;
   [en_lang, ua_lang] = ["en", "ua"];
-  const [currentLanguage, setCurrentLanguage] = useState(en_lang);
+  const [currentLanguage, setCurrentLanguage] = useState(() => en_lang);
 
   function changeLanguage(e) {
     i18n.changeLanguage(e.target.value);
@@ -131,6 +131,30 @@ export default function NavBar() {
               ))}
             </div>
           </Disclosure.Panel>
+          <div className="sm:hidden max-w-full mx-auto">
+            <div className="mt-5 relative flex items-center justify-between h-16">
+                <ul
+                    className="flex list-none mb-4 flex-row min-w-fit rounded-full box-border border-2 border-white bg-gray-200"
+                    role="tablist"
+                >
+                {[en_lang, ua_lang].map((lang) => {
+                        return (
+                        <li
+                            key={lang}
+                            className="box-border mr-2 last:mr-0 flex-auto text-center rounded-full border-2 border-gray-200"
+                        >
+                          <button className={
+                                  "text-sm font-bold px-5 py-3 rounded-full " +
+                                  "block leading-normal uppercase " +
+                                  (currentLanguage === lang
+                                      ? "text-blue-600 bg-white"
+                                      : "text-black bg-gray-200")
+                              } onClick={changeLanguage} value={lang}>{lang}</button>
+                        </li>
+                    )})}
+                </ul>
+            </div>
+          </div>
         </>
       )}
     </Disclosure>
