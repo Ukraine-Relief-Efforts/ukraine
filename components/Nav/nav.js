@@ -2,9 +2,11 @@ import Image from "next/image";
 import logo from '../../public/logo.png'
 import Link from "next/link"
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import {useState} from "react";
 
 const navigation = [
   { name: 'Home', href: '/'},
@@ -19,6 +21,15 @@ function classNames(...classes) {
 
 export default function NavBar() {
   const router = useRouter()
+  const { i18n } = useTranslation();
+  let en_lang, ua_lang;
+  [en_lang, ua_lang] = ["en", "ua"];
+  const [currentLanguage, setCurrentLanguage] = useState(en_lang);
+
+  function changeLanguage(e) {
+    i18n.changeLanguage(e.target.value);
+    setCurrentLanguage(e.target.value);
+  }
 
   return (
     <Disclosure as="nav" className="bg-white">
@@ -43,11 +54,13 @@ export default function NavBar() {
                     href='/'
                     passHref
                   >
+                    <a>
                     <Image
                       className="block cursor-pointer"
                       src={logo}
                       alt='Help Ukraine Now'
                     />
+                    </a>
                   </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -73,6 +86,26 @@ export default function NavBar() {
                             </a>
                         </Link>
                     ))}
+                    <ul
+                        className="w-11/12 sm:w-1/4 flex list-none mt-3 mb-4 flex-row min-w-fit rounded-full box-border border-2 border-white bg-gray-200"
+                        role="tablist"
+                    >
+                    {[en_lang, ua_lang].map((lang) => {
+                            return (
+                            <li
+                                key={lang}
+                                className="box-border mr-2 last:mr-0 flex-auto text-center rounded-full border-2 border-gray-200"
+                            >
+                              <button className={
+                                      "text-sm font-bold px-5 py-3 rounded-full " +
+                                      "block leading-normal uppercase " +
+                                      (currentLanguage === lang
+                                          ? "text-blue-600 bg-white"
+                                          : "text-black bg-gray-200")
+                                  } onClick={changeLanguage} value={lang}>{lang}</button>
+                            </li>
+                        )})}
+                    </ul>
                   </div>
                 </div>
               </div>

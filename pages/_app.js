@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 import * as ga from '../lib/ga'
+import '../lib/i18n/config'
 import '../styles/globals.css'
 
 
