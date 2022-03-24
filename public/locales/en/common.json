@@ -1,19 +1,3 @@
 {
-  "about-us.hero-title": "About Us",
-  "about-us.hero-description": "We are a group of volunteers from all walks of life, united over a mission to save Ukrainian lives and support the wellbeing of people affected by the war.",
-  "about-us.description": "We’ve created this website to amplify volunteer-driven fundraisers for groups that do not have access to support from larger organizations. Since the beginning of the project, we’ve worked with over 30 people, including designers, developers, lawyers, cybersecurity specialists, and more, from Ukraine, the US, Canada, Netherland, and beyond. We now have a core group of 5-10 volunteers who support this project consistently. Anyone with the skills and capacity to help can join our efforts!",
-  "about-us.faq-heading": "Problems We Are Solving",
-  "about-us.onefaq.donation-impact": "Donation Impact",
-  "about-us.onefaq.donation-impact.section1": "While large organizations offer critical support to many groups in the US, their ability to promptly respond to the needs of small groups in different regions of Ukraine is limited. Donations to grassroots groups will help fulfill this gap.",
-  "about-us.onefaq.donation-impact.section2": "Even a small donation towards urgent aid needs will have a major impact on someone’s life and their chance to survive.",
-  "about-us.onefaq.donation-impact.section3": "No overhead; every dollar goes to help people in Ukraine.",
-  "about-us.onefaq.credibility": "Credibility",
-  "about-us.onefaq.credibility.section1": "Fundraisers typically demonstrate their credibility through extreme transparency (photo evidence of receipts, supplies purchase, delivery). This information cannot be made public in wartime.",
-  "about-us.onefaq.credibility.section2": "We help small fundraisers communicate their credibility without revealing sensitive information. All they need is someone with a credible social media reputation to vouch for their efforts. Read more:",
-  "about-us.onefaq.credibility.section2.link": "here",
-  "about-us.onefaq.language-barrier": "Language Barrier",
-  "about-us.onefaq.language-barrier.section1": "Organizations lack English descriptions on their donation pages, especially regarding how they will spend the money and evidence of past work, which makes their information less legitimate in the eyes of English speakers. We help with translation!",
-  "about-us.get-in-touch.heading": "Get in touch",
-  "about-us.get-in-touch.description": "Use this form to get in touch about joining our volunteer group, partnerships, and media coverage.",
-  "about-us.get-in-touch.contact-form": "Contact Form"
+  "about-us": "About Us"
 }

@@ -1,13 +1,13 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Link from "next/link";
 import Layout from "../components/layout";
 import OneFaq from "../components/SubPage/FAQ/OneFaq";
 import Hero from "../components/SubPage/Hero/hero";
 import Button from "../components/Button/button";
-import Link from "next/link";
 
 export default function AboutUs() {
-    const { t } = useTranslation('common')
+    const { t } = useTranslation('about-us')
     return (
         <Layout>
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
@@ -89,7 +89,7 @@ export default function AboutUs() {
                         <p>
                             {t('about-us.get-in-touch.description')}
                         </p>
-                        <br></br>
+                        <br/>
                         <div className="w-full sm:w-64">
                             <Button
                                 value={t('about-us.get-in-touch.contact-form')}
@@ -107,7 +107,7 @@ export default function AboutUs() {
 export async function getStaticProps({ locale }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['common'])),
+            ...(await serverSideTranslations(locale, ['about-us', 'common'])),
         },
     };
 }

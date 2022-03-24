@@ -1,8 +1,6 @@
-import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link"
 import { useRouter } from "next/router";
-import { useTranslation } from 'next-i18next';
 
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
@@ -15,21 +13,24 @@ const navigation = [
   { name: 'About Us', href: '/about-us'}
 ]
 
+// update translatedpath for each navigation as we add in translations
+const translatedpath = [
+  '/about-us'
+]
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function NavBar() {
   const router = useRouter()
-  const { i18n } = useTranslation('common');
   let en_lang, ua_lang;
   [en_lang, ua_lang] = ["en", "ua"];
-  const [currentLanguage, setCurrentLanguage] = useState(() => en_lang);
 
   function changeLanguage(e) {
     router.push(router.asPath, undefined, { locale: e.target.value, });
-    setCurrentLanguage(e.target.value);
   }
+  let showLanguageSwitcher = translatedpath.includes(router.pathname);
 
   return (
     <Disclosure as="nav" className="bg-white">
@@ -82,10 +83,11 @@ export default function NavBar() {
                                         'text-gray-800 hover:text-gray-800' 
                                         : 'text-gray-400 hover:text-gray-800'}`}
                             >
-                                {item.name}
+                              {item.name}
                             </a>
                         </Link>
                     ))}
+                    { showLanguageSwitcher &&
                     <ul
                         className="flex list-none mb-4 flex-row min-w-fit rounded-full box-border border-2 border-white bg-gray-200"
                         role="tablist"
@@ -106,6 +108,7 @@ export default function NavBar() {
                             </li>
                         )})}
                     </ul>
+                    }
                   </div>
                 </div>
               </div>
@@ -131,6 +134,7 @@ export default function NavBar() {
               ))}
             </div>
           </Disclosure.Panel>
+          { showLanguageSwitcher &&
           <div className="sm:hidden max-w-full mx-auto">
             <div className="mt-5 relative flex items-center justify-between h-16">
                 <ul
@@ -155,6 +159,7 @@ export default function NavBar() {
                 </ul>
             </div>
           </div>
+          }
         </>
       )}
     </Disclosure>
