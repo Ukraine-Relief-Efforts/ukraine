@@ -146,7 +146,7 @@ export default function NavBar() {
                           <button className={
                                   "text-sm font-bold px-5 py-3 rounded-full " +
                                   "block leading-normal uppercase " +
-                                  (currentLanguage === lang
+                                  (router.locale === lang
                                       ? "text-blue-600 bg-white"
                                       : "text-black bg-gray-200")
                               } onClick={changeLanguage} value={lang}>{lang}</button>
