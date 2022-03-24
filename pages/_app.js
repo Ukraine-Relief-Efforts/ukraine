@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { appWithTranslation } from 'next-i18next';
 
 import * as ga from '../lib/ga'
 import '../styles/globals.css'
@@ -23,4 +24,4 @@ function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)
