@@ -1,12 +1,12 @@
+import {useState} from "react";
 import Image from "next/image";
-import logo from '../../public/logo.png'
 import Link from "next/link"
 import { useRouter } from "next/router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'next-i18next';
 
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import {useState} from "react";
+import logo from '../../public/logo.png'
 
 const navigation = [
   { name: 'Home', href: '/'},
@@ -21,13 +21,13 @@ function classNames(...classes) {
 
 export default function NavBar() {
   const router = useRouter()
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation('common');
   let en_lang, ua_lang;
   [en_lang, ua_lang] = ["en", "ua"];
   const [currentLanguage, setCurrentLanguage] = useState(() => en_lang);
 
   function changeLanguage(e) {
-    i18n.changeLanguage(e.target.value);
+    router.push(router.asPath, undefined, { locale: e.target.value, });
     setCurrentLanguage(e.target.value);
   }
 
@@ -99,7 +99,7 @@ export default function NavBar() {
                               <button className={
                                       "text-sm font-bold px-5 py-3 rounded-full " +
                                       "block leading-normal uppercase " +
-                                      (currentLanguage === lang
+                                      (router.locale === lang
                                           ? "text-blue-600 bg-white"
                                           : "text-black bg-gray-200")
                                   } onClick={changeLanguage} value={lang}>{lang}</button>
@@ -159,4 +159,4 @@ export default function NavBar() {
       )}
     </Disclosure>
   )
-}
+};

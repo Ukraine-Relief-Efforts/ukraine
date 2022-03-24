@@ -1,4 +1,5 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from "../components/layout";
 import OneFaq from "../components/SubPage/FAQ/OneFaq";
 import Hero from "../components/SubPage/Hero/hero";
@@ -6,7 +7,7 @@ import Button from "../components/Button/button";
 import Link from "next/link";
 
 export default function AboutUs() {
-    const { t } = useTranslation()
+    const { t } = useTranslation('common')
     return (
         <Layout>
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
@@ -101,4 +102,12 @@ export default function AboutUs() {
             </div>
         </Layout>
     );
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    };
 }

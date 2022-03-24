@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import sheets from "../lib/sheets";
 import OrgCard from "../components/OrgCard";
 import OrgPage from "../components/OrgPage";
@@ -205,7 +206,7 @@ export default function Home(props) {
     );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
     const response = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.SHEET_ID,
         range: "Organizations (English)",
@@ -217,6 +218,7 @@ export async function getStaticProps() {
 
     return {
         props: {
+            ...(await serverSideTranslations(locale, ['common'])),
             title,
             rows,
         },
