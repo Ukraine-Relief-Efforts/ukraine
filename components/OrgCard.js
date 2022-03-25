@@ -30,7 +30,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
       : "";
 
   return (
-    <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-2xl shadow-2xl">
+    <div className="bg-[#F2F6FF] w-full mb-5 h-100 flex flex-col justify-between rounded-3xl shadow-2xl">
       <a
         onClick={open}
         className='cursor-pointer'
