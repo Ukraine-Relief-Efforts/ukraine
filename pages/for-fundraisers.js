@@ -31,8 +31,8 @@ export default function ForFundraisers(props) {
                         to the international community and convey that you are a
                         trustworthy and efficient coordinator of their funds.
                     </p>
-                    <div className="mt-16">
-                        <h1 className="text-2xl lg:text-4xl mb-2">
+                    <div className="mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             How to apply to get your fundraiser listed?
                         </h1>
                         <div className="mb-4 flex flex-row mt-10">
@@ -102,8 +102,8 @@ export default function ForFundraisers(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-24">
-                        <h1 className="text-2xl lg:text-4xl mb-2">
+                    <div className="mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             F.A.Q.
                         </h1>
                         <OneFaq title="Why do smaller fundraisers need to have a social media post to be featured?">
@@ -152,8 +152,8 @@ export default function ForFundraisers(props) {
                             </p>
                         </OneFaq>
                     </div>
-                    <div className="mt-24">
-                        <h1 className="text-2xl lg:text-4xl mb-6">
+                    <div className="mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             Receiving donations and choosing a payment method
                         </h1>
                         <h5 className="font-bold text-xl mb-4">
@@ -178,8 +178,8 @@ export default function ForFundraisers(props) {
                             fundraiser for Ukraine.
                         </p>
                     </div>
-                    <div className="mt-12">
-                        <h1 className="text-2xl lg:text-4xl mb-4">
+                    <div className="mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             Receiving money with a Ukrainian card
                         </h1>
                         <PaymentMethods
@@ -188,8 +188,8 @@ export default function ForFundraisers(props) {
                             ukraine={false}
                         />
                     </div>
-                    <div className="mt-12">
-                        <h1 className="text-2xl lg:text-4xl mb-4">
+                    <div className="mt-8">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             Using a trusted person to receive donations through
                             an international banking system
                         </h1>

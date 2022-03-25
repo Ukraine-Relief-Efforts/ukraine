@@ -12,6 +12,7 @@ export default function AboutUs() {
         <Layout>
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
                 <Hero
+
                     title={t('about-us.hero-title')}
                     description={t('about-us.hero-description')}
                 />
@@ -41,6 +42,7 @@ export default function AboutUs() {
                             <div className="flex flex-row items-center mb-4 gap-3">
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
+
                                     <p className="leading-tight">
                                         {t('about-us.onefaq.donation-impact.section3')}
                                     </p>
@@ -51,6 +53,7 @@ export default function AboutUs() {
                             <div className="flex flex-row items-center mb-4 gap-3">
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
+                               public in wartime.
                                     <p className="leading-tight">
                                         {t('about-us.onefaq.credibility.section1')}
                                     </p>
@@ -74,6 +77,7 @@ export default function AboutUs() {
                             <div className="flex flex-row items-center mb-4 gap-3">
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
+
                                     <p className="leading-tight">
                                         {t('about-us.onefaq.language-barrier.section1')}
                                     </p>
@@ -85,7 +89,17 @@ export default function AboutUs() {
                         <h1 className="text-2xl lg:text-4xl my-4">
                             {t('about-us.get-in-touch.heading')}
                         </h1>
-
+                        <p>
+                            Since the beginning of the project, we’ve worked
+                            with over 30 people, including designers,
+                            developers, lawyers, cybersecurity specialists, and
+                            more, from Ukraine, the US, Canada, Netherland, and
+                            beyond. We now have a core group of 5-10 volunteers
+                            who support this project consistently. Anyone with
+                            the skills and capacity to help can join our
+                            efforts!
+                        </p>
+                        <br />
                         <p>
                             {t('about-us.get-in-touch.description')}
                         </p>
