@@ -8,225 +8,95 @@ export default function ForReputationBackers(props) {
     return (
         <Layout>
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
-                <div className="mt-12">
+                <div className="mt-12 font-bold lg:pl-24">
                     <Link href="/for-fundraisers" passHref>
-                        <a>{"<"} Back</a>
+                        <a>{"<"} BACK</a>
                     </Link>
                 </div>
-                <Hero title="For Reputation Backers" description="" />
+                <Hero
+                    title="For Reputation Backers"
+                    description="Who are the reputation backers?"
+                    paragraph="Individuals with meaningful social media 
+                    presence who are willing to vouch for the emergency fundraiser 
+                    by Ukrainian volunteers. These could be local activists, 
+                    supporters abroad, political figures, industry professionals. 
+                    They have to be committed to doing additional due diligence 
+                    on the project and hosting a fundraiser post on their 
+                    social media platform."
+                />
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            Who are the reputation backers?
-                        </h1>
-                        <p>
-                            Individuals with meaningful social media presence
-                            who can verify their reputation and are willing to
-                            vouch for the emergency fundraiser by Ukrainian
-                            volunteers. This person could be a local activist,
-                            supporter abroad, political figure, industry
-                            professional. They have to be committed to doing
-                            additional due diligence on the project and hosting
-                            a fundraiser post on their social media platform.
-                        </p>
                         <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
                             Problem
                         </h1>
                         <p>
-                            There are many volunteers coordinating supplies and
-                            aid for Ukrainian civilians and military. They are
-                            in direct contact with local groups on the ground
+                            Ukrainian volunteers are a major force behind local
+                            aid collection, refugee support, evacuation efforts,
+                            and supply coordination for civilian defense units.
+                            They are in direct contact with people on the ground
                             and understand their immediate needs best.
                         </p>
                         <br />
                         <p>
-                            Often they cannot communicate transparently what
-                            amount of aid is needed, where the supplies will go,
-                            and what financial transactions took place.
-                            Sensitive information if made public can be used by
-                            enemy intelligence and result in ambushes putting
-                            both delivery volunteers and aid recipients in
-                            danger.
+                            When fundraising, they often cannot publicize
+                            detailed evidence of financial transactions, how
+                            many units of aid were purchased, or where it was
+                            delivered. If made public, enemy intelligence could
+                            use this information to organize ambushes,
+                            endangering delivery volunteers and aid recipients.
                         </p>
                         <br />
                         <p>
-                            For this reason volunteers have to rely on their
-                            close networks to secure the funds. Securing the
-                            funds from broader audiences means more supplies
-                            purchased faster and more people getting crucial
-                            help.
+                            While Help Ukraine Now displays information and
+                            photo evidence already shared on media, we
+                            understand the danger of asking for detailed
+                            reports. To help volunteers secure funds from
+                            broader audiences, we ask them to use a credible
+                            social media platform to host the fundraisers.
                         </p>
                         <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
                             Solution
                         </h1>
                         <p>
-                            You can help! As someone who shares a meaningful
-                            level of social media reputation, is willing to
-                            reveal your identity, and do the due diligence, you
-                            can ask for donations on behalf of a volunteer or
-                            the group they are aiding.
+                            If volunteers don’t have access to a credible social
+                            platform, a reputation backer could help. They
+                            should have a meaningful social media platform, be
+                            willing to reveal their identity and conduct
+                            additional due diligence of the volunteer efforts
+                            they are vouching for.
                         </p>
                         <br />
                         <p className="font-semibold">Forms of due diligence:</p>
                         <br />
                         <ul className="mx-4 sm:mx-12">
                             <li className="mb-2">
-                                👉 Ask for some evidence of connection to a
-                                specific battalion or local volunteer groups
+                                👉 Ask for their spending plan; question the
+                                credibility and readiness of their local
+                                suppliers and partners
                             </li>
                             <li className="mb-2">
-                                👉 Ask for receipts and photos of previous
-                                deliveries
+                                👉 Ask for the photo evidence and receipts that
+                                could verify previous volunteering efforts
                             </li>
                             <li className="mb-2">
-                                👉 Ask for a social media profiles
+                                👉 Ask for evidence of a connection to the
+                                beneficiary group they’re aiding
                             </li>
                             <li className="mb-2">
-                                👉 Ask people in the battalion/nonprofits to
-                                verify whether the payment details provided are
-                                accurate
+                                👉 Ask for social media profiles and personal
+                                contacts of key volunteers involved with the
+                                project
                             </li>
-                            <li className="mb-2">
+                            <li className="mb-4">
                                 👉 Reach out to any personal connections in
                                 common
                             </li>
-                            <li className="mb-2">
-                                👉 Have a private conversation over the phone:
-                                ask about the work they’re doing, how will they
-                                spend the funding, the initiatives they’ve
-                                worked on in the past
-                            </li>
                         </ul>
-                        <YellowInlineCallout>
-                            <b>
-                                Important: this communication should happen over
-                                secure channels like Signal or other methods using
-                                end to end encryption!
-                            </b>{" "}
-                        </YellowInlineCallout>
-                        <br />
-                        <br />
-                        <p>
-                            Once you have decided to share the fundraiser on
-                            your platform, make a post on your social media
-                            account. Double check that includes as much of the
-                            following information as possible
-                        </p>
-                        <br />
-                        <ul className="mx-4 sm:mx-12">
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>
-                                        Name of the organization / donation
-                                        request
-                                    </i>
-                                </b>
-                            </li>
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>Description</i>
-                                </b>
-                            </li>
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>
-                                        A few sentences on how the money will be
-                                        used for
-                                    </i>
-                                </b>{" "}
-                                <i>
-                                    (try to provide quantities whenever
-                                    possible)
-                                </i>
-                            </li>
-
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>Is anyone else backing this effort:</i>
-                                </b>{" "}
-                                <i>
-                                    Mention if the group you are representing is
-                                    affiliated with any larger organizations or
-                                    have been endorsed by famous individuals
-                                    (please include links to media evidence)
-                                </i>
-                            </li>
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>
-                                        Any other social media links that can
-                                        help donors better vet this donation
-                                        request
-                                    </i>
-                                </b>{" "}
-                                <i>
-                                    (links to previous fundraisers supported by
-                                    many people, links to social media posts
-                                    with photos of past donations, or other
-                                    evidence of their activity)
-                                </i>
-                            </li>
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>
-                                    <i>Payment method and details:</i>
-                                </b>
-                                <br />
-                                <ul className="ml-4 sm:ml-12">
-                                    <li>
-                                        &bull;{" "}
-                                        <YellowInlineCallout>
-                                            <b>
-                                                Payment details MUST be included in
-                                                your post.
-                                            </b>{" "}
-                                        </YellowInlineCallout>
-                                        We are not hosting any payment details
-                                        on <b>helpuanow.org!</b>
-                                    </li>
-                                    <li>
-                                        &bull;{" "}
-                                        <YellowInlineCallout>
-                                            <b>
-                                                The simpler the payment process, the
-                                                more likely people will contribute!{" "}
-                                            </b>{" "}
-                                        </YellowInlineCallout>
-                                        Consider PayPal, which just launched in
-                                        Ukraine. If you ask for donations to
-                                        Ukrainian cards, mention how someone can
-                                        make a transaction (Wise and SWIFT are
-                                        the most common options).
-                                    </li>
-                                </ul>
-                            </li>
-                            <li className="mb-2">
-                                👉{" "}
-                                <b>Contact information for big donations: </b>
-                                <br /> only add if applicable; please make sure
-                                it’s not someone on the frontlines.
-                            </li>
-                        </ul>
-                        <br />
                         <BlueInlineCallout>
-                            <b>
-                                If you need help writing or translating this
-                                post to English, our volunteers can help
-                            </b>{" "}
-                            Please fill out this form in Ukrainian:{" "}
-                            <a
-                                href="https://forms.gle/YYkY5PMh1vp8ThjcA"
-                                className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                https://forms.gle/YYkY5PMh1vp8ThjcA
-                            </a>
+                            <b>IMPORTANT❗️</b>
+                            This communication should happen over a secure
+                            platform like Signal or other private channels with
+                            end-to-end encryption.{" "}
                         </BlueInlineCallout>
                     </div>
                 </div>

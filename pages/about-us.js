@@ -10,25 +10,22 @@ export default function AboutUs() {
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
                 <Hero
                     title="About Us"
-                    description="We are a group of volunteers from all walks of life, united over a mission to save Ukrainian lives and support the wellbeing of people affected by the war.
-                    "
+                    description="We are a group of volunteers from all walks of life, 
+                    united over a mission to save Ukrainian lives and support the 
+                    wellbeing of people affected by the war."
                 />
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
                         <p>
-                            We’ve created this website to amplify
-                            volunteer-driven fundraisers for groups that do not
-                            have access to support from larger organizations.
-                            Since the beginning of the project, we’ve worked
-                            with over 30 people, including designers,
-                            developers, lawyers, cybersecurity specialists, and
-                            more, from Ukraine, the US, Canada, Netherland, and
-                            beyond. We now have a core group of 5-10 volunteers
-                            who support this project consistently. Anyone with
-                            the skills and capacity to help can join our
-                            efforts!
+                            We’ve created this website to amplify fundraisers by
+                            grassroots volunteer groups that do not have access
+                            to support from larger organizations. We prioritize
+                            helping vetted volunteers that have been actively
+                            coordinating aid and other forms of support to
+                            Ukrainian battalions, people in combat zones and
+                            refugees.
                         </p>
-                        <h1 className="text-2xl lg:text-4xl mb-2 mt-16">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
                             Problems We Are Solving
                         </h1>
                         <OneFaq title="Donation Impact">
@@ -61,7 +58,7 @@ export default function AboutUs() {
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
                                     <p className=" leading-tight">
-                                        No overhead; every dollar goes to help
+                                        No overhead – every dollar goes to help
                                         people in Ukraine.
                                     </p>
                                 </span>
@@ -72,11 +69,12 @@ export default function AboutUs() {
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
                                     <p className=" leading-tight">
-                                        Fundraisers typically demonstrate their
+                                        Typically, fundraisers demonstrate their
                                         credibility through extreme transparency
-                                        (photo evidence of receipts, supplies
-                                        purchase, delivery). This information
-                                        cannot be made public in wartime.
+                                        (financial statements, photo evidence of
+                                        receipts, supplies purchase, delivery).
+                                        Often this information cannot be made
+                                        public in wartime.
                                     </p>
                                 </span>
                             </div>
@@ -104,28 +102,37 @@ export default function AboutUs() {
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
                                     <p className=" leading-tight">
-                                        Organizations lack English descriptions
-                                        on their donation pages, especially
-                                        regarding how they will spend the money
-                                        and evidence of past work, which makes
-                                        their information less legitimate in the
-                                        eyes of English speakers. We help with
-                                        translation!
+                                        Donors want to know how their money will
+                                        be spent and see some evidence of past
+                                        volunteering activity. We help
+                                        grassroots groups formulate and
+                                        translate their fundraiser descriptions
+                                        in English.
                                     </p>
                                 </span>
                             </div>
                         </OneFaq>
                     </div>
                     <div className="mt-8">
-                        <h1 className="text-2xl lg:text-4xl my-4">
+                    <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             Get in touch
                         </h1>
-
+                        <p>
+                            Since the beginning of the project, we’ve worked
+                            with over 30 people, including designers,
+                            developers, lawyers, cybersecurity specialists, and
+                            more, from Ukraine, the US, Canada, Netherland, and
+                            beyond. We now have a core group of 5-10 volunteers
+                            who support this project consistently. Anyone with
+                            the skills and capacity to help can join our
+                            efforts!
+                        </p>
+                        <br />
                         <p>
                             Use this form to get in touch about joining our
                             volunteer group, partnerships, and media coverage.
                         </p>
-                        <br></br>
+                        <br />
                         <div className="w-full sm:w-64">
                             <Button
                                 value="Contact Form"
