@@ -173,6 +173,7 @@ export default function ForLargeOrganizations(props) {
                                     </b>{" "}
                                     Please fill out this form with as much
                                     detail as possible:
+                                    <br/>
                                     <a
                                         href="https://forms.gle/YYkY5PMh1vp8ThjcA"
                                         className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent"
