@@ -1,10 +1,14 @@
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from "../../components/layout";
 import Hero from "../../components/SubPage/Hero/hero";
-import YellowInlineCallout from "../../components/yellowInlineCallout";
 import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
+import Button from "../../components/Button/button";
 
 export default function ForReputationBackers(props) {
+    const { t } = useTranslation('for-reputation-backers')
+
     return (
         <Layout>
             <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
@@ -14,93 +18,80 @@ export default function ForReputationBackers(props) {
                     </Link>
                 </div>
                 <Hero
-                    title="For Reputation Backers"
-                    description="Who are the reputation backers?"
-                    paragraph="Individuals with meaningful social media 
-                    presence who are willing to vouch for the emergency fundraiser 
-                    by Ukrainian volunteers. These could be local activists, 
-                    supporters abroad, political figures, industry professionals. 
-                    They have to be committed to doing additional due diligence 
-                    on the project and hosting a fundraiser post on their 
-                    social media platform."
+                    title={t('for-reputation-backers.hero-title')}
+                    description={t('for-reputation-backers.hero-description')}
+                    paragraph={t('for-reputation-backers.hero-paragraph')}
                 />
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
                         <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
-                            Problem
+                            {t('for-reputation-backers.problem.heading')}
                         </h1>
                         <p>
-                            Ukrainian volunteers are a major force behind local
-                            aid collection, refugee support, evacuation efforts,
-                            and supply coordination for civilian defense units.
-                            They are in direct contact with people on the ground
-                            and understand their immediate needs best.
+                            {t('for-reputation-backers.problem.section1')}
                         </p>
                         <br />
                         <p>
-                            When fundraising, they often cannot publicize
-                            detailed evidence of financial transactions, how
-                            many units of aid were purchased, or where it was
-                            delivered. If made public, enemy intelligence could
-                            use this information to organize ambushes,
-                            endangering delivery volunteers and aid recipients.
+                            {t('for-reputation-backers.problem.section2')}
                         </p>
                         <br />
                         <p>
-                            While Help Ukraine Now displays information and
-                            photo evidence already shared on media, we
-                            understand the danger of asking for detailed
-                            reports. To help volunteers secure funds from
-                            broader audiences, we ask them to use a credible
-                            social media platform to host the fundraisers.
+                            {t('for-reputation-backers.problem.section3')}
                         </p>
                         <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
-                            Solution
+                            {t('for-reputation-backers.solution.heading')}
                         </h1>
                         <p>
-                            If volunteers don’t have access to a credible social
-                            platform, a reputation backer could help. They
-                            should have a meaningful social media platform, be
-                            willing to reveal their identity and conduct
-                            additional due diligence of the volunteer efforts
-                            they are vouching for.
+                            {t('for-reputation-backers.solution.section1')}
                         </p>
                         <br />
-                        <p className="font-semibold">Forms of due diligence:</p>
+                        <p className="font-semibold">{t('for-reputation-backers.forms.heading')}</p>
                         <br />
                         <ul className="mx-4 sm:mx-12">
                             <li className="mb-2">
-                                👉 Ask for their spending plan; question the
-                                credibility and readiness of their local
-                                suppliers and partners
+                                👉 {t('for-reputation-backers.forms.section1')}
                             </li>
                             <li className="mb-2">
-                                👉 Ask for the photo evidence and receipts that
-                                could verify previous volunteering efforts
+                                👉 {t('for-reputation-backers.forms.section2')}
                             </li>
                             <li className="mb-2">
-                                👉 Ask for evidence of a connection to the
-                                beneficiary group they’re aiding
+                                👉 {t('for-reputation-backers.forms.section3')}
                             </li>
                             <li className="mb-2">
-                                👉 Ask for social media profiles and personal
-                                contacts of key volunteers involved with the
-                                project
+                                👉 {t('for-reputation-backers.forms.section4')}
                             </li>
                             <li className="mb-4">
-                                👉 Reach out to any personal connections in
-                                common
+                                👉 {t('for-reputation-backers.forms.section5')}
                             </li>
                         </ul>
                         <BlueInlineCallout>
-                            <b>IMPORTANT❗️</b>
-                            This communication should happen over a secure
-                            platform like Signal or other private channels with
-                            end-to-end encryption.{" "}
+                            <b>{t('for-reputation-backers.forms.important')}❗️</b>
+                            {t('for-reputation-backers.forms.important-description')}{" "}
                         </BlueInlineCallout>
+                        <br/>
+                        <br/>
+                        <p>
+                            {t('for-reputation-backers.before-featuring')}
+                        </p>
+                        <br/>
+                        <div className="w-full sm:w-64">
+                            <Button
+                                value={t('for-reputation-backers.instructions-button')}
+                                href="/for-fundraisers/for-small-fundraisers"
+                                target="_blank"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
         </Layout>
     );
+}
+
+export async function getStaticProps({ locale }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['for-reputation-backers', 'common'])),
+        },
+    };
 }
