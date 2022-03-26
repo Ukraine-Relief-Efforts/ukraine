@@ -9,7 +9,7 @@ export default function PaymentOption(props) {
 
     return (
         <div>
-            <div className="flex flex-row mt-5">
+            <div className="flex flex-row mt-5 cursor-pointer">
                 <div className="w-7 shrink-0 mr-2">
                 {isActive ?
                     <Image src={arrow_down} alt="expanded" onClick={() => setActive(!isActive)}/> :

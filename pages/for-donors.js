@@ -21,7 +21,9 @@ export default function ForDonors() {
                         </p>
                     </div>
                     <div className="mt-16">
-                        <h1 className="text-2xl lg:text-4xl mb-2">F.A.Q.</h1>
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
+                            F.A.Q.
+                        </h1>
                         <OneFaq title="Why donate to small fundraisers?">
                             <p>
                                 Since Russia’s most recent invasion, friends and

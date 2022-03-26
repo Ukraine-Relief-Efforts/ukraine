@@ -9,9 +9,9 @@ export default function ForLargeOrganizations(props) {
         <div>
             <Layout>
                 <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
-                    <div className="mt-12">
+                    <div className="mt-12 font-bold lg:pl-24">
                         <Link href="/for-fundraisers" passHref>
-                            <a>{"<"} Back</a>
+                            <a>{"<"} BACK</a>
                         </Link>
                     </div>
                     <Hero title="For Bigger Organizations" description="" />

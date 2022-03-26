@@ -20,7 +20,7 @@ export default function Button ({onClick, value, href, target, icon}) {
             className="w-full cursor-pointer"
         >
             <div className="flex justify-center 
-                w-full py-3 rounded-2xl
+                w-full py-3 rounded-xl
                 bg-[#005BBC] text-white
                 hover:bg-[#1E429F]
                 focus:border-4 focus:border-[#1E429F]
