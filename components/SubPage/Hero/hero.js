@@ -9,6 +9,7 @@ export default function Hero(props) {
             <div className="font-light my-6 md:my-8 lg:my-10">
                 <p className="text-2xl md:text-3xl">{props.description}</p>
                 {props.paragraph && <p className="mt-4">{props.paragraph}</p>}
+                {props.paragraph2 && <p className="mt-4">{props.paragraph2}</p>}
             </div>
         </div>
     )

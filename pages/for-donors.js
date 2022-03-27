@@ -21,7 +21,7 @@ export default function ForDonors() {
                         </p>
                     </div>
                     <div className="mt-16">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8">
                             F.A.Q.
                         </h1>
                         <OneFaq title="Why donate to small fundraisers?">
@@ -77,21 +77,20 @@ export default function ForDonors() {
                                 <span>
                                     <p className=" leading-tight">
                                         <strong>Disclaimer: </strong>
-                                        We try to make it as easy as possible
-                                        for you to evaluate fundraisers, but you
-                                        are the final decision if yours. Before
-                                        donating, double-check the legitimacy of
-                                        the page hosting the fundraiser.
+                                        We are confident in fundraisers we have
+                                        vetted, but the final decision to donate
+                                        is yours. Before donating, double-check
+                                        the legitimacy of the social media page
+                                        hosting the fundraiser.
                                     </p>
                                 </span>
                             </div>
                         </OneFaq>
                         <OneFaq title="How to donate?">
                             <p>
-                                Each fundraiser page specifies payment methods
-                                available. Click “Donate Now” for payment
-                                information. We will never host payment
-                                information directly on our website.
+                                Click “Donate Now” for deposit information. We
+                                are not hosting payment information directly on
+                                our website at the moment.
                                 <br></br>
                                 <br></br>
                             </p>
