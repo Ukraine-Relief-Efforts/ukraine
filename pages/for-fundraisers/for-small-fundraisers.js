@@ -51,7 +51,7 @@ export default function ForSmallFundraisers(props) {
                                 {t('for-small-fundraisers.step1.section2.description')}
                             </li>
                         </ul>
-                        <div className="w-full sm:w-72 my-4">
+                        <div className="w-full sm:w-80 my-4">
                             <Button
                                 value={t('for-small-fundraisers.step1.guidelines-button')}
                                 href="https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit?usp=sharing"
@@ -126,7 +126,7 @@ export default function ForSmallFundraisers(props) {
                         <p>
                             {t('for-small-fundraisers.step3.description')}
                         </p>
-                        <div className="w-full sm:w-72 mt-4 mb-6">
+                        <div className="w-full sm:w-64 mt-4 mb-6">
                             <Button
                                 value={t('for-small-fundraisers.step3.button')}
                                 href="https://forms.gle/k7X5SMjTBovUpfqFA"

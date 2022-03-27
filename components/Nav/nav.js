@@ -16,6 +16,7 @@ const navigation = [
 // update translatedpath for each navigation as we add in translations
 const translatedpath = [
   '/about-us',
+  '/for-fundraisers',
   '/for-fundraisers/for-reputation-backers',
   '/for-fundraisers/for-small-fundraisers'
 ]
