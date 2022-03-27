@@ -19,7 +19,7 @@ export default function AboutUs() {
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
                         <p>{t('about-us.description')}</p>
-                        <h1 className="text-2xl lg:text-4xl mb-2 mt-16">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-12 text-uablue-default">
                             {t('about-us.faq-heading')}
                         </h1>
                         <OneFaq title={t('about-us.onefaq.donation-impact')}>
@@ -53,7 +53,6 @@ export default function AboutUs() {
                             <div className="flex flex-row items-center mb-4 gap-3">
                                 <span className="shrink-0 w-6">👉 </span>
                                 <span>
-                               public in wartime.
                                     <p className="leading-tight">
                                         {t('about-us.onefaq.credibility.section1')}
                                     </p>
@@ -86,22 +85,15 @@ export default function AboutUs() {
                         </OneFaq>
                     </div>
                     <div className="mt-8">
-                        <h1 className="text-2xl lg:text-4xl my-4">
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
                             {t('about-us.get-in-touch.heading')}
                         </h1>
                         <p>
-                            Since the beginning of the project, we’ve worked
-                            with over 30 people, including designers,
-                            developers, lawyers, cybersecurity specialists, and
-                            more, from Ukraine, the US, Canada, Netherland, and
-                            beyond. We now have a core group of 5-10 volunteers
-                            who support this project consistently. Anyone with
-                            the skills and capacity to help can join our
-                            efforts!
+                            {t('about-us.get-in-touch.description.section1')}
                         </p>
-                        <br />
+                        <br/>
                         <p>
-                            {t('about-us.get-in-touch.description')}
+                            {t('about-us.get-in-touch.description.section2')}
                         </p>
                         <br/>
                         <div className="w-full sm:w-64">

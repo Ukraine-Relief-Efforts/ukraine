@@ -1,78 +1,45 @@
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from "../components/layout";
 import Hero from "../components/SubPage/Hero/hero";
 import PaymentMethods from "../components/SubPage/PaymentMethods/paymentMethods";
 import Image from "next/image";
 import arrowDown from "../public/assets/icons/arrow_right.svg";
 import OneFaq from "../components/SubPage/FAQ/OneFaq";
-import Button from "../components/Button/button";
-import PaymentOption from "../components/SubPage/PaymentMethods/paymentOption";
 import sheets from "../lib/sheets";
 import Link from "next/link";
 
 export default function ForFundraisers(props) {
+    const { t } = useTranslation('for-fundraisers')
+
     return (
         <Layout>
             <div className="w-full md:w-5/6 lg:w-2/3 pb-16">
                 <Hero
-                    title="For Fundraisers"
-                    description="Helping to communicate your fundraising efforts and credibility to the international community."
+                    title={t('for-fundraisers.hero-title')}
+                    description={t('for-fundraisers.hero-description')}
+                    paragraph={t('for-fundraisers.hero-paragraph')}
+                    paragraph2={t('for-fundraisers.hero-paragraph2')}
                 />
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
-                    <p>
-                        Fundraisers and aid organizations of Ukraine, we are so
-                        grateful for the work you have been doing for the
-                        Ukrainian people. Our main goal is to help you get the
-                        necessary funds to supply essential humanitarian aid as
-                        well as medicine and protective gear for soldiers and
-                        volunteer battalions.
-                        <br></br>
-                        <br></br>
-                        We will do our best to help you communicate your efforts
-                        to the international community and convey that you are a
-                        trustworthy and efficient coordinator of their funds.
-                    </p>
                     <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            How to apply to get your fundraiser listed?
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4">
+                            {t('for-fundraisers.apply')}
                         </h1>
                         <div className="mb-4 flex flex-row mt-10">
                             <div className="w-7 shrink-0 mr-2">
                                 <Image src={arrowDown} alt="arrow down" />
                             </div>
                             <div className="w-100">
-                                <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                                    For Large Organizations
+                                <h4 className="text-2xl font-bold mb-4 text-uablue-default">
+                                    {t('for-fundraisers.apply.section1')}
                                 </h4>
                                 <p className="mb-4">
-                                    For established charities or non-profits
-                                    hosting emergency fundraisers to provide
-                                    immediate humanitarian relief to Ukrainians
-                                    on the ground.
-                                </p>
-                                <Link href="/for-fundraisers/for-large-organizations">
-                                    <a className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent">
-                                        Instructions for large fundraisers
-                                    </a>
-                                </Link>
-                            </div>
-                        </div>
-                        <hr className="mt-10"></hr>
-                        <div className="mb-4 flex flex-row mt-10">
-                            <div className="w-7 shrink-0 mr-2">
-                                <Image src={arrowDown} alt="arrow down" />
-                            </div>
-                            <div className="w-100">
-                                <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                                    For Small Fundraisers
-                                </h4>
-                                <p className="mb-4">
-                                    For volunteers organizing fundraisers for
-                                    emergency needs of civilian and military
-                                    groups.
+                                    {t('for-fundraisers.apply.section1.description')}
                                 </p>
                                 <Link href="/for-fundraisers/for-small-fundraisers">
-                                    <a className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4">
-                                        Instructions for volunteer fundraisers
+                                    <a className="font-medium text-lg text-uablue-default underline underline-offset-4 hover:text-uablue-accent">
+                                        {t('for-fundraisers.apply.section1.link')}
                                     </a>
                                 </Link>
                             </div>
@@ -83,119 +50,100 @@ export default function ForFundraisers(props) {
                                 <Image src={arrowDown} alt="arrow down" />
                             </div>
                             <div className="w-100">
-                                <h4 className="text-2xl font-bold text-uablue-default mb-4">
-                                    Vouching for Small Fundraisers
+                                <h4 className="text-2xl font-bold mb-4 text-uablue-default">
+                                    {t('for-fundraisers.apply.section2')}
                                 </h4>
                                 <p className="mb-4">
-                                    For individuals with an established and
-                                    meaningful social media presence who can
-                                    verify their reputation and are willing to
-                                    vouch for the emergency fundraiser by
-                                    Ukrainian volunteers.
+                                    {t('for-fundraisers.apply.section2.description')}
                                 </p>
                                 <Link href="/for-fundraisers/for-reputation-backers">
+                                    <a className=" font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4">
+                                        {t('for-fundraisers.apply.section2.link')}
+                                    </a>
+                                </Link>
+                            </div>
+                        </div>
+                        <hr className="mt-10"></hr>
+                        <div className="mb-4 flex flex-row mt-10">
+                            <div className="w-7 shrink-0 mr-2">
+                                <Image src={arrowDown} alt="arrow down" />
+                            </div>
+                            <div className="w-100">
+                                <h4 className="text-2xl font-bold mb-4 text-uablue-default">
+                                    {t('for-fundraisers.apply.section3')}
+                                </h4>
+                                <p className="mb-4">
+                                    {t('for-fundraisers.apply.section3.description')}
+                                </p>
+                                <Link href="/for-fundraisers/for-large-organizations">
                                     <a className="font-medium text-lg text-uablue-default hover:text-uablue-accent underline underline-offset-4">
-                                        Instructions for posting on a behalf of
-                                        the volunteer group
+                                        {t('for-fundraisers.apply.section3.link')}
                                     </a>
                                 </Link>
                             </div>
                         </div>
                     </div>
                     <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            F.A.Q.
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4">
+                            {t('for-fundraisers.faq')}
                         </h1>
-                        <OneFaq title="Why do smaller fundraisers need to have a social media post to be featured?">
+                        <OneFaq title={t('for-fundraisers.faq.section1')}>
                             <p>
-                                This will help donors evaluate the credibility
-                                of your fundraiser. When your donation request
-                                is on the official social media page of the
-                                organization you’re supporting, or a profile of
-                                a person with a well-established social
-                                reputation, it creates another space for
-                                supporters to learn about your efforts.
+                                {t('for-fundraisers.faq.section1.description')}
                             </p>
                         </OneFaq>
-                        <OneFaq title="Can our fundraiser get listed if we do not have access to a social media page with a meaningful following and engagement?">
+                        <OneFaq title={t('for-fundraisers.faq.section2')}>
                             <p>
-                                No. This criteria is an essential part of the
-                                vetting process for smaller fundraisers. Please
-                                reach out to any local activist, Ukrainian
-                                diaspora, political figure, or industry
-                                professional to vouch for you. Use this guide to
-                                explain what is needed from their side:{" "}
+                                {t('for-fundraisers.faq.section2.description')}{" "}
                                 <a
                                     className="underline text-uablue-default hover:text-uablue-accent"
                                     href="https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    Backing Reputation.
+                                    {t('for-fundraisers.faq.section2.link')}.
                                 </a>
                             </p>
                         </OneFaq>
-                        <OneFaq title="Where can I get help with translating my donations post to English?">
+                        <OneFaq title={t('for-fundraisers.faq.section3')}>
                             <p>
-                                We have volunteers happy to help create a
-                                fundraiser post in English with the information
-                                you provide. Please use this form to request
-                                help:{" "}
+                                {t('for-fundraisers.faq.section3.description')}{" "}
                                 <a
                                     className="underline text-uablue-default hover:text-uablue-accent"
                                     href="https://docs.google.com/forms/d/e/1FAIpQLSdgj1TpCypclrkZB9g5msGX2g6CqBQB8iiVJllDj_1Ne-QuzQ/viewform"
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    Request help with translation.
+                                    {t('for-fundraisers.faq.section3.link')}.
                                 </a>
                             </p>
                         </OneFaq>
                     </div>
                     <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            Receiving donations and choosing a payment method
+                        <h1 className="font-bold text-2xl lg:text-4xl mb-4">
+                            {t('for-fundraisers.payments')}
                         </h1>
-                        <h5 className="font-bold text-xl mb-4">
-                            Key Considerations
+                        <h5 className="font-bold text-2xl mb-4">
+                            {t('for-fundraisers.payments.section1')}
                         </h5>
                         <p className="mb-8">
-                            Speed of transactions, fund freezing policies, lack
-                            of censorship, safety
+                            {t('for-fundraisers.payments.section1.description')}
                         </p>
-                        <h5 className="font-bold text-xl mb-4">Important</h5>
+                        <h5 className="font-bold text-2xl mb-4">
+                            {t('for-fundraisers.payments.section2')}
+                        </h5>
                         <p className="mb-4">
-                            Before posting your payment details on social media,
-                            make sure the account is set up with two-factor
-                            authentication connected to a code-generating app.
+                            {t('for-fundraisers.payments.section2.description1')}
                         </p>
                         <p>
-                            Make sure you have checked with your bank before
-                            hosting a fundraiser. Excessive deposits might
-                            result in your card being frozen. If you’re using a
-                            Ukrainian bank (Monobank, PrivatBank), reach out to
-                            their online support and tell them you’re hosting a
-                            fundraiser for Ukraine.
+                            {t('for-fundraisers.payments.section2.description2')}
                         </p>
                     </div>
                     <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            Receiving money with a Ukrainian card
-                        </h1>
                         <PaymentMethods
                             titles={props.title}
                             rows={props.rows}
                             ukraine={false}
-                        />
-                    </div>
-                    <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            Using a trusted person to receive donations through
-                            an international banking system
-                        </h1>
-                        <PaymentMethods
-                            titles={props.title}
-                            rows={props.rows}
                         />
                     </div>
                 </div>
@@ -204,7 +152,7 @@ export default function ForFundraisers(props) {
     );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ locale }) {
     const response = await sheets.spreadsheets.values.get({
         spreadsheetId: process.env.SHEET_ID,
         range: "Payment Method",
@@ -215,6 +163,7 @@ export async function getStaticProps() {
         props: {
             title,
             rows,
+            ...(await serverSideTranslations(locale, ['for-fundraisers', 'common'])),
         },
     };
 }
