@@ -63,6 +63,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                 value="Donate Now"
                 href={donationLinks.trim()}
                 target="_blank"
+                isExternalLink
               />
             )}
           </div>

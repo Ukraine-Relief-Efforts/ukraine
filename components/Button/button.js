@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 /*
@@ -11,7 +10,7 @@ Props to parse (all optional)
 - icon: for leading icon of button 
 */
 
-export default function Button ({onClick, value, href, target, icon}) {
+export default function Button ({onClick, value, href, target, isExternalLink, icon}) {
     return (
         <a 
             {...(onClick != '' && {onClick})} 
@@ -36,6 +35,17 @@ export default function Button ({onClick, value, href, target, icon}) {
                     </div>
                 }
                 {value}
+                {isExternalLink &&
+                    <div className="w-3 ml-3 flex justify-center">
+                        <Image 
+                            src={'/assets/external_link.svg'}
+                            alt={'external link'}
+                            layout="intrinsic"
+                            height={18}
+                            width={18}
+                        />
+                    </div>
+                }
             </div>
         </a>
     )
