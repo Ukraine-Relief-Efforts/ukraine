@@ -129,7 +129,7 @@ export default function ForSmallFundraisers(props) {
                         <div className="w-full sm:w-64 mt-4 mb-6">
                             <Button
                                 value={t('for-small-fundraisers.step3.button')}
-                                href="https://forms.gle/k7X5SMjTBovUpfqFA"
+                                href="https://forms.gle/s16BXc87JrRwqSx59"
                                 target="_blank"
                             />
                         </div>
