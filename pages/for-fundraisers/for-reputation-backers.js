@@ -5,6 +5,7 @@ import Hero from "../../components/SubPage/Hero/hero";
 import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
 import Button from "../../components/Button/button";
+import ListItem from '../../components/List/listItem';
 
 export default function ForReputationBackers(props) {
     const { t } = useTranslation('for-reputation-backers')
@@ -47,23 +48,24 @@ export default function ForReputationBackers(props) {
                         <br />
                         <p className="font-semibold">{t('for-reputation-backers.forms.heading')}</p>
                         <br />
-                        <ul className="mx-4 sm:mx-12">
-                            <li className="mb-2">
-                                👉 {t('for-reputation-backers.forms.section1')}
-                            </li>
-                            <li className="mb-2">
-                                👉 {t('for-reputation-backers.forms.section2')}
-                            </li>
-                            <li className="mb-2">
-                                👉 {t('for-reputation-backers.forms.section3')}
-                            </li>
-                            <li className="mb-2">
-                                👉 {t('for-reputation-backers.forms.section4')}
-                            </li>
-                            <li className="mb-4">
-                                👉 {t('for-reputation-backers.forms.section5')}
-                            </li>
+                        <ul className="mx-4 sm:mx-8">
+                            <ListItem>
+                                {t('for-reputation-backers.forms.section1')}
+                            </ListItem>
+                            <ListItem>
+                                {t('for-reputation-backers.forms.section2')}
+                            </ListItem>
+                            <ListItem>
+                                {t('for-reputation-backers.forms.section3')}
+                            </ListItem>
+                            <ListItem>
+                                {t('for-reputation-backers.forms.section4')}
+                            </ListItem>
+                            <ListItem>
+                                {t('for-reputation-backers.forms.section5')}
+                            </ListItem>
                         </ul>
+                        <br />
                         <BlueInlineCallout>
                             <b>{t('for-reputation-backers.forms.important')}❗️</b>
                             {t('for-reputation-backers.forms.important-description')}{" "}
