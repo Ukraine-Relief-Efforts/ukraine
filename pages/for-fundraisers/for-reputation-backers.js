@@ -48,7 +48,7 @@ export default function ForReputationBackers(props) {
                         <br />
                         <p className="font-semibold">{t('for-reputation-backers.forms.heading')}</p>
                         <br />
-                        <ul className="mx-4 sm:mx-12">
+                        <ul className="mx-4 sm:mx-8">
                             <ListItem>
                                 {t('for-reputation-backers.forms.section1')}
                             </ListItem>
@@ -65,6 +65,7 @@ export default function ForReputationBackers(props) {
                                 {t('for-reputation-backers.forms.section5')}
                             </ListItem>
                         </ul>
+                        <br />
                         <BlueInlineCallout>
                             <b>{t('for-reputation-backers.forms.important')}❗️</b>
                             {t('for-reputation-backers.forms.important-description')}{" "}
