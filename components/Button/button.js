@@ -31,6 +31,7 @@ export default function Button ({onClick, value, href, target, isExternalLink, i
                             src={icon}
                             alt={value}
                             layout="intrinsic"
+                            loading="lazy"
                         />
                     </div>
                 }
@@ -43,6 +44,7 @@ export default function Button ({onClick, value, href, target, isExternalLink, i
                             layout="intrinsic"
                             height={18}
                             width={18}
+                            loading="lazy"
                         />
                     </div>
                 }

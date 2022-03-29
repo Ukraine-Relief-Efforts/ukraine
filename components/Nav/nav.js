@@ -86,11 +86,12 @@ export default function NavBar() {
                     passHref
                   >
                     <a>
-                    <Image
-                      className="block cursor-pointer"
-                      src={logo}
-                      alt='Help Ukraine Now'
-                    />
+                        <Image
+                        className="block cursor-pointer"
+                        src={logo}
+                        alt='Help Ukraine Now'
+                        loading="lazy"
+                        />
                     </a>
                   </Link>
                 </div>

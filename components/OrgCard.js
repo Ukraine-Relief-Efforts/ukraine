@@ -44,6 +44,7 @@ function OrgCard({ titles, values, orgIndex, open }) {
               objectFit="cover"
               objectPosition={'center','center'}
               className='rounded-t-2xl'
+              loading="lazy"
             />
             {/* <div className='absolute left-4 top-4 float-left'>
               <Badge value={cause} />
