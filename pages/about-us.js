@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import OneFaq from "../components/SubPage/FAQ/OneFaq";
 import Hero from "../components/SubPage/Hero/hero";
 import Button from "../components/Button/button";
+import ListItem from '../components/List/listItem';
 
 export default function AboutUs() {
     const { t } = useTranslation('about-us')
@@ -23,86 +24,47 @@ export default function AboutUs() {
                             {t('about-us.faq-heading')}
                         </h1>
                         <OneFaq title={t('about-us.onefaq.donation-impact')}>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className="leading-tight">
-                                        {t('about-us.onefaq.donation-impact.section1')}
-                                    </p>
-                                </span>
-                            </div>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className="leading-tight">
-                                        {t('about-us.onefaq.donation-impact.section2')}
-                                    </p>
-                                </span>
-                            </div>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-
-                                    <p className="leading-tight">
-                                        {t('about-us.onefaq.donation-impact.section3')}
-                                    </p>
-                                </span>
-                            </div>
+                            <ul>
+                                <ListItem>{t('about-us.onefaq.donation-impact.section1')}</ListItem>
+                                <ListItem>{t('about-us.onefaq.donation-impact.section2')}</ListItem>
+                                <ListItem>{t('about-us.onefaq.donation-impact.section3')}</ListItem>
+                            </ul>                                                        
                         </OneFaq>
                         <OneFaq title={t('about-us.onefaq.credibility')}>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className="leading-tight">
-                                        {t('about-us.onefaq.credibility.section1')}
-                                    </p>
-                                </span>
-                            </div>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className="leading-tight">
-                                        {t('about-us.onefaq.credibility.section2')}{" "}
-                                        <Link href="/for-fundraisers/for-reputation-backers">
-                                            <a className="font-medium text-uablue-default underline underline-offset-4 hover:text-uablue-accent">
-                                                {t('about-us.onefaq.credibility.section2.link')}
-                                            </a>
-                                        </Link>
-                                    </p>
-                                </span>
-                            </div>
+                            <ul>
+                                <ListItem>{t('about-us.onefaq.credibility.section1')}</ListItem>
+                                <ListItem>
+                                    {t('about-us.onefaq.credibility.section2')}{" "}
+                                    <Link href="/for-fundraisers/for-reputation-backers">
+                                        <a className="font-medium text-uablue-default underline underline-offset-4 hover:text-uablue-accent">
+                                            {t('about-us.onefaq.credibility.section2.link')}
+                                        </a>
+                                    </Link>
+                                </ListItem>
+                            </ul>                                                        
                         </OneFaq>
                         <OneFaq title={t('about-us.onefaq.language-barrier')}>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-
-                                    <p className="leading-tight">
-                                        {t('about-us.onefaq.language-barrier.section1')}
-                                    </p>
-                                </span>
+                            <ul>
+                                <ListItem>{t('about-us.onefaq.language-barrier.section1')}</ListItem>
+                            </ul>                            
+                        </OneFaq>
+                        <OneFaq title={t('about-us.get-in-touch.heading')}>
+                            <p>
+                                {t('about-us.get-in-touch.description.section1')}
+                            </p>
+                            <br/>
+                            <p>
+                                {t('about-us.get-in-touch.description.section2')}
+                            </p>
+                            <br/>
+                            <div className="w-full sm:w-64">
+                                <Button
+                                    value={t('about-us.get-in-touch.contact-form')}
+                                    href="https://forms.gle/fENMLtLzqAxE3fwm6"
+                                    target="_blank"
+                                />
                             </div>
                         </OneFaq>
-                    </div>
-                    <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            {t('about-us.get-in-touch.heading')}
-                        </h1>
-                        <p>
-                            {t('about-us.get-in-touch.description.section1')}
-                        </p>
-                        <br/>
-                        <p>
-                            {t('about-us.get-in-touch.description.section2')}
-                        </p>
-                        <br/>
-                        <div className="w-full sm:w-64">
-                            <Button
-                                value={t('about-us.get-in-touch.contact-form')}
-                                href="https://forms.gle/fENMLtLzqAxE3fwm6"
-                                target="_blank"
-                            />
-                        </div>
                     </div>
                 </div>
             </div>
