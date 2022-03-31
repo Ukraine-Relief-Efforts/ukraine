@@ -20,17 +20,17 @@ export default function AboutUs() {
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
                     <div className="mt-8">
                         <p>{t('about-us.description')}</p>
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-12 text-uablue-default">
+                        <h1 className="font-bold text-4xl lg:text-4xl mb-4 mt-12 text-uablue-default">
                             {t('about-us.faq-heading')}
                         </h1>
-                        <OneFaq title={t('about-us.onefaq.donation-impact')}>
+                        <OneFaq title={t('about-us.onefaq.donation-impact')} titleBlack>
                             <ul>
                                 <ListItem>{t('about-us.onefaq.donation-impact.section1')}</ListItem>
                                 <ListItem>{t('about-us.onefaq.donation-impact.section2')}</ListItem>
                                 <ListItem>{t('about-us.onefaq.donation-impact.section3')}</ListItem>
                             </ul>                                                        
                         </OneFaq>
-                        <OneFaq title={t('about-us.onefaq.credibility')}>
+                        <OneFaq title={t('about-us.onefaq.credibility')} titleBlack>
                             <ul>
                                 <ListItem>{t('about-us.onefaq.credibility.section1')}</ListItem>
                                 <ListItem>
@@ -43,7 +43,7 @@ export default function AboutUs() {
                                 </ListItem>
                             </ul>                                                        
                         </OneFaq>
-                        <OneFaq title={t('about-us.onefaq.language-barrier')}>
+                        <OneFaq title={t('about-us.onefaq.language-barrier')} titleBlack>
                             <ul>
                                 <ListItem>{t('about-us.onefaq.language-barrier.section1')}</ListItem>
                             </ul>                            
