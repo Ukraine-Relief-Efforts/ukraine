@@ -4,6 +4,7 @@ import sheets from "../../lib/sheets";
 import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
 import Button from "../../components/Button/button";
+import ListItem from "../../components/List/listItem";
 
 export default function ForLargeOrganizations(props) {
     return (
@@ -32,18 +33,18 @@ export default function ForLargeOrganizations(props) {
                                 </b>
                             </p>
                             <ul>
-                                <li className="mt-2">
-                                    👉 Not knowing what the money will be spent
+                                <ListItem>
+                                    Not knowing what the money will be spent
                                     on
-                                </li>
-                                <li className="mt-2">
-                                    👉 Not understanding Ukrainian descriptions
+                                </ListItem>
+                                <ListItem>
+                                    Not understanding Ukrainian descriptions
                                     on the donations page
-                                </li>
-                                <li className="mt-2">
-                                    👉 Not knowing who to contact when
+                                </ListItem>
+                                <ListItem>
+                                    Not knowing who to contact when
                                     considering large donations
-                                </li>
+                                </ListItem>
                             </ul>
                             <br />
                             <BlueInlineCallout>
@@ -81,8 +82,7 @@ export default function ForLargeOrganizations(props) {
                                 <br />
                                 <br />
                                 <ul>
-                                    <li className="mt-2">
-                                        👉{" "}
+                                    <ListItem>
                                         <b>
                                             A brief description of your
                                             organization in English
@@ -90,23 +90,20 @@ export default function ForLargeOrganizations(props) {
                                         <br /> Include any relevant background,
                                         major institutional backers, and past
                                         accomplishments.
-                                    </li>
-                                    <li className="mt-2">
-                                        👉{" "}
+                                    </ListItem>
+                                    <ListItem>
                                         <b>
                                             Explanation of how the money will be
                                             used
                                         </b>
-                                    </li>
-                                    <li className="mt-2">
-                                        👉{" "}
+                                    </ListItem>
+                                    <ListItem>
                                         <b>
                                             How much approximately you are
                                             trying to raise
                                         </b>
-                                    </li>
-                                    <li className="mt-2">
-                                        👉{" "}
+                                    </ListItem>
+                                    <ListItem>
                                         <b>
                                             Any social media links that can help
                                             donors better vet this donation
@@ -120,9 +117,8 @@ export default function ForLargeOrganizations(props) {
                                         influential individuals, institutions,
                                         or media; or other evidence of you past
                                         efforts.
-                                    </li>
-                                    <li className="mt-2">
-                                        👉{" "}
+                                    </ListItem>
+                                    <ListItem>
                                         <b>
                                             Payment method and deposit details:
                                         </b>
@@ -135,15 +131,15 @@ export default function ForLargeOrganizations(props) {
                                         transaction option alongside SWIFT when
                                         hosting the fundraiser with a Ukrainian
                                         card.
-                                    </li>
-                                    <li className="mt-2">
-                                        👉 <b>Contact for big donations</b>
+                                    </ListItem>
+                                    <ListItem>
+                                        <b>Contact for big donations</b>
                                         <br />
                                         Preferablly share a contact of someone
                                         in your organization who speaks English.
                                         Please make sure it’s not a person in an
                                         active combat zone.{" "}
-                                    </li>
+                                    </ListItem>
                                 </ul>
                             </p>
                         </div>

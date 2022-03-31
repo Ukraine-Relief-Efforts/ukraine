@@ -3,6 +3,7 @@ import OneFaq from "../components/SubPage/FAQ/OneFaq";
 import Hero from "../components/SubPage/Hero/hero";
 import Link from "next/link";
 import Button from "../components/Button/button";
+import ListItem from "../components/List/listItem";
 
 export default function ForDonors() {
     return (
@@ -12,14 +13,12 @@ export default function ForDonors() {
                     title="For donors"
                     description="Helping you meaningfully support grassroots fundraising efforts for Ukraine."
                 />
+                <p>
+                    This project was created to find, evaluate and
+                    amplify credible fundraisers organized by Ukrainian
+                    volunteers.
+                </p>
                 <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
-                    <div className="mt-8">
-                        <p>
-                            This project was created to find, evaluate and
-                            amplify credible fundraisers organized by Ukrainian
-                            volunteers.
-                        </p>
-                    </div>
                     <div className="mt-16">
                         <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8">
                             F.A.Q.
@@ -72,50 +71,38 @@ export default function ForDonors() {
                                     our vetting process.
                                 </li>
                             </ul>
-                            <div className="flex flex-row items-center mb-4 mt-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className=" leading-tight">
-                                        <strong>Disclaimer: </strong>
-                                        We are confident in fundraisers we have
-                                        vetted, but the final decision to donate
-                                        is yours. Before donating, double-check
-                                        the legitimacy of the social media page
-                                        hosting the fundraiser.
-                                    </p>
-                                </span>
-                            </div>
+                            <ul>
+                                <ListItem>                                    
+                                    <strong>Disclaimer: </strong>
+                                    We are confident in fundraisers we have
+                                    vetted, but the final decision to donate
+                                    is yours. Before donating, double-check
+                                    the legitimacy of the social media page
+                                    hosting the fundraiser.                           
+                                </ListItem>
+                            </ul>                                
                         </OneFaq>
                         <OneFaq title="How to donate?">
                             <p>
                                 Click “Donate Now” for deposit information. We
                                 are not hosting payment information directly on
-                                our website at the moment.
-                                <br></br>
-                                <br></br>
+                                our website at the moment.                                
                             </p>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className=" leading-tight">
-                                        <strong>
-                                            Donating to a Ukrainian card:
-                                        </strong>{" "}
-                                        Wise, SWIFT, Western Union
-                                    </p>
-                                </span>
-                            </div>
-                            <div className="flex flex-row items-center mb-4 gap-3">
-                                <span className="shrink-0 w-6">👉 </span>
-                                <span>
-                                    <p className=" leading-tight">
-                                        <strong>
-                                            Donating to a US-based account:
-                                        </strong>{" "}
-                                        Venmo, Paypal, Zelle, Revolut, CashApp
-                                    </p>
-                                </span>
-                            </div>
+                            <ul>
+                                <ListItem>
+                                    <strong>
+                                        Donating to a Ukrainian card:
+                                    </strong>{" "}
+                                    Wise, SWIFT, Western Union
+                                </ListItem>
+                                <ListItem>
+                                    <strong>
+                                        Donating to a US-based account:
+                                    </strong>{" "}
+                                    Venmo, Paypal, Zelle, Revolut, CashApp
+                                </ListItem>
+                            </ul>
+                            <br />
                             <div className="w-full sm:w-64">
                                 <Button
                                     value="See All Fundraisers"

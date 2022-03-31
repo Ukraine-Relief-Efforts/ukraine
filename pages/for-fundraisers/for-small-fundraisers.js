@@ -6,6 +6,7 @@ import sheets from "../../lib/sheets";
 import BlueInlineCallout from "../../components/blueInlineCallout";
 import Link from "next/link";
 import Button from "../../components/Button/button";
+import ListItem from '../../components/List/listItem';
 
 export default function ForSmallFundraisers(props) {
     const { t } = useTranslation('for-small-fundraisers')
@@ -34,22 +35,20 @@ export default function ForSmallFundraisers(props) {
                         </p>
 
                         <ul>
-                            <li className="mt-4">
-                                👉{" "}
+                            <ListItem>
                                 <b>
                                     {t('for-small-fundraisers.step1.section1')}
                                 </b>
                                 <br />
                                 {t('for-small-fundraisers.step1.section1.description')}
-                            </li>
-                            <li className="mt-4">
-                                👉{" "}
+                            </ListItem>
+                            <ListItem>
                                 <b>
                                     {t('for-small-fundraisers.step1.section2')}
                                 </b>
                                 <br />
                                 {t('for-small-fundraisers.step1.section2.description')}
-                            </li>
+                            </ListItem>
                         </ul>
                         <div className="w-full sm:w-80 my-4">
                             <Button
@@ -67,34 +66,30 @@ export default function ForSmallFundraisers(props) {
                             {t('for-small-fundraisers.step2.description')}
                         </p>
                         <ul>
-                            <li className="mt-4">
-                                👉{" "}
+                            <ListItem>
                                 <b>{t('for-small-fundraisers.step2.section1')}</b>
-                            </li>
-                            <li className="mt-4">
-                                👉{" "}
+                            </ListItem>
+                            <ListItem>
                                 <b>
                                     {t('for-small-fundraisers.step2.section2')}
                                 </b>
-                            </li>
-                            <li className="mt-4">
-                                👉{" "}
+                            </ListItem>
+                            <ListItem>
                                 <b>
                                     {t('for-small-fundraisers.step2.section3')}
                                 </b>
                                 <br />
                                 {t('for-small-fundraisers.step2.section3.description')}
-                            </li>
-                            <li className="mt-4">
-                                👉{" "}
+                            </ListItem>
+                            <ListItem>
                                 <b>
                                     {t('for-small-fundraisers.step2.section4')}
                                 </b>
                                 <br />
                                 {t('for-small-fundraisers.step2.section4.description')}
-                            </li>
-                            <li className="mt-4">
-                                👉 <b>{t('for-small-fundraisers.step2.section5')}</b>
+                            </ListItem>
+                            <ListItem>
+                                <b>{t('for-small-fundraisers.step2.section5')}</b>
                                 <br />
                                 {t('for-small-fundraisers.step2.section5.description1')}
                                 <br />
@@ -105,12 +100,12 @@ export default function ForSmallFundraisers(props) {
                                 <br />
                                 <b>{t('for-small-fundraisers.step2.section5.description4')}</b> 
                                 {t('for-small-fundraisers.step2.section5.description5')}
-                            </li>
-                            <li className="mt-4">
-                                👉 <b>{t('for-small-fundraisers.step2.section6')}</b>
+                            </ListItem>
+                            <ListItem>
+                                <b>{t('for-small-fundraisers.step2.section6')}</b>
                                 <br />
                                 {t('for-small-fundraisers.step2.section6.description')}
-                            </li>
+                            </ListItem>
                         </ul>
                         <br />
                         <BlueInlineCallout>

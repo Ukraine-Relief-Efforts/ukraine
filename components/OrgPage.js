@@ -38,6 +38,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
           }
           alt="Organization Logo"
           className=" w-full h-full object-cover object-center"
+          loading="lazy"
         />
       </div>
       {showFrontPageLink && (
@@ -85,6 +86,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                   alt="instagram"
                   height="28px"
                   width="28px"
+                  loading="lazy"
                 ></Image>
               </a>
             )}
@@ -95,6 +97,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                   alt={facebook}
                   height="28px"
                   width="28px"
+                  loading="lazy"
                 ></Image>
               </a>
             )}
@@ -105,6 +108,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
                   alt="twitter"
                   height="28px"
                   width="28px"
+                  loading="lazy"
                 ></Image>
               </a>
             )}
