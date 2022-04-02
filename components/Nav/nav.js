@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import logo from '../../public/logo.png'
+import logo from '../../public/logo-helpuanow2x.png'
 
 const navigation = [
   { name: 'Home', href: '/'},
