@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Layout from "../../components/layout";
@@ -12,130 +13,134 @@ export default function ForSmallFundraisers(props) {
     const { t } = useTranslation('for-small-fundraisers')
 
     return (
-        <div>
-            <Layout>
-                <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
-                    <div className="mt-12 font-bold lg:pl-24">
-                        <Link href="/for-fundraisers" passHref>
-                            <a>{"<"} BACK</a>
-                        </Link>
-                    </div>
-                    <Hero
-                        title={t('for-small-fundraisers.hero-title')}
-                        description={t('for-small-fundraisers.hero-description')}
-                    />
-                </div>
-                <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
-                    <div className="mt-8">
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
-                            {t('for-small-fundraisers.step1')}
-                        </h1>
-                        <p>
-                            {t('for-small-fundraisers.step1.description')}
-                        </p>
+      <div>
+        <Head>
+          <title>For Small Fundraisers | Help UA Now</title>
+          <meta
+            name="description"
+            content="Application guide for local volunteer groups supporting Ukrainians in need."
+          />
+          <meta
+            property="og:title"
+            content="For Small Fundraisers | Help UA Now"
+          />
+          <meta
+            property="og:description"
+            content="Help your fundraiser reach a wider international audience. We onboard and verify civilian lead fundraisers in Ukraine, connecting them to donors"
+          />
+          <meta
+            property="og:url"
+            content="https://www.helpuanow.org/for-fundraisers/for-small-fundraisers"
+          />
+          <meta property="og:type" content="website" />
+        </Head>
+        <Layout>
+          <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
+            <div className="mt-12 font-bold lg:pl-24">
+              <Link href="/for-fundraisers" passHref>
+                <a>{"<"} BACK</a>
+              </Link>
+            </div>
+            <Hero
+              title={t("for-small-fundraisers.hero-title")}
+              description={t("for-small-fundraisers.hero-description")}
+            />
+          </div>
+          <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
+            <div className="mt-8">
+              <h1 className="font-bold text-2xl lg:text-4xl mb-4 text-uablue-default">
+                {t("for-small-fundraisers.step1")}
+              </h1>
+              <p>{t("for-small-fundraisers.step1.description")}</p>
 
-                        <ul>
-                            <ListItem>
-                                <b>
-                                    {t('for-small-fundraisers.step1.section1')}
-                                </b>
-                                <br />
-                                {t('for-small-fundraisers.step1.section1.description')}
-                            </ListItem>
-                            <ListItem>
-                                <b>
-                                    {t('for-small-fundraisers.step1.section2')}
-                                </b>
-                                <br />
-                                {t('for-small-fundraisers.step1.section2.description')}
-                            </ListItem>
-                        </ul>
-                        <div className="w-full sm:w-80 my-4">
-                            <Button
-                                value={t('for-small-fundraisers.step1.guidelines-button')}
-                                href="https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit?usp=sharing"
-                                target="_blank"
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
-                            {t('for-small-fundraisers.step2')}
-                        </h1>
-                        <p>
-                            {t('for-small-fundraisers.step2.description')}
-                        </p>
-                        <ul>
-                            <ListItem>
-                                <b>{t('for-small-fundraisers.step2.section1')}</b>
-                            </ListItem>
-                            <ListItem>
-                                <b>
-                                    {t('for-small-fundraisers.step2.section2')}
-                                </b>
-                            </ListItem>
-                            <ListItem>
-                                <b>
-                                    {t('for-small-fundraisers.step2.section3')}
-                                </b>
-                                <br />
-                                {t('for-small-fundraisers.step2.section3.description')}
-                            </ListItem>
-                            <ListItem>
-                                <b>
-                                    {t('for-small-fundraisers.step2.section4')}
-                                </b>
-                                <br />
-                                {t('for-small-fundraisers.step2.section4.description')}
-                            </ListItem>
-                            <ListItem>
-                                <b>{t('for-small-fundraisers.step2.section5')}</b>
-                                <br />
-                                {t('for-small-fundraisers.step2.section5.description1')}
-                                <br />
-                                <b>
-                                    {t('for-small-fundraisers.step2.section5.description2')}
-                                </b>{" "}
-                                {t('for-small-fundraisers.step2.section5.description3')}
-                                <br />
-                                <b>{t('for-small-fundraisers.step2.section5.description4')}</b> 
-                                {t('for-small-fundraisers.step2.section5.description5')}
-                            </ListItem>
-                            <ListItem>
-                                <b>{t('for-small-fundraisers.step2.section6')}</b>
-                                <br />
-                                {t('for-small-fundraisers.step2.section6.description')}
-                            </ListItem>
-                        </ul>
-                        <br />
-                        <BlueInlineCallout>
-                            <p>
-                                {t('for-small-fundraisers.step2.help')}
-                            </p>
-                        </BlueInlineCallout>
-                    </div>
-                    <div>
-                        <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
-                            {t('for-small-fundraisers.step3')}
-                        </h1>
-                        <p>
-                            {t('for-small-fundraisers.step3.description')}
-                        </p>
-                        <div className="w-full sm:w-64 mt-4 mb-6">
-                            <Button
-                                value={t('for-small-fundraisers.step3.button')}
-                                href="https://forms.gle/s16BXc87JrRwqSx59"
-                                target="_blank"
-                            />
-                        </div>
-                        <BlueInlineCallout>
-                            <b>{t('for-small-fundraisers.step3.important')}❗️</b>
-                            {t('for-small-fundraisers.step3.important.description')}
-                        </BlueInlineCallout>
-                    </div>
-                </div>
-            </Layout>
-        </div>
+              <ul>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step1.section1")}</b>
+                  <br />
+                  {t("for-small-fundraisers.step1.section1.description")}
+                </ListItem>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step1.section2")}</b>
+                  <br />
+                  {t("for-small-fundraisers.step1.section2.description")}
+                </ListItem>
+              </ul>
+              <div className="w-full sm:w-80 my-4">
+                <Button
+                  value={t("for-small-fundraisers.step1.guidelines-button")}
+                  href="https://docs.google.com/document/d/1Xrf6CwJ0n6cAqccjf-Q85MlnLrzkqnZMDfjNa5xwAEQ/edit?usp=sharing"
+                  target="_blank"
+                />
+              </div>
+            </div>
+            <div>
+              <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
+                {t("for-small-fundraisers.step2")}
+              </h1>
+              <p>{t("for-small-fundraisers.step2.description")}</p>
+              <ul>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step2.section1")}</b>
+                </ListItem>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step2.section2")}</b>
+                </ListItem>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step2.section3")}</b>
+                  <br />
+                  {t("for-small-fundraisers.step2.section3.description")}
+                </ListItem>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step2.section4")}</b>
+                  <br />
+                  {t("for-small-fundraisers.step2.section4.description")}
+                </ListItem>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step2.section5")}</b>
+                  <br />
+                  {t("for-small-fundraisers.step2.section5.description1")}
+                  <br />
+                  <b>
+                    {t("for-small-fundraisers.step2.section5.description2")}
+                  </b>{" "}
+                  {t("for-small-fundraisers.step2.section5.description3")}
+                  <br />
+                  <b>
+                    {t("for-small-fundraisers.step2.section5.description4")}
+                  </b>
+                  {t("for-small-fundraisers.step2.section5.description5")}
+                </ListItem>
+                <ListItem>
+                  <b>{t("for-small-fundraisers.step2.section6")}</b>
+                  <br />
+                  {t("for-small-fundraisers.step2.section6.description")}
+                </ListItem>
+              </ul>
+              <br />
+              <BlueInlineCallout>
+                <p>{t("for-small-fundraisers.step2.help")}</p>
+              </BlueInlineCallout>
+            </div>
+            <div>
+              <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8 text-uablue-default">
+                {t("for-small-fundraisers.step3")}
+              </h1>
+              <p>{t("for-small-fundraisers.step3.description")}</p>
+              <div className="w-full sm:w-64 mt-4 mb-6">
+                <Button
+                  value={t("for-small-fundraisers.step3.button")}
+                  href="https://forms.gle/s16BXc87JrRwqSx59"
+                  target="_blank"
+                />
+              </div>
+              <BlueInlineCallout>
+                <b>{t("for-small-fundraisers.step3.important")}❗️</b>
+                {t("for-small-fundraisers.step3.important.description")}
+              </BlueInlineCallout>
+            </div>
+          </div>
+        </Layout>
+      </div>
     );
 }
 
