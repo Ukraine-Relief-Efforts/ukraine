@@ -12,19 +12,30 @@ export default function ForDonors() {
         <Head>
           <title>For Donors | Help UA Now</title>
           <meta
-            name="description"
+            key="donors-description"
+            name="donors-description"
             content="Helping you meaningfully support grassroots fundraising efforts for Ukraine. This project was created to find, evaluate and amplify credible fundraisers organized by Ukrainian volunteers."
           />
-          <meta property="og:title" content="For Donors | Help UA Now" />
           <meta
+            key="donors-og:title"
+            property="og:title"
+            content="For Donors | Help UA Now"
+          />
+          <meta
+            key="donors-og:description"
             property="og:description"
             content="Helping you meaningfully support grassroots fundraising efforts for Ukraine. This project was created to find, evaluate and amplify credible fundraisers organized by Ukrainian volunteers."
           />
           <meta
+            key="donors-og:url"
             property="og:url"
             content="https://www.helpuanow.org/for-donors"
           />
-          <meta property="og:type" content="website" />
+          <meta
+            key="donors-og:type"
+            property="og:type"
+            content="website"
+          />
         </Head>
         <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
           <Hero

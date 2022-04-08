@@ -17,22 +17,30 @@ export default function ForSmallFundraisers(props) {
         <Head>
           <title>For Small Fundraisers | Help UA Now</title>
           <meta
+            key="small-fundraisers-description"
             name="description"
             content="Application guide for local volunteer groups supporting Ukrainians in need."
           />
           <meta
+            key="small-fundraisers-og:title"
             property="og:title"
             content="For Small Fundraisers | Help UA Now"
           />
           <meta
+            key="small-fundraisers-og:description"
             property="og:description"
             content="Help your fundraiser reach a wider international audience. We onboard and verify civilian lead fundraisers in Ukraine, connecting them to donors"
           />
           <meta
+            key="small-fundraisers-og:url"
             property="og:url"
             content="https://www.helpuanow.org/for-fundraisers/for-small-fundraisers"
           />
-          <meta property="og:type" content="website" />
+          <meta
+            key="small-fundraisers-og:type"
+            property="og:type"
+            content="website"
+          />
         </Head>
         <Layout>
           <div className="w-full md:w-3/4 lg:w-2/3 pb-8">

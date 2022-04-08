@@ -18,19 +18,26 @@ export default function ForFundraisers(props) {
         <Head>
           <title>For Fundraisers | Help UA Now</title>
           <meta
+            key="fundraiser-description"
             name="description"
             content="Help your fundraiser reach a wider international audience. We onboard and verify civilian lead fundraisers in Ukraine, connecting them to donors"
           />
           <meta property="og:title" content="For Fundraisers | Help UA Now" />
           <meta
+            key="fundraiser-og:description"
             property="og:description"
             content="Help your fundraiser reach a wider international audience. We onboard and verify civilian lead fundraisers in Ukraine, connecting them to donors"
           />
           <meta
+            key="fundraiser-og:url"
             property="og:url"
             content="https://www.helpuanow.org/for-fundraisers"
           />
-          <meta property="og:type" content="website" />
+          <meta
+            key="fundraiser-og:type"
+            property="og:type"
+            content="website"
+          />
         </Head>
 
         <div className="w-full md:w-5/6 lg:w-2/3 pb-16">

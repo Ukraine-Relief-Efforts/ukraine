@@ -16,18 +16,22 @@ export default function ForReputationBackers(props) {
         <Head>
           <title>For Reputation Backers | Help UA Now</title>
           <meta
+            key="reputation-backers"
             name="description"
             content="Individuals with meaningful social media presence who are willing to vouch for the emergency fundraiser by Ukrainian volunteers."
           />
           <meta
+            key="reputation-backers-og:title"
             property="og:title"
             content="For Reputation Backers | Help UA Now"
           />
           <meta
+            key="reputation-backers-og:description"
             property="og:description"
             content="Individuals with meaningful social media presence who are willing to vouch for the emergency fundraiser by Ukrainian volunteers."
           />
           <meta
+            key="reputation-backers-og:url"
             property="og:url"
             content="https://www.helpuanow.org/for-fundraisers/for-reputation-backers"
           />

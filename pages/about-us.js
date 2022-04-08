@@ -15,19 +15,29 @@ export default function AboutUs() {
         <Head>
           <title>About Us | Help UA Now</title>
           <meta
+            key="about-us-description"
             name="description"
             content="We are a group of volunteers from all walks of life, united over a mission to save Ukrainian lives and support the wellbeing of people affected by the war."
           />
-          <meta property="og:title" content="About Us | Help UA Now" />
           <meta
+            key="about-us-og:title"
+            property="og:title"
+            content="About Us | Help UA Now"
+          />
+          <meta
+            key="about-us-og:description"
             property="og:description"
             content="We are a group of volunteers from all walks of life, united over a mission to save Ukrainian lives and support the wellbeing of people affected by the war."
           />
           <meta
+            key="about-us-og:url"
             property="og:url"
             content="https://www.helpuanow.org/about-us"
           />
-          <meta property="og:type" content="website" />
+          <meta
+            key="about-us-og:type"
+            property="og:type"
+            content="website" />
         </Head>
         <div className="w-full md:w-3/4 lg:w-2/3 pb-8">
           <Hero
