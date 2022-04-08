@@ -21,7 +21,8 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
     website,
     bannerImage,
     smallOrg,
-    bannerImage2
+    bannerImage2,
+    additionalText
   ] = orgData;
 
   const bannerViewableUrl = typeof bannerImage2 === 'string' ? bannerImage2 : '';
@@ -131,6 +132,9 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal}) {
               <h2 className="font-black text-xl mt-12">
                 What they&apos;ve accomplished so far
               </h2>
+              {additionalText && (
+                <p className="mt-6">{additionalText}</p>
+              )}
               <p className="mt-6">
                 <a
                   href={accomplishments}
