@@ -53,9 +53,9 @@ export default function Home(props) {
             Ukraine.
           </title>
           <meta
-            key='home-description'
+            key="home-description"
             name="description"
-            content="“Help UA Now connects you to local, volunteer run fundraisers in Ukraine. Provide urgent, life-saving aid directly to those in need through one of our vetted partners. Donate to as many causes as you’d like, all in one place"
+            content="Help UA Now connects you to local, volunteer run fundraisers in Ukraine. Provide urgent, life-saving aid directly to those in need through one of our vetted partners. Donate to as many causes as you’d like, all in one place"
           />
         </Head>
         <Hero />
