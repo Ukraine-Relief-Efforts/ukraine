@@ -22,16 +22,12 @@ export default function Home(props) {
 }
 
 export async function getStaticPaths() {
-  const response = await sheets.spreadsheets.values.get({
-    spreadsheetId: process.env.SHEET_ID,
-    range: "Organizations (English)",
-  });
-
+  const response = await getSpreadSheet();
   const numRows = response.data.values.length - 1;
 
   const paths = [];
-  for (let i = 0; i < numRows; i++) {
-    paths.push({ params: { row: (i + 1).toString() } });
+  for (let i = 1; i <= numRows; i++) {
+    paths.push({ params: { row: (i).toString() } });
   }
   return {
     paths,
@@ -40,15 +36,19 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { row } }) {
-  const response = await sheets.spreadsheets.values.get({
-    spreadsheetId: process.env.SHEET_ID,
-    range: `Organizations (English)!${parseInt(row) + 1}:${parseInt(row) + 1}`,
-  });
-
+  const response = await getSpreadSheet();
+  if (row === "0" || parseInt(row) > response.data.values.length -1) row = "1";
   return {
     props: {
-      data: response.data.values[0],
+      data: response.data.values[(parseInt(row))]
     },
     revalidate: 10,
   };
+}
+
+async function getSpreadSheet() {
+  return await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SHEET_ID,
+    range: "Organizations (English)",
+  });
 }
