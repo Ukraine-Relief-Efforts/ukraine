@@ -41,11 +41,8 @@ export default function ForDonors() {
           <Hero
             title="For donors"
             description="Helping you meaningfully support grassroots fundraising efforts for Ukraine."
+            paragraph="This project was created to find, evaluate and amplify credible fundraisers organized by Ukrainian volunteers."
           />
-          <p>
-            This project was created to find, evaluate and amplify credible
-            fundraisers organized by Ukrainian volunteers.
-          </p>
           <div className="bg-gray-100 absolute right-0 py-8 px-6 sm:px-16 sm:mt-8 lg:pl-40 lg:pr-96">
             <div className="mt-16">
               <h1 className="font-bold text-2xl lg:text-4xl mb-4 mt-8">
