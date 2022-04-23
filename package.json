@@ -13,7 +13,6 @@
     "@heroicons/react": "^1.0.6",
     "@sentry/nextjs": "^6.19.6",
     "googleapis": "^100.0.0",
-    "graphql-tag": "^2.12.6",
     "i18next": "^21.6.14",
     "next": "12.1.4",
     "next-i18next": "^11.0.0",

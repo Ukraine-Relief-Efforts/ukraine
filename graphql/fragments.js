@@ -1,5 +1,3 @@
-import gql from "graphql-tag";
-
 export const FRAGMENT_FUNDRAISER_FIELDS = `
     fragment fundraiserFields on Fundraiser {
         sys {
