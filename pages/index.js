@@ -224,15 +224,15 @@ export async function getStaticProps({ locale }) {
   rows.map((data, initialIndex) => {
     data.push(initialIndex + 1);
   });
-  const data = await queryContentful(fundraiserQuery);
-  console.log("contentful graphql query:", data);
+//   FOR FUTURE GRAPHQL WORK - EXAMPLE QUERY CALL
+//   const data = await queryContentful(fundraiserQuery);
+//   console.log("contentful graphql query:", data);
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["about-us", "common"])),
       title,
-      rows,
-      data,
+      rows
     },
     revalidate: 10,
   };
