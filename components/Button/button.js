@@ -10,7 +10,7 @@ Props to parse (all optional)
 - icon: for leading icon of button 
 */
 
-export default function Button ({onClick, value, href, target, isExternalLink, icon}) {
+export default function Button ({onClick, value, href, target, isExternalLink, icon, color, isShareBtn}) {
     return (
         <a 
             {...(onClick != '' && {onClick})} 
@@ -18,13 +18,13 @@ export default function Button ({onClick, value, href, target, isExternalLink, i
             {...(target != '' && {target})}
             className="w-full cursor-pointer"
         >
-            <div className="flex justify-center 
+            <div className={`flex justify-center 
                 w-full py-3 rounded-xl
-                bg-[#005BBC] text-white
-                hover:bg-[#1E429F]
                 focus:border-4 focus:border-[#1E429F]
                 text-lg font-bold leading-6
-            ">
+                ${color === "white" ? "bg-white text-[#005BBC] hover:bg-[#E5E5E5]" 
+                : "bg-[#005BBC] text-white hover:bg-[#1E429F]"}
+            `}>
                 {icon && 
                     <div className="w-3 mr-3 flex justify-center">
                         <Image 
@@ -41,6 +41,18 @@ export default function Button ({onClick, value, href, target, isExternalLink, i
                         <Image 
                             src={'/assets/external_link.svg'}
                             alt={'external link'}
+                            layout="intrinsic"
+                            height={18}
+                            width={18}
+                            loading="lazy"
+                        />
+                    </div>
+                }
+                {isShareBtn && 
+                    <div className="ml-3 flex justify-center">
+                        <Image 
+                            src={'/assets/share_icon.svg'}
+                            alt={'share button'}
                             layout="intrinsic"
                             height={18}
                             width={18}

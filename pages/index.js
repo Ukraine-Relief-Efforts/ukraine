@@ -29,10 +29,11 @@ export default function Home(props) {
     const [expandModal, setExpandModal] = useState(false);
     const [orgData, setOrgData] = useState([]);
 
+    // TODO: modal needs to be removed, temporary fix to redirect to page immediately
     function openModal(rowNumber, rowData) {
-        setIsOpen(true);
-        window.history.pushState(null, null, `/${rowNumber}`);
+        setExpandModal(true);
         setOrgData(rowData);
+        router.push(`/${rowNumber}`);
     }
 
     function closeModal() {
@@ -40,10 +41,10 @@ export default function Home(props) {
         window.history.pushState(null, null, `/`);
     }
 
-    function goToModalPage() {
-        setExpandModal(!expandModal);
-        setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
-    }
+    // function goToModalPage() {
+    //     setExpandModal(!expandModal);
+    //     setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
+    // }
 
     return (
       <Layout>
