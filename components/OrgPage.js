@@ -3,6 +3,11 @@ import Link from "next/link";
 import Badge from "./Badge/badge";
 import Button from "./Button/button";
 import arrowDown from "../public/assets/icons/arrow_right.svg";
+import { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export default function OrgPage({ orgData, showFrontPageLink, expandModal }) {
     const [
@@ -230,10 +235,15 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal }) {
                         <h4 className="font-bold text-2xl mb-4">
                             What they&apos;ve accomplished so far
                         </h4>
+                        <Swiper slidesPerView={"auto"} navigation={true} modules={[Navigation]} className="mySwiper w-full">
+                            <SwiperSlide className="text-center">Sample Image</SwiperSlide>
+                            <SwiperSlide className="text-center">Sample Image</SwiperSlide>
+                            <SwiperSlide className="text-center">Sample Image</SwiperSlide>
+                        </Swiper>
                         {additionalText && (
                             <p className="mt-6">{additionalText}</p>
                         )}
-                        <p className="mt-6">
+                        {/* <p className="mt-6">
                             <a
                                 href={accomplishments}
                                 target="_blank"
@@ -243,7 +253,7 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal }) {
                             >
                                 Check out their past work
                             </a>
-                        </p>
+                        </p> */}
                     </>
                 )}
             </div>
