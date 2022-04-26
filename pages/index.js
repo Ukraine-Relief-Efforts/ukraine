@@ -9,6 +9,8 @@ import Hero from "../components/Hero/hero";
 import Layout from "../components/layout";
 import Modal from "react-modal";
 import { getMiddlewareManifest } from "next/dist/client/route-loader";
+import { queryContentful } from "../lib/contentful/Api";
+import { fundraiserQuery } from "../graphql/queries";
 
 Modal.setAppElement("#__next");
 
@@ -215,21 +217,24 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ locale }) {
-    const response = await sheets.spreadsheets.values.get({
-        spreadsheetId: process.env.SHEET_ID,
-        range: "Organizations (English)",
-    });
-    const [title, ...rows] = response.data.values;
-    rows.map((data, initialIndex) => {
-        data.push(initialIndex + 1);
-    });
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SHEET_ID,
+    range: "Organizations (English)",
+  });
+  const [title, ...rows] = response.data.values;
+  rows.map((data, initialIndex) => {
+    data.push(initialIndex + 1);
+  });
+//   FOR FUTURE GRAPHQL WORK - EXAMPLE QUERY CALL
+//   const data = await queryContentful(fundraiserQuery);
+//   console.log("contentful graphql query:", data);
 
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['about-us', 'common'])),
-            title,
-            rows,
-        },
-        revalidate: 10,
-    };
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["about-us", "common"])),
+      title,
+      rows
+    },
+    revalidate: 10,
+  };
 }
