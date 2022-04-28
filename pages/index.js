@@ -11,8 +11,28 @@ import Modal from "react-modal";
 import { getMiddlewareManifest } from "next/dist/client/route-loader";
 import { queryContentful } from "../lib/contentful/Api";
 import { fundraiserQuery } from "../graphql/queries";
+import {useQuery} from "@apollo/client";
 
 Modal.setAppElement("#__next");
+
+function Fundraiser() {
+  //Error: Missing getServerSnapshot, which is required for server-rendered content. Will revert to client rendering.
+  const { loading, error, data } = useQuery(fundraiserQuery);
+  console.log("contentful graphql query:", data);
+
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
+
+  return (
+    <div name="fundraiser" >
+      {data.fundraiserCollection.items.map(item => (
+        <h1 key={item.slug}>
+          {item.organizationName}
+        </h1>
+      ))}
+    </div>
+  );
+}
 
 export default function Home(props) {
     const router = useRouter();
@@ -47,6 +67,9 @@ export default function Home(props) {
     //     setExpandModal(!expandModal);
     //     setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
     // }
+    // TODO: fix Get Missing Server Snapshot error
+    // const { loading, error, data } = useQuery(fundraiserQuery);
+    // console.log("contentful graphql query:", data);
 
     return (
       <Layout>

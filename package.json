@@ -9,19 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.5.10",
     "@headlessui/react": "^1.6.0",
     "@heroicons/react": "^1.0.6",
     "@sentry/nextjs": "^6.19.6",
     "googleapis": "^100.0.0",
+    "graphql": "^16.4.0",
     "i18next": "^21.6.16",
     "next": "12.1.5",
     "next-i18next": "^11.0.0",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-modal": "^3.14.4",
-    "sharp": "^0.30.3",
-    "swiper": "^8.1.4",
-    "sharp": "^0.30.4"
+    "sharp": "^0.30.4",
+    "swiper": "^8.1.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.5",

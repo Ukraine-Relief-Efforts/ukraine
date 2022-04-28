@@ -1,6 +1,7 @@
+import { gql } from "@apollo/client";
 import { FRAGMENT_FUNDRAISER_FIELDS } from "./fragments";
 
-export const fundraiserQuery = `
+export const fundraiserQuery = gql`
     ${FRAGMENT_FUNDRAISER_FIELDS}
 
     query {
@@ -17,7 +18,7 @@ export const fundraiserQuery = `
 `;
 
 //GET ALL BY CAUSE W/PAGINATION
-export const fundraisersByCauseQuery = `
+export const fundraisersByCauseQuery = gql`
     ${FRAGMENT_FUNDRAISER_FIELDS}
 
     query {
@@ -32,7 +33,7 @@ export const fundraisersByCauseQuery = `
 `;
 
 //GET ALL BY CAUSE EXCLUSIVE LIST W/PAGINATION
-export const fundraisersByCauseExclusiveQuery = `
+export const fundraisersByCauseExclusiveQuery = gql`
     ${FRAGMENT_FUNDRAISER_FIELDS}
 
     query {
@@ -50,7 +51,7 @@ export const fundraisersByCauseExclusiveQuery = `
 `;
 
 //GET ALL BY CAUSE INCLUSIVE LIST W/PAGINATION
-export const fundraisersByCauseInclusiveQuery = `
+export const fundraisersByCauseInclusiveQuery = gql`
     ${FRAGMENT_FUNDRAISER_FIELDS}
 
     query {
@@ -68,7 +69,7 @@ export const fundraisersByCauseInclusiveQuery = `
 `;
 
 //GET BY CAUSE AND PRIORITY HIGH W/PAGINATION
-export const fundraisersByCauseAndPriorityQuery = `
+export const fundraisersByCauseAndPriorityQuery = gql`
     ${FRAGMENT_FUNDRAISER_FIELDS}
 
     query {
@@ -87,7 +88,7 @@ export const fundraisersByCauseAndPriorityQuery = `
 `;
 
 //GET BY CAUSE AND PAYMENT TYPES (Multi) W/PAGINATION
-export const fundraisersByCauseAndPaymentTypeQuery = `
+export const fundraisersByCauseAndPaymentTypeQuery = gql`
     ${FRAGMENT_FUNDRAISER_FIELDS}
 
     query {
