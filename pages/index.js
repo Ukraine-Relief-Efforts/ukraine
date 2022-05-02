@@ -10,7 +10,10 @@ import Layout from "../components/layout";
 import Modal from "react-modal";
 import { getMiddlewareManifest } from "next/dist/client/route-loader";
 import { queryContentful } from "../lib/contentful/Api";
-import { fundraiserQuery } from "../graphql/queries";
+import {
+    fundraisersLargeOrgByCauseInclusiveQuery,
+    fundraisersSmallOrgByCauseInclusiveQuery
+} from "../graphql/queries";
 
 Modal.setAppElement("#__next");
 
@@ -30,6 +33,10 @@ export default function Home(props) {
     const [modalIsOpen, setIsOpen] = useState(false);
     const [expandModal, setExpandModal] = useState(false);
     const [orgData, setOrgData] = useState([]);
+    let smallFundraisers = props.smallFundraisers.data.fundraiserCollection.items;
+    let largeFundraisers = props.largeFundraisers.data.fundraiserCollection.items;
+    console.log("contentful smallFundraiser graphql query:", smallFundraisers)
+    console.log("contentful largeFundraiser graphql query:", largeFundraisers)
 
     // TODO: modal needs to be removed, temporary fix to redirect to page immediately
     function openModal(rowNumber, rowData) {
@@ -226,14 +233,16 @@ export async function getStaticProps({ locale }) {
     data.push(initialIndex + 1);
   });
 //   FOR FUTURE GRAPHQL WORK - EXAMPLE QUERY CALL
-//   const data = await queryContentful(fundraiserQuery);
-//   console.log("contentful graphql query:", data);
+  let smallFundraisers = await queryContentful(fundraisersSmallOrgByCauseInclusiveQuery);
+  let largeFundraisers = await queryContentful(fundraisersLargeOrgByCauseInclusiveQuery);
 
   return {
     props: {
       ...(await serverSideTranslations(locale, ["about-us", "common"])),
       title,
-      rows
+      rows,
+      smallFundraisers,
+      largeFundraisers
     },
     revalidate: 10,
   };
