@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "48bb7af8-67bb-44b6-b9d4-61ed7fb7fd65",
+		"name": "Help UA Now",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GraphQL Contentful",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{CONTENTFUL_ACCESS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "T6XDVjpI76LWkY9Yq4FBlWAaKwpKvpBMBFicHgKF4cA",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "    fragment fundraiserFields on Fundraiser {\n        sys {\n            id\n            publishedAt\n            spaceId\n            environmentId\n            publishedVersion\n            firstPublishedAt\n        }\n        contentfulMetadata {\n            tags {\n                id\n                name\n            }\n        }\n        slug\n        organizationName\n        donationLink\n        contactForLargeDonations {\n            json\n        }\n        description {\n            json\n        }\n        description2 {\n            json\n        }\n        cause\n        howWillTheySpendDonations {\n            json\n        }\n        whatWeHaveAccomplished {\n            json\n        }\n        institutionalBacking {\n            json\n        }\n        paymentMethod {\n            json\n        }\n        supportsCryptocurrency\n        facebook\n        instagram\n        organizationWebsite\n        smallOrganization\n        bannerImage {\n            url\n            title\n            fileName\n        }\n    }\n\n    query {\n        fundraiser(id:\"5zy3mVAEbNg9K7XXNF0Z4a\") {\n            organizationName\n        }\n\n        fundraiserCollection {\n            items {\n                ...fundraiserFields\n            }\n        }\n    }",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://graphql.contentful.com/content/v1/spaces/{{CONTENTFUL_SPACE_ID}}",
+					"protocol": "https",
+					"host": [
+						"graphql",
+						"contentful",
+						"com"
+					],
+					"path": [
+						"content",
+						"v1",
+						"spaces",
+						"{{CONTENTFUL_SPACE_ID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CONTENTFUL_SPACE_ID",
+			"value": "9jd1d3pheo6l",
+			"type": "string"
+		},
+		{
+			"key": "CONTENTFUL_ACCESS_TOKEN",
+			"value": "T6XDVjpI76LWkY9Yq4FBlWAaKwpKvpBMBFicHgKF4cA",
+			"type": "string"
+		}
+	]
+}
