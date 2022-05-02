@@ -51,3 +51,43 @@ export const FRAGMENT_FUNDRAISER_FIELDS = `
         }
     }
 `;
+
+export const FRAGMENT_FUNDRAISER_BASIC_FIELDS = `
+    fragment fundraiserBasicFields on Fundraiser {
+        slug
+        organizationName
+        donationLink
+        contactForLargeDonations {
+            json
+        }
+        description {
+            json
+        }
+        description2 {
+            json
+        }
+        cause
+        howWillTheySpendDonations {
+            json
+        }
+        whatWeHaveAccomplished {
+            json
+        }
+        institutionalBacking {
+            json
+        }
+        paymentMethod {
+            json
+        }
+        supportsCryptocurrency
+        facebook
+        instagram
+        organizationWebsite
+        smallOrganization
+        bannerImage {
+            url
+            title
+            fileName
+        }
+    }
+`;

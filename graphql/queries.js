@@ -1,4 +1,4 @@
-import { FRAGMENT_FUNDRAISER_FIELDS } from "./fragments";
+import {FRAGMENT_FUNDRAISER_BASIC_FIELDS, FRAGMENT_FUNDRAISER_FIELDS} from "./fragments";
 
 export const fundraiserQuery = `
     ${FRAGMENT_FUNDRAISER_FIELDS}
@@ -50,18 +50,37 @@ export const fundraisersByCauseExclusiveQuery = `
 `;
 
 //GET ALL BY CAUSE INCLUSIVE LIST W/PAGINATION
-export const fundraisersByCauseInclusiveQuery = `
-    ${FRAGMENT_FUNDRAISER_FIELDS}
+export const fundraisersSmallOrgByCauseInclusiveQuery = `
+    ${FRAGMENT_FUNDRAISER_BASIC_FIELDS}
 
     query {
         fundraiserCollection(limit: 25, skip: 0, where: {
             OR: [
                 { cause_contains_all: "Humanitarian" }
                 { cause_contains_all: "Military" }
-            ]
+            ],
+            AND: [{smallOrganization: true}]
         }) {
             items {
-                ...fundraiserFields
+                ...fundraiserBasicFields
+            }
+        }
+    }
+`;
+
+export const fundraisersLargeOrgByCauseInclusiveQuery = `
+    ${FRAGMENT_FUNDRAISER_BASIC_FIELDS}
+
+    query {
+        fundraiserCollection(limit: 25, skip: 0, where: {
+            OR: [
+                { cause_contains_all: "Humanitarian" }
+                { cause_contains_all: "Military" }
+            ],
+            AND: [{smallOrganization: false}]
+        }) {
+            items {
+                ...fundraiserBasicFields
             }
         }
     }
