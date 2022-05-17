@@ -11,6 +11,15 @@ Props to parse (all optional)
 */
 
 export default function Button ({onClick, value, href, target, isExternalLink, icon, color, isShareBtn}) {
+    let colorClass = "bg-[#005BBC] text-white hover:bg-[#1E429F]";
+
+    if (color === "white") {
+        colorClass = "bg-white text-[#005BBC] hover:bg-[#E5E5E5]";
+    }
+    if (color === "yellow") {
+        colorClass="bg-[#ffd503] text-[#1e1e1e] hover:bg-[#c0a000]";
+    }
+
     return (
         <a 
             {...(onClick != '' && {onClick})} 
@@ -22,8 +31,7 @@ export default function Button ({onClick, value, href, target, isExternalLink, i
                 w-full py-3 rounded-xl
                 focus:border-4 focus:border-[#1E429F]
                 text-lg font-bold leading-6
-                ${color === "white" ? "bg-white text-[#005BBC] hover:bg-[#E5E5E5]" 
-                : "bg-[#005BBC] text-white hover:bg-[#1E429F]"}
+                ${colorClass}
             `}>
                 {icon && 
                     <div className="w-3 mr-3 flex justify-center">

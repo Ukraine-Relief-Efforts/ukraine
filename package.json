@@ -19,11 +19,11 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-modal": "^3.15.1",
-    "sharp": "^0.30.3",
-    "swiper": "^8.1.4",
-    "sharp": "^0.30.4"
+    "sharp": "^0.30.4",
+    "swiper": "^8.1.4"
   },
   "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.0",
     "autoprefixer": "^10.4.6",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.5",

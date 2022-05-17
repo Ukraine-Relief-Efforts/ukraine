@@ -25,7 +25,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function NavBar() {
+export default function NavBar({ isIndexPage }) {
   const router = useRouter()
   let en_lang, ua_lang;
   [en_lang, ua_lang] = ["en", "ua"];
@@ -36,7 +36,7 @@ export default function NavBar() {
   let showLanguageSwitcher = translatedpath.includes(router.pathname);
 
   return (
-    <Disclosure as="nav" className="bg-white">
+    <Disclosure as="nav" className={`bg-white ${isIndexPage ? "m-6 sm:my-12 sm:mx-16" : ""}`}>
       {({ open }) => (
         <>
           <div className=" max-w-full mx-auto">
@@ -80,18 +80,29 @@ export default function NavBar() {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:justify-between">
-                <div className="flex-shrink-0 flex items-center w-10 md:w-12 lg:w-16">
+                <div className="flex-shrink-0 flex items-center">
                   <Link
                     href='/'
                     passHref
                   >
-                    <a>
+                    <a className="flex items-center">
                         <Image
-                        className="block cursor-pointer"
-                        src={logo}
-                        alt='Help Ukraine Now'
-                        loading="lazy"
+                          className="block cursor-pointer"
+                          src={logo}
+                          alt='Help Ukraine Now'
+                          loading="lazy"
+                          height={40}
+                          width={40}
                         />
+                        { isIndexPage && 
+                          <div className="ml-4">
+                            <span className="text-[#005BBC] font-bold sm:font-extrabold text-xl inline leading-none">Help </span>
+                            <span className="text-[#FFD500] bg-[#005BBC] font-bold sm:font-extrabold px-2 py-0.25 text-xl rounded-lg leading-none">
+                                Ukraine
+                            </span>
+                            <span className="text-[#005BBC] font-bold sm:font-extrabold text-xl inline leading-none"> Now</span>
+                          </div>
+                        }
                     </a>
                   </Link>
                 </div>
