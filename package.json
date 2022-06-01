@@ -19,7 +19,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-modal": "^3.14.4",
-    "sharp": "^0.30.3"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",
