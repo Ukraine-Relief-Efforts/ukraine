@@ -34,7 +34,7 @@ export default function Home(props) {
     [small, big] = ["Small Fundraisers", "Large Charities"];
     const [openTab, setOpenTab] = useState(small);
     const smallGroup = props.rows.filter((row) => {
-        return row[15] ? row[15] : false;
+        return row.smallOrganization ? row.smallOrganization : false;
     });
     const orgList =
         openTab === small && smallGroup
@@ -60,6 +60,8 @@ export default function Home(props) {
     //     setExpandModal(!expandModal);
     //     setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
     // }
+	
+	
 
     return (
       <Layout isIndexPage="true">
@@ -118,10 +120,10 @@ export default function Home(props) {
                 return (
                     <SwiperSlide key={index} className="container md:col-span-6 xl:col-span-4 col-span-12 flex !h-full">
                       <OrgCard
-                        orgIndex={row[row.length - 1]}
-                        titles={props.title}
-                        values={row}
-                        open={() => openModal(row[row.length - 1], row)}
+                        orgIndex={row.slug}
+                            titles={props.title}
+                            values={row}
+                            open={() => openModal(row.slug, row)}
                         whiteText={true}
                       ></OrgCard>
                     </SwiperSlide>
@@ -262,10 +264,10 @@ export default function Home(props) {
                     return (
                         <SwiperSlide key={index} className="container md:col-span-6 xl:col-span-4 col-span-12 flex !h-full">
                           <OrgCard
-                            orgIndex={row[row.length - 1]}
+                            orgIndex={row.slug}
                             titles={props.title}
                             values={row}
-                            open={() => openModal(row[row.length - 1], row)}
+                            open={() => openModal(row.slug, row)}
                           ></OrgCard>
                         </SwiperSlide>
                     );
@@ -527,13 +529,22 @@ export async function getStaticProps({ locale }) {
     spreadsheetId: process.env.SHEET_ID,
     range: "Organizations (English)",
   });
-  const [title, ...rows] = response.data.values;
+  
+ /* const [title, ...rows] = response.data.values;
   rows.map((data, initialIndex) => {
     data.push(initialIndex + 1);
-  });
+  });*/
 //   FOR FUTURE GRAPHQL WORK - EXAMPLE QUERY CALL
-//   const data = await queryContentful(fundraiserQuery);
+   const data = await queryContentful(fundraiserQuery);
 //   console.log("contentful graphql query:", data);
+	var rows = [];
+	
+	for(var i = 0; i < data.data.fundraiserCollection.items.length; i++)
+	{
+		rows.push(data.data.fundraiserCollection.items[i]);
+	}
+	
+    const title = "";
 
   return {
     props: {

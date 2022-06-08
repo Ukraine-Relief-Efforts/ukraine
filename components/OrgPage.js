@@ -10,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 export default function OrgPage({ orgData, showFrontPageLink, expandModal }) {
-    const [
+    /*const [
         orgName,
         donationLinks,
         largeDonationsContact,
@@ -29,10 +29,30 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal }) {
         smallOrg,
         bannerImage2,
         additionalText,
-    ] = orgData;
+    ] = orgData;*/
 
-    const bannerViewableUrl =
-        typeof bannerImage2 === "string" ? bannerImage2 : "";
+	  const orgName = orgData.organizationName;
+  const donationLinks = orgData.donationLink;
+  const largeDonationsContact = (orgData.largeDonationsContact == null ? "" : orgData.contactForLargeDonations.json.content[0].content[0].value);
+  const englishDesc = (orgData.description == null ? "" : orgData.description.json.content[0].content[0].value);
+  const cause = orgData.cause;
+  const spendingTowards = orgData.howWillTheySpendDonations.json.content[0].content[0].value;
+  const accomplishments = (orgData.whatTheyHaveAccomplishedSoFar == null ? "" : orgData.whatTheyHaveAccomplishedSoFar);
+  const backedBy = (orgData.institutionalBacking == null ? "" : orgData.institutionalBacking.json.content[0].content[0].value);
+  const paymentMethod = (orgData.paymentMethod == null ? "" : orgData.paymentMethod.json.content[0].content[0].value);
+  const crypto = orgData.supportsCryptocurrency;
+  const instagram = orgData.instagram;
+  const facebook = orgData.facebook;
+  const twitter = orgData.twitter;
+  const website = orgData.organizationWebsite;
+  const bannerImage = orgData.bannerImage.url;
+  const smallOrg = orgData.smallOrganization;
+  const bannerImage2 = orgData.bannerImage.url;
+  
+  const bannerViewableUrl =
+    typeof bannerImage2.url === "string"
+      ? bannerImage2.url
+      : "";
 
     return (
         <div id="organization" className="absolute right-0">
