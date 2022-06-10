@@ -24,7 +24,6 @@ export default function Home(props) {
 }
 
 export async function getStaticPaths() {
-	console.log("getStaticPaths()");
   const response = await getSpreadSheet();
   const numRows = response.length - 1;
 
@@ -39,7 +38,6 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { row } }) {
-	console.log(row);
   const response = await getSpreadSheet();
   //if (row === "0" || parseInt(row) > response.data.values.length -1) row = "1";
   

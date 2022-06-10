@@ -536,7 +536,7 @@ export async function getStaticProps({ locale }) {
   });*/
 //   FOR FUTURE GRAPHQL WORK - EXAMPLE QUERY CALL
    const data = await queryContentful(fundraiserQuery);
-//   console.log("contentful graphql query:", data);
+   //console.log("contentful graphql query:", data);
 	var rows = [];
 	
 	for(var i = 0; i < data.data.fundraiserCollection.items.length; i++)
