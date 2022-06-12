@@ -30,8 +30,6 @@ export default function OrgPage({ orgData, showFrontPageLink, expandModal }) {
 	const smallOrg = orgData.smallOrganization;
 	const bannerImage2 = orgData.bannerImage.url;
 
-	console.log(orgData.twitter);
-
 	const bannerViewableUrl =
 	typeof bannerImage2 === "string"
 	? bannerImage2

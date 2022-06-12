@@ -42,6 +42,7 @@ export const FRAGMENT_FUNDRAISER_FIELDS = `
         supportsCryptocurrency
         facebook
         instagram
+		twitter
         organizationWebsite
         smallOrganization
         bannerImage {
