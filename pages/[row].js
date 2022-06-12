@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import sheets from "../lib/sheets";
 import { useRouter } from "next/router";
 import OrgPage from "/components/OrgPage";
 import Layout from "../components/layout";
@@ -39,8 +38,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { row } }) {
   const response = await getSpreadSheet();
-  //if (row === "0" || parseInt(row) > response.data.values.length -1) row = "1";
-  
+ 
   var index;
   
   for(let i = 0; i < response.length; i++)
@@ -62,7 +60,7 @@ export async function getStaticProps({ params: { row } }) {
 
 async function getSpreadSheet() {
 	const data = await queryContentful(fundraiserQuery);
-//   console.log("contentful graphql query:", data);
+
 	var rows = [];
 	
 	for(var i = 0; i < data.data.fundraiserCollection.items.length; i++)
@@ -71,9 +69,4 @@ async function getSpreadSheet() {
 	}
 	
 	return rows;
-	
-  return await sheets.spreadsheets.values.get({
-    spreadsheetId: process.env.SHEET_ID,
-    range: "Organizations (English)",
-  });
 }

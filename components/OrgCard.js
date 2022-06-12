@@ -4,25 +4,6 @@ import Button from "./Button/button";
 import Image from "next/image";
 
 function OrgCard({ titles, values, orgIndex, open, whiteText }) {
-  /*const [
-    orgName,
-    donationLinks,
-    largeDonationsContact,
-    englishDesc,
-    cause,
-    spendingTowards,
-    acomplishments,
-    backedBy,
-    paymentMethod,
-    crypto,
-    instagram,
-    facebook,
-    twitter,
-    website,
-    bannerImage,
-    smallOrg,
-    bannerImage2
-  ] = values;*/
 
   const orgName = values.organizationName;
   const donationLinks = values.donationLink;
@@ -43,8 +24,8 @@ function OrgCard({ titles, values, orgIndex, open, whiteText }) {
   const bannerImage2 = values.bannerImage.url;
   
   const bannerViewableUrl =
-    typeof bannerImage2.url === "string"
-      ? bannerImage2.url
+    typeof bannerImage2 === "string"
+      ? bannerImage2
       : "";
 
   return (
