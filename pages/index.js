@@ -2,7 +2,6 @@ import Head from 'next/head'
 import { useState, useRef } from "react";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import sheets from "../lib/sheets";
 import OrgCard from "../components/OrgCard";
 import OrgPage from "../components/OrgPage";
 import Hero from "../components/Hero/hero";
@@ -34,7 +33,7 @@ export default function Home(props) {
     [small, big] = ["Small Fundraisers", "Large Charities"];
     const [openTab, setOpenTab] = useState(small);
     const smallGroup = props.rows.filter((row) => {
-        return row[15] ? row[15] : false;
+        return row.smallOrganization ? row.smallOrganization : false;
     });
     const orgList =
         openTab === small && smallGroup
@@ -60,6 +59,8 @@ export default function Home(props) {
     //     setExpandModal(!expandModal);
     //     setTimeout(() => router.push(`/${orgData[orgData.length - 1]}`), 80);
     // }
+	
+	
 
     return (
       <Layout isIndexPage="true">
@@ -118,10 +119,10 @@ export default function Home(props) {
                 return (
                     <SwiperSlide key={index} className="container md:col-span-6 xl:col-span-4 col-span-12 flex !h-full">
                       <OrgCard
-                        orgIndex={row[row.length - 1]}
-                        titles={props.title}
-                        values={row}
-                        open={() => openModal(row[row.length - 1], row)}
+                        orgIndex={row.slug}
+                            titles={props.title}
+                            values={row}
+                            open={() => openModal(row.slug, row)}
                         whiteText={true}
                       ></OrgCard>
                     </SwiperSlide>
@@ -262,10 +263,10 @@ export default function Home(props) {
                     return (
                         <SwiperSlide key={index} className="container md:col-span-6 xl:col-span-4 col-span-12 flex !h-full">
                           <OrgCard
-                            orgIndex={row[row.length - 1]}
+                            orgIndex={row.slug}
                             titles={props.title}
                             values={row}
-                            open={() => openModal(row[row.length - 1], row)}
+                            open={() => openModal(row.slug, row)}
                           ></OrgCard>
                         </SwiperSlide>
                     );
@@ -523,24 +524,24 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ locale }) {
-  const response = await sheets.spreadsheets.values.get({
-    spreadsheetId: process.env.SHEET_ID,
-    range: "Organizations (English)",
-  });
-  const [title, ...rows] = response.data.values;
-  rows.map((data, initialIndex) => {
-    data.push(initialIndex + 1);
-  });
-//   FOR FUTURE GRAPHQL WORK - EXAMPLE QUERY CALL
-//   const data = await queryContentful(fundraiserQuery);
-//   console.log("contentful graphql query:", data);
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["about-us", "common"])),
-      title,
-      rows
-    },
-    revalidate: 10,
-  };
+	const data = await queryContentful(fundraiserQuery);
+
+	var rows = [];
+
+	for(var i = 0; i < data.data.fundraiserCollection.items.length; i++)
+	{
+		rows.push(data.data.fundraiserCollection.items[i]);
+	}
+
+	const title = "";
+
+	return {
+	props: {
+	  ...(await serverSideTranslations(locale, ["about-us", "common"])),
+	  title,
+	  rows
+	},
+	revalidate: 10,
+	};
 }

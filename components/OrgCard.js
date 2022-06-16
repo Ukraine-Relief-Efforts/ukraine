@@ -4,26 +4,25 @@ import Button from "./Button/button";
 import Image from "next/image";
 
 function OrgCard({ titles, values, orgIndex, open, whiteText }) {
-  const [
-    orgName,
-    donationLinks,
-    largeDonationsContact,
-    englishDesc,
-    cause,
-    spendingTowards,
-    acomplishments,
-    backedBy,
-    paymentMethod,
-    crypto,
-    instagram,
-    facebook,
-    twitter,
-    website,
-    bannerImage,
-    smallOrg,
-    bannerImage2
-  ] = values;
 
+  const orgName = values.organizationName;
+  const donationLinks = values.donationLink;
+  const largeDonationsContact = (values.largeDonationsContact == null ? "" : values.contactForLargeDonations.json.content[0].content[0].value);
+  const englishDesc = (values.description == null ? "" : values.description.json.content[0].content[0].value);
+  const cause = values.cause;
+  const spendingTowards = values.howWillTheySpendDonations.json.content[0].content[0].value;
+  const acomplishments = (values.whatTheyHaveAccomplishedSoFar == null ? "" : values.whatTheyHaveAccomplishedSoFar);
+  const backedBy = (values.institutionalBacking == null ? "" : values.institutionalBacking.json.content[0].content[0].value);
+  const paymentMethod = (values.paymentMethod == null ? "" : values.paymentMethod.json.content[0].content[0].value);
+  const crypto = values.supportsCryptocurrency;
+  const instagram = values.instagram;
+  const facebook = values.facebook;
+  const twitter = values.twitter;
+  const website = values.organizationWebsite;
+  const bannerImage = values.bannerImage.url;
+  const smallOrg = values.smallOrganization;
+  const bannerImage2 = values.bannerImage.url;
+  
   const bannerViewableUrl =
     typeof bannerImage2 === "string"
       ? bannerImage2
