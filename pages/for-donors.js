@@ -51,7 +51,7 @@ export default function ForDonors() {
               <OneFaq title="Why donate to small fundraisers?">
                 <p>
                   Since Russia’s most recent invasion, friends and families of
-                  people fighting on the frontlines, activists, and others have
+                  people fighting on the front lines, activists, and others have
                   volunteered to support the people and military in Ukraine, at
                   times risking their lives to deliver essential supplies to
                   occupied areas. While large charities will continue playing a

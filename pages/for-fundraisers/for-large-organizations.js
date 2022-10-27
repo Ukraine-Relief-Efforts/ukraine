@@ -135,7 +135,7 @@ export default function ForLargeOrganizations(props) {
                                     <ListItem>
                                         <b>Contact for big donations</b>
                                         <br />
-                                        Preferablly share a contact of someone
+                                        Preferably share a contact of someone
                                         in your organization who speaks English.
                                         Please make sure it’s not a person in an
                                         active combat zone.{" "}
