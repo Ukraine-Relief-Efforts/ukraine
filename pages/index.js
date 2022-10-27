@@ -22,6 +22,7 @@ import arrowRWhite from "../public/assets/icons/arrow_r_white.svg";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import OrgSlider from '../components/OrgSlider';
 
 Modal.setAppElement("#__next");
 
@@ -77,58 +78,14 @@ export default function Home(props) {
         </Head>
         <Hero urgentRef={urgentRef} />
         <div className="bg-[#152D48] py-8 px-6 sm:px-16 sm:pt-20" ref={urgentRef}>
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex items-start">
-              <div className="bg-[#f76659] rounded text-white font-bold text-sm border-box p-1 mr-2">URGENT</div>
-              <h4 className="text-white font-bold text-2xl mb-4">
-                Consider starting with these urgent needs           
-              </h4>
-            </div>
-            <div className="flex">
-              <div className="flex swiper-prev cursor-pointer bg-white border rounded p-1 mr-2">
-                <Image
-                  src={arrowLBlue}
-                  alt={"left arrow icon"}
-                  layout="intrinsic"
-                  height={18}
-                  width={18}
-                />
-              </div>
-              <div className="flex swiper-next cursor-pointer bg-white border rounded p-1">
-                <Image
-                  src={arrowRBlue}
-                  alt={"right arrow icon"}
-                  layout="intrinsic"
-                  height={18}
-                  width={18}
-                />
-              </div>
-            </div>
-          </div>
-          <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
-            navigation={{nextEl: ".swiper-next",
-            prevEl: ".swiper-prev"}}
-            modules={[Navigation]}
-            className="swiper"
-            autoHeight="true"
-          >
-            {orgList &&
-              orgList.map((row, index) => {
-                return (
-                    <SwiperSlide key={index} className="container md:col-span-6 xl:col-span-4 col-span-12 flex !h-full">
-                      <OrgCard
-                        orgIndex={row.slug}
-                            titles={props.title}
-                            values={row}
-                            open={() => openModal(row.slug, row)}
-                        whiteText={true}
-                      ></OrgCard>
-                    </SwiperSlide>
-                );
-              })}
-          </Swiper>
+          <OrgSlider 
+            orgList={orgList} 
+            props={props} 
+            title="Consider starting with these urgent needs"
+            isUrgent={true}
+            whiteText={true}
+            id={"1"}
+          />
         </div>
         <div className="py-8 px-6 sm:px-16 sm:pt-20 sm:pb-28">
           <div className="flex justify-between mb-12">
@@ -224,54 +181,14 @@ export default function Home(props) {
               </ul>
             </div>
             <div>
-              <div className="flex justify-between">
-                <h4 className="font-bold text-2xl mb-4">
-                  Support evacuation and aid efforts in combat zones      
-                </h4>
-                <div className="flex items-center">
-                  <div className="flex swiper-prev-2 cursor-pointer bg-white border rounded p-1 mr-2">
-                    <Image
-                      src={arrowLBlue}
-                      alt={"left arrow icon"}
-                      layout="intrinsic"
-                      height={18}
-                      width={18}
-                    />
-                  </div>
-                  <div className="flex swiper-next-2 cursor-pointer bg-white border rounded p-1">
-                    <Image
-                      src={arrowRBlue}
-                      alt={"right arrow icon"}
-                      layout="intrinsic"
-                      height={18}
-                      width={18}
-                    />
-                  </div>
-                </div>
-              </div>
-              <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
-                navigation={{nextEl: ".swiper-next-2",
-                prevEl: ".swiper-prev-2"}}
-                modules={[Navigation]}
-                className="swiper"
-                autoHeight="true"
-              >
-                {orgList &&
-                  orgList.map((row, index) => {
-                    return (
-                        <SwiperSlide key={index} className="container md:col-span-6 xl:col-span-4 col-span-12 flex !h-full">
-                          <OrgCard
-                            orgIndex={row.slug}
-                            titles={props.title}
-                            values={row}
-                            open={() => openModal(row.slug, row)}
-                          ></OrgCard>
-                        </SwiperSlide>
-                    );
-                  })}
-              </Swiper>
+              <OrgSlider 
+                orgList={orgList} 
+                props={props} 
+                title="Support evacuation and aid efforts in combat zones"
+                isUrgent={false}
+                whiteText={false}
+                id={"2"}
+              />
           </div>
         </div>
         <div className="bg-[#152D48] py-8 px-6 sm:px-16 sm:pt-20 pb-20">
