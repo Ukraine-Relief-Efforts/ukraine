@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.3",
+    "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^1.0.6",
     "@sentry/nextjs": "^7.19.0",
     "googleapis": "^109.0.1",
