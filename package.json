@@ -11,7 +11,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.4",
     "@heroicons/react": "^1.0.6",
-    "@sentry/nextjs": "^7.21.1",
+    "@sentry/nextjs": "^7.37.0",
     "googleapis": "^109.0.1",
     "i18next": "^22.0.6",
     "next": "13.0.5",
